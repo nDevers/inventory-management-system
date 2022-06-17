@@ -3,6 +3,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../hooks/firebase.init';
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import Loading from '../../components/Loading';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -16,14 +17,10 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     if (error) {
-        return (
-            <div>
-                <p>Error: {error.message}</p>
-            </div>
-        );
+        return toast.error(`Error: ${error?.message}`);
     }
     if (loading) {
-        return <p>Loading...</p>;
+        return <Loading />;
     }
     if (user) {
         console.log(user);
