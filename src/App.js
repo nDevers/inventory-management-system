@@ -5,6 +5,7 @@ import Login from "./pages/Authentication/Login";
 import Register from "./pages/Authentication/Register";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="register" element={<Register />} />
       </Routes>
 
+      <Sidebar />
 
       <Footer />
       <ToastContainer />
