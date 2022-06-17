@@ -1,19 +1,32 @@
-# inventory-management-system (Full-Stack)
+## Inventory Management System (Full-stack)
 
-Live Site Link: 
+### Website Link:
 
+### Client Side Code:
 
-## Features 
+### Server Side Code:
 
-1. Authentication
-    i. User Credentials
-    ii. Licenece
-3. Manage Product
-4. User Dashboard
-5. Admin Dashboard
+### Features
 
+1. Authentication (Firebase)
+2. Manage products (CRUD operations)
+3. User profile
+4. Author Profile
+5. Dashboard
+6. Admin panel
 
-## Technology
+### Technology Used
 
-1. Front-end: React JS, Tailwind CSS, HTML
-2. Back-end: Node.js. Express.js, MongoDB
+1. React JS
+2. Express.js
+3. Cors
+4. Dotenv
+5. Nodemon
+6. MongoDB
+7. Tailwind CSS
+8. HTML
+
+### Hosting
+
+1. Client-side hosting: Firebase
+2. Server-side hosting: Heroku
