@@ -28,6 +28,8 @@ const Login = () => {
     if (user) {
         console.log(user);
         toast.success('Logged in successfully');
+
+        navigate('/dashboard');
     }
 
     const handleLogin = (event) => {

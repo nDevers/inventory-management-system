@@ -1,13 +1,27 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
+import auth from '../hooks/firebase.init';
 
 const Navbar = () => {
-    const navbarItems = <>
+    const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate();
+    const defaultNavbarItems = <>
         <li><a>Home</a></li>
         <li><a>About</a></li>
         <li><a>Contact</a></li>
         <li><Link to='login'>Login</Link></li>
     </>
+
+    const logout = () => {
+        signOut(auth);
+
+        toast.success('See you soon!');
+
+        navigate('/');
+    };
 
     return (
         <div class="navbar bg-base-100">
@@ -18,7 +32,7 @@ const Navbar = () => {
                     </label>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {
-                            navbarItems
+                            !user && defaultNavbarItems
                         }
                     </ul>
                 </div>
@@ -27,13 +41,39 @@ const Navbar = () => {
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     {
-                        navbarItems
+                        !user && defaultNavbarItems
                     }
                 </ul>
             </div>
-            <div class="navbar-end">
-                <a class="btn" href='/'>Get started</a>
-            </div>
+
+            {
+                user ?
+                    <div class="navbar-end">
+                        <div class="dropdown dropdown-end">
+                            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+                                <div class="w-10 rounded-full">
+                                    <img src="https://api.lorem.space/image/face?hash=33791" />
+                                </div>
+                            </label>
+                            <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                                <li>
+                                    <a class="justify-between">
+                                        Profile
+                                        <span class="badge">New</span>
+                                    </a>
+                                </li>
+                                <li><a>Settings</a></li>
+                                <li onClick={() => logout()}><a>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    :
+
+                    <div class="navbar-end">
+                        <a class="btn" href='/'>Get started</a>
+                    </div>
+            }
         </div>
     );
 };
