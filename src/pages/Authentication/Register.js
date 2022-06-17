@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../hooks/firebase.init';
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [
@@ -56,6 +58,9 @@ const Register = () => {
                 </div>
                 <div class="form-control mt-6">
                     <button type='submit' class="btn btn-primary">Register</button>
+                </div>
+                <div class="form-control mt-6">
+                    <p className='flex justify-between'>Already a member? <span onClick={() => navigate('/login')} className='text-[#F4E06D] underline'>Login Here</span></p>
                 </div>
             </form>
         </div>

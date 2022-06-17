@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Authentication/Login";
@@ -7,7 +8,13 @@ function App() {
   return (
     <div>
       <Navbar />
-      <Register />
+
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+      </Routes>
+
+
       <Footer />
     </div>
   );

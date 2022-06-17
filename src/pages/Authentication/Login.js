@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../hooks/firebase.init';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [
-        createUserWithEmailAndPassword,
+        signInWithEmailAndPassword,
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useSignInWithEmailAndPassword(auth);
 
     if (error) {
         return (
@@ -23,22 +25,18 @@ const Login = () => {
         return <p>Loading...</p>;
     }
     if (user) {
-        return (
-            <div>
-                <p>Registered User: {user.email}</p>
-            </div>
-        );
+        console.log(user);
     }
 
-    const handleSignup = (event) => {
+    const handleLogin = (event) => {
         event.preventDefault();
 
-        createUserWithEmailAndPassword(email, password);
+        signInWithEmailAndPassword(email, password);
     }
 
     return (
         <div class="card flex-shrink-0 w-4/12 shadow-2xl bg-base-100 mx-auto my-20">
-            <form onSubmit={handleSignup} class="card-body">
+            <form onSubmit={handleLogin} class="card-body">
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Email</span>
@@ -56,6 +54,9 @@ const Login = () => {
                 </div>
                 <div class="form-control mt-6">
                     <button type='submit' class="btn btn-primary">Login</button>
+                </div>
+                <div class="form-control mt-6">
+                    <p className='flex justify-between'>New to Inventory? <span onClick={() => navigate('/register')} className='text-[#F4E06D] underline'>Register Here</span></p>
                 </div>
             </form>
         </div>
