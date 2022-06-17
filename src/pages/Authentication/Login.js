@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../hooks/firebase.init';
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -26,6 +27,7 @@ const Login = () => {
     }
     if (user) {
         console.log(user);
+        toast.success('Logged in successfully');
     }
 
     const handleLogin = (event) => {
