@@ -1,4 +1,7 @@
-# inventory-management-system
+# inventory-management-system (Full-Stack)
+
+Live Site Link: 
+
 
 ## Features 
 
@@ -8,3 +11,9 @@
 3. Manage Product
 4. User Dashboard
 5. Admin Dashboard
+
+
+## Technology
+
+1. Front-end: React JS, Tailwind CSS, HTML
+2. Back-end: Node.js. Express.js, MongoDB
