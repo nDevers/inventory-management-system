@@ -28,7 +28,7 @@ const Sidebar = () => {
                             >
                                 <MdOutlineSummarize className='text-lg' />
 
-                                <span class="ml-3 text-sm font-medium"> Summary </span>
+                                <span class="ml-3 text-sm font-medium"> Dashboard </span>
                             </Link>
 
                             <details class="group">
