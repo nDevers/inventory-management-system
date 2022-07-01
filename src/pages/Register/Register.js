@@ -20,8 +20,7 @@ const Register = () => {
                     <h1 class="text-2xl font-bold sm:text-3xl">Create Your Inventory Account</h1>
 
                     <p class="mt-4 text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et libero nulla
-                        eaque error neque ipsa culpa autem, at itaque nostrum!
+                        Sign up today and unlock intelligent inventory management solution, feel the power of automation and more.
                     </p>
                 </div>
 
@@ -61,7 +60,7 @@ const Register = () => {
                         <div class="form-control mt-4">
                             <label class="label cursor-pointer">
                                 <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
-                                <span class="label-text">By clicking this I accept the terms and condition</span>
+                                <span class="label-text">By continuing, you agree String LAB Terms of Service and Privacy Policy.</span>
                             </label>
                         </div>
                     </div>
