@@ -1,59 +1,270 @@
 import React from 'react';
 import ProductsRow from './ProductsRow';
-import { confirmAlert } from 'react-confirm-alert';
-
-const createProduct = event => {
-    confirmAlert({
-        customUI: ({ onClose }) => {
-            return (
-                <div className='bg-gradient-to-r from-primary to-secondary p-8 text-white rounded-lg w-96'>
-                    <h1 className='text-xl mb-4'>Are you sure?</h1>
-                    <p>Your post will be public so be careful before proceed.</p>
-
-                    <div className='flex justify-between mt-8'>
-                        <button className='btn btn-info w-36 flex items-center' onClick={onClose}>
-                            Cancel
-                        </button>
-
-                        <button className='btn btn-info w-36 flex items-center'>
-                            Confirm
-                        </button>
-                    </div>
-                </div>
-            );
-        }
-    });
-
-    event.target.reset();
-};
+import { BsPrinter, BsSave2 } from 'react-icons/bs';
+import { FcCancel } from 'react-icons/fc';
+import { MdOutlineAddBox } from 'react-icons/md';
 
 const Products = () => {
     return (
         <section>
-            <label for="my-modal-6" class="btn modal-button">open modal</label>
-
             <div className="flex justify-between mb-6">
-                <button for="my-modal" class="btn modal-button gap-2">
+                <label for="create-new-product" class="btn btn-sm gap-2 modal-button">
+                    <MdOutlineAddBox className='text-lg' />
                     New
-                </button>
-                <button class="btn gap-2">
+                </label>
+                <button class="btn btn-sm gap-2">
+                    <BsPrinter className='text-md' />
                     Print
                 </button>
             </div>
 
-            <input type="checkbox" id="my-modal-6" class="modal-toggle" />
-            <div class="modal modal-bottom sm:modal-middle">
-                <div class="modal-box w-11/12 max-w-5xl">
-                    <h3 class="font-bold text-lg mb-4">Create a Product</h3>
+            <input type="checkbox" id="create-new-product" class="modal-toggle" />
+            <div class="modal">
+                <div class="modal-box w-12/12 max-w-5xl">
+                    <label for="create-new-product" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <div className='flex justify-between gap-4'>
-                        <input type="text" placeholder="Type here" class="input input-bordered input-sm w-full max-w-xs" />
-                        <input type="text" placeholder="Type here" class="input input-bordered input-sm w-full max-w-xs" />
-                        <input type="text" placeholder="Type here" class="input input-bordered input-sm w-full max-w-xs" />
+                    <h3 class="font-bold text-lg mb-2">Create a Product</h3>
 
+                    <div className='grid grid-cols-4 gap-4 mb-2'>
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Trade Name</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Generic Name</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Barcode</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
+
+                        <div className="div">
+                            <label class="label">
+                                <span class="label-text">Strength</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
                     </div>
-                    <div class="modal-action">
-                        <label for="my-modal-6" class="btn">Yay!</label>
+
+                    <div className='grid grid-cols-5 gap-4 mb-2'>
+                        <div className="div">
+                            <label class="label">
+                                <span class="label-text">Category</span>
+                            </label>
+                            <select class="select select-bordered select-xs w-full max-w-xs">
+                                <option disabled selected>Small</option>
+                                <option>Small Apple</option>
+                                <option>Small Orange</option>
+                                <option>Small Tomato</option>
+                            </select>
+                        </div>
+
+                        <div className="div">
+                            <label class="label">
+                                <span class="label-text">Counter</span>
+                            </label>
+                            <select class="select select-bordered select-xs w-full max-w-xs">
+                                <option disabled selected>Small</option>
+                                <option>Small Apple</option>
+                                <option>Small Orange</option>
+                                <option>Small Tomato</option>
+                            </select>
+                        </div>
+
+                        <div className="div">
+                            <label class="label">
+                                <span class="label-text">Company</span>
+                            </label>
+                            <select class="select select-bordered select-xs w-full max-w-xs">
+                                <option disabled selected>Small</option>
+                                <option>Small Apple</option>
+                                <option>Small Orange</option>
+                                <option>Small Tomato</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Sold Days For Purchase Required</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Minimum Stock To Alert</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
+                    </div>
+
+                    <div className='flex justify-between gap-4 mb-2'>
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Sold Days For Purchase Required</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Minimum Stock To Alert</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="flex flex-col w-full lg:flex-row">
+                        <div class="grid flex-grow card">
+                            <div className='flex justify-between items-center'>
+                                <h3 className='text-xl'>Purchase Area</h3>
+                                <div>
+                                    <label class="label">
+                                        <span class="label-text">Unit Conversion</span>
+                                    </label>
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="div">
+                                    <label class="label">
+                                        <span class="label-text">Purchase Unit Type</span>
+                                    </label>
+                                    <select class="select select-bordered select-xs w-full max-w-xs">
+                                        <option disabled selected>Small</option>
+                                        <option>Small Apple</option>
+                                        <option>Small Orange</option>
+                                        <option>Small Tomato</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="label">
+                                        <span class="label-text">Unit TP Price (S/P)</span>
+                                    </label>
+                                    <div className='flex justify-between gap-4'>
+                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Purchase Vat</span>
+                                </label>
+                                <div className="grid grid-cols-3 gap-4">
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Purchase Discount</span>
+                                </label>
+                                <div className="grid grid-cols-3 gap-4">
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="divider lg:divider-horizontal"></div>
+
+                        <div class="grid flex-grow card">
+                            <div className='flex justify-between items-center'>
+                                <h3 className='text-xl'>Sales Area</h3>
+                                <div>
+                                    <label class="label">
+                                        <span class="label-text">Profit (%)</span>
+                                    </label>
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                                </div>
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <div className="div">
+                                    <label class="label">
+                                        <span class="label-text">Sales Unit Type</span>
+                                    </label>
+                                    <select class="select select-bordered select-xs w-full max-w-xs">
+                                        <option disabled selected>Small</option>
+                                        <option>Small Apple</option>
+                                        <option>Small Orange</option>
+                                        <option>Small Tomato</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="label">
+                                        <span class="label-text">Unit MRP (S/P)</span>
+                                    </label>
+                                    <div className='flex justify-between gap-4'>
+                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Sales Vat</span>
+                                </label>
+                                <div className="grid grid-cols-3 gap-4">
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Sales Discount</span>
+                                </label>
+                                <div className="grid grid-cols-3 gap-4">
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Max Sales Discount</span>
+                                </label>
+                                <div className="grid grid-cols-3 gap-4">
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className='flex justify-around items-center my-4'>
+                        <button class="btn btn-sm flex items-center gap-2">
+                            <BsSave2 className='text-md' />
+                            Save
+                        </button>
+                        <label for="create-new-product" class="btn btn-sm flex items-center gap-2">
+                            <FcCancel className='text-lg' />
+                            Cancel
+                        </label>
                     </div>
                 </div>
             </div>
