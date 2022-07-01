@@ -25,7 +25,7 @@ const DefaultNavbar = () => {
                         }
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl uppercase" href='/'>Inventory</a>
+                <a class="btn btn-ghost text-xl uppercase" href='/'>String LAB</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">

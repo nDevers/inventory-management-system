@@ -19,12 +19,11 @@ const UserNavbar = () => {
                         }
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl uppercase" href='/'>Inventory</a>
+                <a class="btn btn-ghost text-xl uppercase" href='/'>String LAB</a>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
                     <div className='flex items-center'>
-                        <h3 className='text-lg'>Shop name</h3>
                         <div class="text-sm breadcrumbs">
                             <ul>
                                 <li>
