@@ -25,8 +25,9 @@ import Returns from './Pages/Dashboard/Returns';
 import Employees from './Pages/Dashboard/Employees';
 import Customers from './Pages/Dashboard/Customers';
 import Suppliers from './Pages/Dashboard/Suppliers';
-import Setup from './Pages/Dashboard/Setup';
+import Setup from './Pages/Dashboard/Setup/Setup';
 import CreateProduct from './Pages/Dashboard/Products/CreateProduct';
+import SetupCategories from './Pages/Dashboard/Setup/SetupCategories';
 
 function App() {
   return (
@@ -57,6 +58,7 @@ function App() {
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
           <Route path='suppliers' element={<Suppliers />} />
+          <Route path='setup-category' element={<SetupCategories />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

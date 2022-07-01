@@ -10,28 +10,28 @@ const CreateProduct = () => {
                     <label class="label">
                         <span class="label-text">Trade Name</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
 
                 <div>
                     <label class="label">
                         <span class="label-text">Generic Name</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
 
                 <div>
                     <label class="label">
                         <span class="label-text">Barcode</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
 
                 <div className="div">
                     <label class="label">
                         <span class="label-text">Strength</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
             </div>
 
@@ -40,7 +40,7 @@ const CreateProduct = () => {
                     <label class="label">
                         <span class="label-text">Category</span>
                     </label>
-                    <select class="select select-bordered select-sm w-full max-w-xs">
+                    <select class="select select-bordered select-xs w-full max-w-xs">
                         <option disabled selected>Small</option>
                         <option>Small Apple</option>
                         <option>Small Orange</option>
@@ -52,7 +52,7 @@ const CreateProduct = () => {
                     <label class="label">
                         <span class="label-text">Counter</span>
                     </label>
-                    <select class="select select-bordered select-sm w-full max-w-xs">
+                    <select class="select select-bordered select-xs w-full max-w-xs">
                         <option disabled selected>Small</option>
                         <option>Small Apple</option>
                         <option>Small Orange</option>
@@ -64,7 +64,7 @@ const CreateProduct = () => {
                     <label class="label">
                         <span class="label-text">Company</span>
                     </label>
-                    <select class="select select-bordered select-sm w-full max-w-xs">
+                    <select class="select select-bordered select-xs w-full max-w-xs">
                         <option disabled selected>Small</option>
                         <option>Small Apple</option>
                         <option>Small Orange</option>
@@ -76,14 +76,14 @@ const CreateProduct = () => {
                     <label class="label">
                         <span class="label-text">Sold Days For Purchase Required</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
 
                 <div>
                     <label class="label">
                         <span class="label-text">Minimum Stock To Alert</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
             </div>
 
@@ -92,14 +92,14 @@ const CreateProduct = () => {
                     <label class="label">
                         <span class="label-text">Sold Days For Purchase Required</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
 
                 <div>
                     <label class="label">
                         <span class="label-text">Minimum Stock To Alert</span>
                     </label>
-                    <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                 </div>
             </div>
 
@@ -113,7 +113,7 @@ const CreateProduct = () => {
                             <label class="label">
                                 <span class="label-text">Unit Conversion</span>
                             </label>
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                         </div>
                     </div>
 
@@ -122,7 +122,7 @@ const CreateProduct = () => {
                             <label class="label">
                                 <span class="label-text">Purchase Unit Type</span>
                             </label>
-                            <select class="select select-bordered select-sm w-full max-w-xs">
+                            <select class="select select-bordered select-xs w-full max-w-xs">
                                 <option disabled selected>Small</option>
                                 <option>Small Apple</option>
                                 <option>Small Orange</option>
@@ -135,8 +135,8 @@ const CreateProduct = () => {
                                 <span class="label-text">Unit TP Price (S/P)</span>
                             </label>
                             <div className='flex justify-between gap-4'>
-                                <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
-                                <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                                <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
                             </div>
                         </div>
                     </div>
@@ -146,9 +146,9 @@ const CreateProduct = () => {
                             <span class="label-text">Purchase Vat</span>
                         </label>
                         <div className="grid grid-cols-3 gap-4">
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered max-w-xs" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
                         </div>
                     </div>
 
@@ -157,9 +157,9 @@ const CreateProduct = () => {
                             <span class="label-text">Purchase Discount</span>
                         </label>
                         <div className="grid grid-cols-3 gap-4">
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered max-w-xs" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
                         </div>
                     </div>
                 </div>
@@ -171,7 +171,7 @@ const CreateProduct = () => {
                             <label class="label">
                                 <span class="label-text">Profit (%)</span>
                             </label>
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full max-w-xs" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                         </div>
                     </div>
 
@@ -180,7 +180,7 @@ const CreateProduct = () => {
                             <label class="label">
                                 <span class="label-text">Sales Unit Type</span>
                             </label>
-                            <select class="select select-bordered select-sm w-full max-w-xs">
+                            <select class="select select-bordered select-xs w-full max-w-xs">
                                 <option disabled selected>Small</option>
                                 <option>Small Apple</option>
                                 <option>Small Orange</option>
@@ -193,8 +193,8 @@ const CreateProduct = () => {
                                 <span class="label-text">Unit MRP (S/P)</span>
                             </label>
                             <div className='flex justify-between gap-4'>
-                                <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
-                                <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                                <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                                <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
                             </div>
                         </div>
                     </div>
@@ -204,9 +204,9 @@ const CreateProduct = () => {
                             <span class="label-text">Sales Vat</span>
                         </label>
                         <div className="grid grid-cols-3 gap-4">
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered max-w-xs" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
                         </div>
                     </div>
 
@@ -215,9 +215,9 @@ const CreateProduct = () => {
                             <span class="label-text">Sales Discount</span>
                         </label>
                         <div className="grid grid-cols-3 gap-4">
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered max-w-xs" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
                         </div>
                     </div>
 
@@ -226,9 +226,9 @@ const CreateProduct = () => {
                             <span class="label-text">Max Sales Discount</span>
                         </label>
                         <div className="grid grid-cols-3 gap-4">
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered max-w-xs" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
-                            <input type="text" placeholder="Type here" class="input input-sm input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered max-w-xs" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full" />
                         </div>
                     </div>
                 </div>
