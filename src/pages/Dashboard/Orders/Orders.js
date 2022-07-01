@@ -18,7 +18,7 @@ const Orders = () => {
         <th className='text-xs' >Created At</th>
         <th className='text-xs' >
             <select class="select select-bordered select-xs w-full max-w-xs">
-                <option disabled selected>10</option>
+                <option selected>10</option>
                 <option>20</option>
                 <option>30</option>
                 <option>40</option>
