@@ -28,6 +28,8 @@ import Suppliers from './Pages/Dashboard/Suppliers';
 import Setup from './Pages/Dashboard/Setup/Setup';
 import CreateProduct from './Pages/Dashboard/Products/CreateProduct';
 import SetupCategories from './Pages/Dashboard/Setup/SetupCategories';
+import Profile from './Pages/User/Profile';
+import Settings from './Pages/User/Settings';
 
 function App() {
   return (
@@ -46,6 +48,8 @@ function App() {
         <Route path="resources" element={<Resources />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="settings" element={<Settings />} />
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<DashboardSummary />} />
           <Route path='products' element={<Products />} />
