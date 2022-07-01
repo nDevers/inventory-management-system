@@ -45,8 +45,8 @@ const Products = () => {
             </div>
 
             <input type="checkbox" id="create-new-product" class="modal-toggle" />
-            <div class="modal">
-                <div class="modal-box w-12/12 max-w-5xl">
+            <label for="create-new-product" class="modal cursor-pointer">
+                <label class="modal-box w-11/12 max-w-5xl relative" for="">
                     <label for="create-new-product" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
                     <h3 class="font-bold text-lg mb-2">Create a Product</h3>
@@ -292,8 +292,8 @@ const Products = () => {
                             Cancel
                         </label>
                     </div>
-                </div>
-            </div>
+                </label>
+            </label>
 
             <table class="table table-zebra table-compact w-full">
                 <thead>

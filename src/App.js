@@ -49,15 +49,24 @@ function App() {
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<DashboardSummary />} />
           <Route path='products' element={<Products />} />
-          <Route path='create-product' element={<CreateProduct />} />
-          <Route path='required-items' element={<RequiredItems />} />
-          <Route path='orders' element={<Orders />} />
-          <Route path='purchases' element={<Purchases />} />
-          <Route path='setup' element={<Setup />} />
-          <Route path='returns' element={<Returns />} />
+          <Route path='products/pharmacy' element={<Products />} />
+          <Route path='products/non-pharmacy' element={<Products />} />
+          <Route path='requested-items/pharmacy' element={<RequiredItems />} />
+          <Route path='requested-items/non-pharmacy' element={<RequiredItems />} />
+          <Route path='orders/pharmacy' element={<Orders />} />
+          <Route path='orders/non-pharmacy' element={<Orders />} />
+          <Route path='purchases/pharmacy' element={<Purchases />} />
+          <Route path='purchases/non-pharmacy' element={<Purchases />} />
+          <Route path='setup/category' element={<Setup />} />
+          <Route path='setup/unit-type' element={<Setup />} />
+          <Route path='setup/company' element={<Setup />} />
+          <Route path='returns/customer' element={<Returns />} />
+          <Route path='returns/expire-or-damage' element={<Returns />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
-          <Route path='suppliers' element={<Suppliers />} />
+          <Route path='suppliers/list' element={<Suppliers />} />
+          <Route path='suppliers/payment' element={<Suppliers />} />
+          <Route path='suppliers/documents' element={<Suppliers />} />
           <Route path='setup-category' element={<SetupCategories />} />
         </Route>
         <Route path="*" element={<NotFound />} />
