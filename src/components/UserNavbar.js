@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import logo from '../Assets/logo.png';
+import { RiSettings5Fill, RiProfileLine, RiLogoutBoxRFill } from 'react-icons/ri';
 
 const UserNavbar = () => {
     return (
@@ -59,13 +60,24 @@ const UserNavbar = () => {
                     </div>
                     <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <li>
-                            <a class="justify-between">
+                            <Link to='/profile' class="flex items-center gap-2">
+                                <RiProfileLine className='text-lg' />
                                 Profile
                                 <span class="badge">New</span>
-                            </a>
+                            </Link>
                         </li>
-                        <li><a>Settings</a></li>
-                        <li><a>Logout</a></li>
+                        <li>
+                            <Link to='/settings' class="flex items-center gap-2">
+                                <RiSettings5Fill className='text-lg' />
+                                Settings
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/settings' class="flex items-center gap-2">
+                                <RiLogoutBoxRFill className='text-lg' />
+                                Logout
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </div>
