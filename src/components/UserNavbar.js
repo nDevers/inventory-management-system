@@ -1,11 +1,8 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
-import Loading from './Loading';
+import { Link } from "react-router-dom";
+import logo from '../Assets/logo.png';
 
 const UserNavbar = () => {
-    const navigate = useNavigate();
-
     return (
         <div class="navbar">
             <div class="navbar-start">
@@ -19,7 +16,10 @@ const UserNavbar = () => {
                         }
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl uppercase" href='/'>String LAB</a>
+                <Link class="btn btn-ghost text-xl uppercase flex items-center" to='/'>
+                    <img className='w-12' src={logo} alt="logo" />
+                    String LAB
+                </Link>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">

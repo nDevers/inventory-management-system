@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { toast } from 'react-toastify';
-import Loading from './Loading';
+import { Link } from "react-router-dom";
+import logo from '../Assets/logo.png';
 
 const DefaultNavbar = () => {
-    const navigate = useNavigate();
     const defaultNavbarItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='about'>About</Link></li>
@@ -25,7 +23,10 @@ const DefaultNavbar = () => {
                         }
                     </ul>
                 </div>
-                <a class="btn btn-ghost text-xl uppercase" href='/'>String LAB</a>
+                <Link class="btn btn-ghost text-xl uppercase flex items-center" to='/'>
+                    <img className='w-12' src={logo} alt="logo" />
+                    String LAB
+                </Link>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
