@@ -19,7 +19,7 @@ import Dashboard from './Pages/Dashboard/Dashboard';
 import DashboardSummary from './Pages/Dashboard/DashboardSummary';
 import Products from './Pages/Dashboard/Products/Products';
 import RequiredItems from './Pages/Dashboard/RequiredItems';
-import Orders from './Pages/Dashboard/Orders';
+import Orders from './Pages/Dashboard/Orders/Orders';
 import Purchases from './Pages/Dashboard/Purchases';
 import Returns from './Pages/Dashboard/Returns';
 import Employees from './Pages/Dashboard/Employees';
