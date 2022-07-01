@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Intigration = () => {
+const Integration = () => {
     return (
         <section class="text-white bg-blue-600">
             <div class="max-w-screen-xl px-4 py-16 mx-auto sm:px-6 lg:px-8">
@@ -51,4 +51,4 @@ const Intigration = () => {
     );
 };
 
-export default Intigration;
+export default Integration;

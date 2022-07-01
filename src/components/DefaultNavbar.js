@@ -1,17 +1,14 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
-import auth from '../hooks/firebase.init';
 import Loading from './Loading';
 
 const DefaultNavbar = () => {
     const navigate = useNavigate();
     const defaultNavbarItems = <>
-        <li><a>Home</a></li>
-        <li><a>About</a></li>
-        <li><a>Contact</a></li>
+        <li><Link to='/'>Home</Link></li>
+        <li><Link to='about'>About</Link></li>
+        <li><Link to='contact'>Contact</Link></li>
         <li><Link to='login'>Login</Link></li>
     </>
 
@@ -38,7 +35,7 @@ const DefaultNavbar = () => {
                 </ul>
             </div>
             <div class="navbar-end">
-                <a class="btn" href='/dashboard'>Get started</a>
+                <Link class="btn" to='/pricing'>Get started</Link>
             </div>
         </div>
     );

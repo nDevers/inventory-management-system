@@ -1,31 +1,13 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
-import auth from '../hooks/firebase.init';
 import Loading from './Loading';
 
 const UserNavbar = () => {
-    const [loading, error] = useAuthState(auth);
     const navigate = useNavigate();
-    if (error) {
-        return toast.error(`Error: ${error?.message}`);
-    }
-    if (loading) {
-        return <Loading />;
-    }
-
-    const logout = () => {
-        signOut(auth);
-
-        toast.success('See you soon!');
-
-        navigate('/');
-    };
 
     return (
-        <div class="navbar bg-base-100">
+        <div class="navbar">
             <div class="navbar-start">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -84,7 +66,7 @@ const UserNavbar = () => {
                             </a>
                         </li>
                         <li><a>Settings</a></li>
-                        <li onClick={() => logout()}><a>Logout</a></li>
+                        <li><a>Logout</a></li>
                     </ul>
                 </div>
             </div>

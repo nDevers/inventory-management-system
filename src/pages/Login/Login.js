@@ -1,44 +1,21 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from '../../hooks/firebase.init';
-import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
-import Loading from '../../components/Loading';
+import { Link, useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-    ] = useCreateUserWithEmailAndPassword(auth);
 
-    if (error) {
-        return toast.error(`Error: ${error?.message}`);
-    }
-    if (loading) {
-        return <Loading />;
-    }
-    if (user) {
-        return (
-            <div>
-                <p>Registered User: {user.email}</p>
-            </div>
-        );
-    }
 
-    const handleSignup = (event) => {
+    const handleLogin = (event) => {
         event.preventDefault();
 
-        createUserWithEmailAndPassword(email, password);
     }
 
     return (
         <div class="card flex-shrink-0 w-4/12 shadow-2xl bg-base-100 mx-auto my-20">
-            <form onSubmit={handleSignup} class="card-body">
+            <form onSubmit={handleLogin} class="card-body">
                 <div class="form-control">
                     <label class="label">
                         <span class="label-text">Email</span>
@@ -51,18 +28,26 @@ const Register = () => {
                     </label>
                     <input onChange={(e) => setPassword(e.target.value)} type="text" placeholder="password" class="input input-bordered" />
                     <label class="label">
-                        <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                        <Link to='/forgot-password' className='text-[#F4E06D] label-text-alt link link-hover'>Forgot Password?</Link>
                     </label>
                 </div>
+
+                <div class="form-control mt-4">
+                    <label class="label cursor-pointer">
+                        <input type="checkbox" class="checkbox checkbox-primary" />
+                        <span class="label-text">Remember Me</span>
+                    </label>
+                </div>
+
                 <div class="form-control mt-6">
-                    <button type='submit' class="btn btn-primary">Register</button>
+                    <button type='submit' class="btn btn-primary">Login</button>
                 </div>
                 <div class="form-control mt-6">
-                    <p className='flex justify-between'>Already a member? <span onClick={() => navigate('/login')} className='text-[#F4E06D] underline'>Login Here</span></p>
+                    <p className='flex justify-between'>New to Inventory? <Link to='/register' className='text-[#F4E06D] underline'>Register Here</Link></p>
                 </div>
-            </form>
-        </div>
+            </form >
+        </div >
     );
 };
 
-export default Register;
+export default Login;

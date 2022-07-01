@@ -1,10 +1,11 @@
 import React from 'react';
-import DefaultNavbar from '../../components/DefaultNavbar';
+import DefaultNavbar from '../../Components/DefaultNavbar';
+import Footer from '../../Components/Footer';
 import CustomersStories from './CustomersStories';
 import FAQs from './FAQs';
 import Features from './Features';
 import Header from './Header';
-import Intigration from './Intigration';
+import Integration from './Integration';
 
 const Home = () => {
     return (
@@ -12,9 +13,10 @@ const Home = () => {
             <DefaultNavbar />
             <Header />
             <Features />
-            <Intigration />
+            <Integration />
             <CustomersStories />
             <FAQs />
+            <Footer />
         </div>
     );
 };
