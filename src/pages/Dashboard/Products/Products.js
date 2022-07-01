@@ -5,6 +5,32 @@ import { FcCancel } from 'react-icons/fc';
 import { MdOutlineAddBox } from 'react-icons/md';
 
 const Products = () => {
+    const tableHead = <tr>
+        <th className='text-xs' >SN</th>
+        <th className='text-xs' >Code</th>
+        <th className='text-xs' >Trade Name</th>
+        <th className='text-xs' >Category</th>
+        <th className='text-xs' >Strength</th>
+        <th className='text-xs' >Company</th>
+        <th className='text-xs' >Stock</th>
+        <th className='text-xs' >TP</th>
+        <th className='text-xs' >MRP</th>
+        <th className='text-xs' >
+            <select class="select select-bordered select-xs w-full max-w-xs">
+                <option selected>10</option>
+                <option>20</option>
+                <option>30</option>
+                <option>40</option>
+                <option>50</option>
+                <option>60</option>
+                <option>70</option>
+                <option>80</option>
+                <option>90</option>
+                <option>100</option>
+            </select>
+        </th>
+    </tr>;
+
     return (
         <section>
             <div className="flex justify-between mb-6">
@@ -271,15 +297,9 @@ const Products = () => {
 
             <table class="table table-zebra table-compact w-full">
                 <thead>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>company</th>
-                        <th>location</th>
-                        <th>Last Login</th>
-                        <th>Favorite Color</th>
-                    </tr>
+                    {
+                        tableHead
+                    }
                 </thead>
                 <tbody>
                     <ProductsRow />
@@ -288,15 +308,9 @@ const Products = () => {
                     <ProductsRow />
                 </tbody>
                 <tfoot>
-                    <tr>
-                        <th></th>
-                        <th>Name</th>
-                        <th>Job</th>
-                        <th>company</th>
-                        <th>location</th>
-                        <th>Last Login</th>
-                        <th>Favorite Color</th>
-                    </tr>
+                    {
+                        tableHead
+                    }
                 </tfoot>
             </table>
         </section >
