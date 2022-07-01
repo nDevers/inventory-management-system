@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import registerGif from '../../Assets/GIF/register.gif';
 
 const Register = () => {
     const navigate = useNavigate();
@@ -25,6 +26,20 @@ const Register = () => {
                 </div>
 
                 <form onSubmit={handleRegister} class="card-body">
+                    <div className='grid grid-cols-2 gap-4 justify-between'>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">First Name</span>
+                            </label>
+                            <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="first name" class="input input-bordered" />
+                        </div>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Last Name</span>
+                            </label>
+                            <input onChange={(e) => setEmail(e.target.value)} type="email" placeholder="last name" class="input input-bordered" />
+                        </div>
+                    </div>
                     <div class="form-control">
                         <label class="label">
                             <span class="label-text">Email</span>
@@ -36,16 +51,22 @@ const Register = () => {
                             <span class="label-text">Password</span>
                         </label>
                         <input onChange={(e) => setPassword(e.target.value)} type="text" placeholder="password" class="input input-bordered" />
+                    </div>
+                    <div class="form-control">
+                        <label class="label">
+                            <span class="label-text">Confirm Password</span>
+                        </label>
+                        <input onChange={(e) => setPassword(e.target.value)} type="text" placeholder="confirm password" class="input input-bordered" />
 
                         <div class="form-control mt-4">
                             <label class="label cursor-pointer">
-                                <input type="checkbox" class="checkbox checkbox-primary" />
-                                <span class="label-text">I accept the terms and condition</span>
+                                <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
+                                <span class="label-text">By clicking this I accept the terms and condition</span>
                             </label>
                         </div>
                     </div>
                     <div class="form-control mt-6">
-                        <button type='submit' class="btn btn-primary">Login</button>
+                        <button type='submit' class="btn btn-primary text-white">Register</button>
                     </div>
                     <div class="form-control mt-6">
                         <p className='flex justify-between'>Already a member? <span onClick={() => navigate('/login')} className='text-[#F4E06D] underline'>Login Here</span></p>
@@ -56,7 +77,7 @@ const Register = () => {
             <div class="relative w-full h-64 sm:h-96 lg:w-1/2 lg:h-full">
                 <img
                     class="absolute inset-0 object-cover w-full h-full"
-                    src="https://www.hyperui.dev/photos/team-1.jpeg"
+                    src={registerGif}
                     alt=""
                 />
             </div>
