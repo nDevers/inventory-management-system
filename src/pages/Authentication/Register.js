@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import registerGif from '../../Assets/GIF/register.gif';
 
 const Register = () => {
@@ -7,11 +7,9 @@ const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-
     const handleRegister = (event) => {
         event.preventDefault();
-
-    }
+    };
 
     return (
         <section class="relative flex flex-wrap lg:h-screen lg:items-center">
@@ -58,9 +56,9 @@ const Register = () => {
                         <input onChange={(e) => setPassword(e.target.value)} type="text" placeholder="confirm password" class="input input-bordered" />
 
                         <div class="form-control mt-4">
-                            <label class="label cursor-pointer">
+                            <label class="label cursor-pointer flex items-center">
                                 <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
-                                <span class="label-text">By continuing, you agree String LAB Terms of Service and Privacy Policy.</span>
+                                <p class="label-text">By signing up with a third party service, you agree to accept String LAB's <Link to='/terms-and-conditions' className='underline'>Terms of service</Link> and <Link to='privacy-policy' className='underline'>Privacy policy</Link></p>
                             </label>
                         </div>
                     </div>

@@ -6,11 +6,11 @@ import Home from './Pages/Home/Home';
 import Features from './Pages/Features/Features';
 import CustomerStories from './Pages/CustomerStories/CustomerStories';
 import FindExperts from './Pages/FindExperts/FindExperts';
-import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
+import ForgotPassword from './Pages/Authentication/ForgotPassword';
 import Integrations from './Pages/Integrations/Integrations';
-import Login from './Pages/Login/Login';
+import Login from './Pages/Authentication/Login';
 import Pricing from './Pages/Pricing/Pricing';
-import Register from './Pages/Register/Register';
+import Register from './Pages/Authentication/Register';
 import Resources from './Pages/Resources/Resources';
 import NotFound from './Pages/NotFound/NotFound';
 import About from './Pages/About/About';
@@ -30,6 +30,7 @@ import CreateProduct from './Pages/Dashboard/Products/CreateProduct';
 import SetupCategories from './Pages/Dashboard/Setup/SetupCategories';
 import Profile from './Pages/User/Profile';
 import Settings from './Pages/User/Settings';
+import TermsAndConditions from './Pages/Authentication/TermsAndConditions';
 
 function App() {
   return (
@@ -45,6 +46,8 @@ function App() {
         <Route path="login" element={<Login />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="register" element={<Register />} />
+        <Route path="terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="privacy-policy" element={<Register />} />
         <Route path="resources" element={<Resources />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />
