@@ -32,6 +32,7 @@ import Profile from './Pages/User/Profile';
 import Settings from './Pages/User/Settings';
 import TermsAndConditions from './Pages/Authentication/TermsAndConditions';
 import PrivacyPolicy from './Pages/Authentication/PrivacyPolicy';
+import ProductsPharmacy from './Pages/Dashboard/Products/ProductsPharmacy';
 
 function App() {
   return (
@@ -57,7 +58,7 @@ function App() {
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<DashboardSummary />} />
           <Route path='products' element={<Products />} />
-          <Route path='products/pharmacy' element={<Products />} />
+          <Route path='products/pharmacy' element={<ProductsPharmacy />} />
           <Route path='products/non-pharmacy' element={<Products />} />
           <Route path='requested-items/pharmacy' element={<RequiredItems />} />
           <Route path='requested-items/non-pharmacy' element={<RequiredItems />} />
