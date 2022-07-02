@@ -31,6 +31,7 @@ import SetupCategories from './Pages/Dashboard/Setup/SetupCategories';
 import Profile from './Pages/User/Profile';
 import Settings from './Pages/User/Settings';
 import TermsAndConditions from './Pages/Authentication/TermsAndConditions';
+import PrivacyPolicy from './Pages/Authentication/PrivacyPolicy';
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="register" element={<Register />} />
         <Route path="terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="privacy-policy" element={<Register />} />
+        <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="resources" element={<Resources />} />
         <Route path="about" element={<About />} />
         <Route path="contact" element={<Contact />} />

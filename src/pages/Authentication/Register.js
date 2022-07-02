@@ -58,7 +58,7 @@ const Register = () => {
                         <div class="form-control mt-4">
                             <label class="label cursor-pointer flex items-center">
                                 <input type="checkbox" class="checkbox checkbox-sm checkbox-primary" />
-                                <p class="label-text">By signing up with a third party service, you agree to accept String LAB's <Link to='/terms-and-conditions' className='underline'>Terms of service</Link> and <Link to='privacy-policy' className='underline'>Privacy policy</Link></p>
+                                <p class="label-text">By signing up with a third party service, you agree to accept String LAB's <Link to='/terms-and-conditions' className='underline'>Terms of service</Link> and <Link to='/privacy-policy' className='underline'>Privacy policy</Link></p>
                             </label>
                         </div>
                     </div>
