@@ -18,8 +18,33 @@ const UnitType = () => {
 
     return (
         <section>
+            <input type="checkbox" id="create-new-unit-type" class="modal-toggle" />
+            <label for="create-new-unit-type" class="modal cursor-pointer">
+                <label class="modal-box w-2/5 h-2/5 max-w-4xl relative p-4" for="">
+                    <label for="create-new-unit-type" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+
+                    <h3 class="font-bold text-lg text-center uppercase mb-2">Create a Unit Type</h3>
+
+                    <div className='grid grid-cols-1 gap-y-4 place-items-center'>
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Description</span>
+                            </label>
+                            <textarea type="text" placeholder="Type here" class="textarea textarea-xs textarea-bordered" />
+                        </div>
+                    </div>
+                </label>
+            </label>
+
             <div className="flex justify-between mb-6">
-                <label for="create-new-product" class="btn btn-sm gap-2 modal-button">
+                <label for="create-new-unit-type" class="btn btn-sm gap-2 modal-button">
                     <MdOutlineAddBox className='text-lg' />
                     New
                 </label>
