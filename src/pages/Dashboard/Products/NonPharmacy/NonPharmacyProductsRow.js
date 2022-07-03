@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProductsRow = () => {
+const PharmacyProductsRow = () => {
     return (
         <tr>
             <th>1</th>
@@ -14,4 +14,4 @@ const ProductsRow = () => {
     );
 };
 
-export default ProductsRow;
+export default PharmacyProductsRow;

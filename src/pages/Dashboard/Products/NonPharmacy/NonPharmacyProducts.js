@@ -1,10 +1,10 @@
 import React from 'react';
-import ProductsRow from './ProductsRow';
+import NonPharmacyProductsRow from './NonPharmacyProductsRow';
 import { BsPrinter, BsSave2 } from 'react-icons/bs';
 import { FcCancel } from 'react-icons/fc';
 import { MdOutlineAddBox } from 'react-icons/md';
 
-const ProductsPharmacy = () => {
+const PharmacyProducts = () => {
     const tableHead = <tr>
         <th className='text-xs' >SN</th>
         <th className='text-xs' >Code</th>
@@ -248,10 +248,10 @@ const ProductsPharmacy = () => {
                     }
                 </thead>
                 <tbody>
-                    <ProductsRow />
-                    <ProductsRow />
-                    <ProductsRow />
-                    <ProductsRow />
+                    <NonPharmacyProductsRow />
+                    <NonPharmacyProductsRow />
+                    <NonPharmacyProductsRow />
+                    <NonPharmacyProductsRow />
                 </tbody>
                 <tfoot>
                     {
@@ -263,4 +263,4 @@ const ProductsPharmacy = () => {
     );
 };
 
-export default ProductsPharmacy;
+export default PharmacyProducts;

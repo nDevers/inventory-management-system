@@ -17,7 +17,6 @@ import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import DashboardSummary from './Pages/Dashboard/DashboardSummary';
-import Products from './Pages/Dashboard/Products/Products';
 import RequiredItems from './Pages/Dashboard/RequiredItems';
 import Orders from './Pages/Dashboard/Orders/Orders';
 import Purchases from './Pages/Dashboard/Purchases';
@@ -26,13 +25,16 @@ import Employees from './Pages/Dashboard/Employees';
 import Customers from './Pages/Dashboard/Customers';
 import Suppliers from './Pages/Dashboard/Suppliers';
 import Setup from './Pages/Dashboard/Setup/Setup';
-import CreateProduct from './Pages/Dashboard/Products/CreateProduct';
 import SetupCategories from './Pages/Dashboard/Setup/SetupCategories';
 import Profile from './Pages/User/Profile';
 import Settings from './Pages/User/Settings';
 import TermsAndConditions from './Pages/Authentication/TermsAndConditions';
 import PrivacyPolicy from './Pages/Authentication/PrivacyPolicy';
-import ProductsPharmacy from './Pages/Dashboard/Products/ProductsPharmacy';
+import PharmacyProducts from './Pages/Dashboard/Products/Pharmacy/PharmacyProducts';
+import NonPharmacyProducts from './Pages/Dashboard/Products/NonPharmacy/NonPharmacyProducts';
+import Category from './Pages/Dashboard/Setup/Category/Category';
+import UnitType from './Pages/Dashboard/Setup/UnitType/UnitType';
+import Company from './Pages/Dashboard/Setup/Company/Company';
 
 function App() {
   return (
@@ -57,18 +59,17 @@ function App() {
         <Route path="settings" element={<Settings />} />
         <Route path="dashboard" element={<Dashboard />}>
           <Route index element={<DashboardSummary />} />
-          <Route path='products' element={<Products />} />
-          <Route path='products/pharmacy' element={<ProductsPharmacy />} />
-          <Route path='products/non-pharmacy' element={<Products />} />
+          <Route path='products/pharmacy' element={<PharmacyProducts />} />
+          <Route path='products/non-pharmacy' element={<NonPharmacyProducts />} />
           <Route path='requested-items/pharmacy' element={<RequiredItems />} />
           <Route path='requested-items/non-pharmacy' element={<RequiredItems />} />
           <Route path='orders/pharmacy' element={<Orders />} />
           <Route path='orders/non-pharmacy' element={<Orders />} />
           <Route path='purchases/pharmacy' element={<Purchases />} />
           <Route path='purchases/non-pharmacy' element={<Purchases />} />
-          <Route path='setup/category' element={<Setup />} />
-          <Route path='setup/unit-type' element={<Setup />} />
-          <Route path='setup/company' element={<Setup />} />
+          <Route path='setup/category' element={<Category />} />
+          <Route path='setup/unit-type' element={<UnitType />} />
+          <Route path='setup/company' element={<Company />} />
           <Route path='returns/customer' element={<Returns />} />
           <Route path='returns/expire-or-damage' element={<Returns />} />
           <Route path='employees' element={<Employees />} />
