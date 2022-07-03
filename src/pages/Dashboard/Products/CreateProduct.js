@@ -3,7 +3,7 @@ import React from 'react';
 const CreateProduct = () => {
     return (
         <div>
-            <h3 class="font-bold text-lg mb-2">Create a Product</h3>
+            <h3 class="font-bold text-lg text-center mb-2">Create a Product</h3>
 
             <div className='grid grid-cols-4 gap-4 mb-2'>
                 <div>

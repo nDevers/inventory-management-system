@@ -54,7 +54,7 @@ const ProductsPharmacy = () => {
                 <label class="modal-box w-11/12 max-w-4xl relative" for="">
                     <label for="create-new-product" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
 
-                    <h3 class="font-bold text-lg mb-2">Create a Product</h3>
+                    <h3 class="font-bold text-lg text-center uppercase mb-2">Create a Pharmacy Product</h3>
 
                     <div className='grid grid-cols-5 gap-4 mb-2'>
                         <div>
@@ -103,12 +103,23 @@ const ProductsPharmacy = () => {
                         </div>
                     </div>
 
-                    <div class="divider"></div>
+                    <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                        <div class="grid">
+                            <h3 className='text-xl'>Purchase Area</h3>
 
-                    <div class="flex flex-col w-full lg:flex-row">
-                        <div class="grid flex-grow card">
-                            <div className='flex justify-between items-center'>
-                                <h3 className='text-xl'>Purchase Area</h3>
+                            <div className='grid grid-cols-2 gap-x-4'>
+                                <div>
+                                    <label class="label">
+                                        <span class="label-text">Purchase Unit Type</span>
+                                    </label>
+                                    <select class="select select-bordered select-xs w-full max-w-xs">
+                                        <option disabled selected>Small</option>
+                                        <option>Small Apple</option>
+                                        <option>Small Orange</option>
+                                        <option>Small Tomato</option>
+                                    </select>
+                                </div>
+
                                 <div>
                                     <label class="label">
                                         <span class="label-text">Pack Size</span>
@@ -117,19 +128,7 @@ const ProductsPharmacy = () => {
                                 </div>
                             </div>
 
-                            <div>
-                                <label class="label">
-                                    <span class="label-text">Purchase Unit Type</span>
-                                </label>
-                                <select class="select select-bordered select-xs w-full max-w-xs">
-                                    <option disabled selected>Small</option>
-                                    <option>Small Apple</option>
-                                    <option>Small Orange</option>
-                                    <option>Small Tomato</option>
-                                </select>
-                            </div>
-
-                            <div className='grid grid-cols-2'>
+                            <div className='grid grid-cols-2 gap-x-4'>
                                 <div>
                                     <label class="label">
                                         <span class="label-text">Pack TP</span>
@@ -145,36 +144,50 @@ const ProductsPharmacy = () => {
                                 </div>
                             </div>
 
-                            <div className='grid grid-cols-2 gap-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Purchase VAT</span>
-                                    </label>
-                                    <div className='grid grid-cols-2'>
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    </div>
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Purchase VAT</span>
+                                </label>
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                                 </div>
                             </div>
 
-                            <div className='grid grid-cols-2 gap-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Purchase Discount</span>
-                                    </label>
-                                    <div className='grid grid-cols-2'>
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    </div>
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Purchase Discount</span>
+                                </label>
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                                 </div>
                             </div>
+
+                            <button class="btn btn-sm flex items-center gap-2 mt-4">
+                                <BsSave2 className='text-md' />
+                                Save
+                            </button>
                         </div>
 
                         <div class="divider lg:divider-horizontal"></div>
 
-                        <div class="grid flex-grow card">
-                            <div className='flex justify-between items-center'>
-                                <h3 className='text-xl'>Purchase Area</h3>
+                        <div class="grid">
+                            <h3 className='text-xl'>Purchase Area</h3>
+
+                            <div className='grid grid-cols-2 gap-x-4'>
+                                <div>
+                                    <label class="label">
+                                        <span class="label-text">Purchase Unit Type</span>
+                                    </label>
+                                    <select class="select select-bordered select-xs w-full max-w-xs">
+                                        <option disabled selected>Small</option>
+                                        <option>Small Apple</option>
+                                        <option>Small Orange</option>
+                                        <option>Small Tomato</option>
+                                    </select>
+                                </div>
+
                                 <div>
                                     <label class="label">
                                         <span class="label-text">Pack Size</span>
@@ -183,19 +196,7 @@ const ProductsPharmacy = () => {
                                 </div>
                             </div>
 
-                            <div>
-                                <label class="label">
-                                    <span class="label-text">Purchase Unit Type</span>
-                                </label>
-                                <select class="select select-bordered select-xs w-full max-w-xs">
-                                    <option disabled selected>Small</option>
-                                    <option>Small Apple</option>
-                                    <option>Small Orange</option>
-                                    <option>Small Tomato</option>
-                                </select>
-                            </div>
-
-                            <div className='grid grid-cols-2'>
+                            <div className='grid grid-cols-2 gap-x-4'>
                                 <div>
                                     <label class="label">
                                         <span class="label-text">Pack TP</span>
@@ -211,41 +212,31 @@ const ProductsPharmacy = () => {
                                 </div>
                             </div>
 
-                            <div className='grid grid-cols-2 gap-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Purchase VAT</span>
-                                    </label>
-                                    <div className='grid grid-cols-2'>
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    </div>
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Purchase VAT</span>
+                                </label>
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                                 </div>
                             </div>
 
-                            <div className='grid grid-cols-2 gap-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Purchase Discount</span>
-                                    </label>
-                                    <div className='grid grid-cols-2'>
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                        <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    </div>
+                            <div>
+                                <label class="label">
+                                    <span class="label-text">Purchase Discount</span>
+                                </label>
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
+                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
                                 </div>
                             </div>
+
+                            <button for="create-new-product" class="btn btn-sm flex items-center gap-2 mt-4">
+                                <FcCancel className='text-lg' />
+                                Cancel
+                            </button>
                         </div>
-                    </div>
-
-                    <div className='flex justify-around items-center my-4'>
-                        <button class="btn btn-sm flex items-center gap-2">
-                            <BsSave2 className='text-md' />
-                            Save
-                        </button>
-                        <label for="create-new-product" class="btn btn-sm flex items-center gap-2">
-                            <FcCancel className='text-lg' />
-                            Cancel
-                        </label>
                     </div>
                 </label>
             </label>
