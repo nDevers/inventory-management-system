@@ -21,8 +21,54 @@ const Company = () => {
 
     return (
         <section>
+            <input type="checkbox" id="add-new-company" class="modal-toggle" />
+            <label for="add-new-company" class="modal cursor-pointer">
+                <label class="modal-box w-2/5 h-2/5 max-w-4xl relative p-4" for="">
+                    <label for="add-new-company" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+
+                    <h3 class="font-bold text-lg text-center uppercase mb-2">Add a Company</h3>
+
+                    <div className='grid grid-cols-2 gap-x-4 place-items-center'>
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Name</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Phone</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Website</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Email</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered" />
+                        </div>
+
+                        <div>
+                            <label class="label">
+                                <span class="label-text">Address</span>
+                            </label>
+                            <input type="text" placeholder="Type here" class="input input-xs input-bordered" />
+                        </div>
+                    </div>
+                </label>
+            </label>
+
             <div className="flex justify-between mb-6">
-                <label for="create-new-product" class="btn btn-sm gap-2 modal-button">
+                <label for="add-new-company" class="btn btn-sm gap-2 modal-button">
                     <MdOutlineAddBox className='text-lg' />
                     New
                 </label>
