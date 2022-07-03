@@ -40,6 +40,30 @@ const Category = () => {
                     <CategoryRow />
                     <CategoryRow />
                     <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
+                    <CategoryRow />
                 </tbody>
                 <tfoot>
                     {

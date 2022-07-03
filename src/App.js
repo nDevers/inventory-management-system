@@ -24,8 +24,6 @@ import Returns from './Pages/Dashboard/Returns';
 import Employees from './Pages/Dashboard/Employees';
 import Customers from './Pages/Dashboard/Customers';
 import Suppliers from './Pages/Dashboard/Suppliers';
-import Setup from './Pages/Dashboard/Setup/Setup';
-import SetupCategories from './Pages/Dashboard/Setup/SetupCategories';
 import Profile from './Pages/User/Profile';
 import Settings from './Pages/User/Settings';
 import TermsAndConditions from './Pages/Authentication/TermsAndConditions';
@@ -77,7 +75,6 @@ function App() {
           <Route path='suppliers/list' element={<Suppliers />} />
           <Route path='suppliers/payment' element={<Suppliers />} />
           <Route path='suppliers/documents' element={<Suppliers />} />
-          <Route path='setup-category' element={<SetupCategories />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
