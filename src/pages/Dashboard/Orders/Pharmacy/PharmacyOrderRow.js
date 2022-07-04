@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderRow = () => {
+const PharmacyOrderRow = () => {
     const tableRowsData = [`1`, `Cy Ganderton 11`, `Quality Control Specialist`, `Littel, Schaden and Vandervort`, `Canada`, `12/16/2020`, `Blue`];
 
     return (
@@ -13,4 +13,4 @@ const OrderRow = () => {
     );
 };
 
-export default OrderRow;
+export default PharmacyOrderRow;
