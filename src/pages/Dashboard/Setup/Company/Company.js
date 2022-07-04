@@ -3,6 +3,7 @@ import CompanyRow from './CompanyRow';
 import { BsPrinter, BsSave2 } from 'react-icons/bs';
 import { FcCancel } from 'react-icons/fc';
 import { MdOutlineAddBox } from 'react-icons/md';
+import PrintButton from '../../../../Components/Buttons/PrintButton';
 
 const Company = () => {
     const tableHead = <tr>
@@ -72,10 +73,8 @@ const Company = () => {
                     <MdOutlineAddBox className='text-lg' />
                     New
                 </label>
-                <button class="btn btn-sm gap-2">
-                    <BsPrinter className='text-md' />
-                    Print
-                </button>
+
+                <PrintButton />
             </div>
 
             <table class="table table-zebra table-compact w-full">
