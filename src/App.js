@@ -31,7 +31,7 @@ import PharmacyProducts from './Pages/Dashboard/Products/Pharmacy/PharmacyProduc
 import NonPharmacyProducts from './Pages/Dashboard/Products/NonPharmacy/NonPharmacyProducts';
 import Category from './Pages/Dashboard/Setup/Category';
 import UnitType from './Pages/Dashboard/Setup/UnitType/UnitType';
-import Company from './Pages/Dashboard/Setup/Company/Company';
+import Company from './Pages/Dashboard/Setup/Company';
 import PharmacyOrderRow from './Pages/Dashboard/Orders/Pharmacy/PharmacyOrderRow';
 import PharmacyOrders from './Pages/Dashboard/Orders/Pharmacy/PharmacyOrders';
 import NonPharmacyOrderRow from './Pages/Dashboard/Orders/NonPharmacy/NonPharmacyOrderRow';
