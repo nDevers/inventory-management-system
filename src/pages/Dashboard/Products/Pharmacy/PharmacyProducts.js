@@ -66,20 +66,20 @@ const PharmacyProducts = () => {
                         <div class="divider lg:divider-horizontal"></div>
 
                         <div class="grid">
-                            <h3 className='text-xl'>Purchase Area</h3>
+                            <h3 className='text-xl'>Sale Area</h3>
 
                             <div className='grid grid-cols-2 gap-x-4'>
-                                <Select title={'Purchase Unit Type'} />
+                                <Select title={'Sales Unit Type'} />
                                 <Input title={'Pack Size'} />
                             </div>
 
                             <div className='grid grid-cols-2 gap-x-4'>
-                                <Input title={'Pack TP'} />
-                                <Input title={'Unit TP'} />
+                                <Input title={'Pack MRP'} />
+                                <Input title={'Unit MRP'} />
                             </div>
 
-                            <DoubleInput title={'Purchase VAT'} />
-                            <DoubleInput title={'Purchase Discount'} />
+                            <DoubleInput title={'Sales VAT'} />
+                            <DoubleInput title={'Sales Discount'} />
 
                             <CancelButton />
                         </div>
