@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsPrinterFill } from 'react-icons/bs';
 import { MdOutlineAddBox } from 'react-icons/md';
+import PrintButton from '../../../Components/Buttons/PrintButton';
 import OrderRow from './OrderRow';
 
 const Orders = () => {
@@ -105,10 +106,8 @@ const Orders = () => {
                 </div>
 
                 <div className='grid grid-cols-2 gap-2 mb-2'>
-                    <button class="btn btn-xs gap-2">
-                        Print
-                        <BsPrinterFill />
-                    </button>
+                    <PrintButton btnSize={'btn-xs'} />
+
                     <button class="btn btn-xs gap-2">
                         New
                         <MdOutlineAddBox />

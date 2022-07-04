@@ -1,8 +1,10 @@
 import React from 'react';
 import PharmacyProductsRow from './PharmacyProductsRow';
 import { BsPrinter, BsSave2 } from 'react-icons/bs';
-import { FcCancel } from 'react-icons/fc';
 import { MdOutlineAddBox } from 'react-icons/md';
+import SaveButton from '../../../../Components/Buttons/SaveButton';
+import CancelButton from '../../../../Components/Buttons/CancelButton';
+import PrintButton from '../../../../Components/Buttons/PrintButton';
 
 const PharmacyProducts = () => {
     const tableHead = <tr>
@@ -43,10 +45,8 @@ const PharmacyProducts = () => {
                     <MdOutlineAddBox className='text-lg' />
                     New
                 </label>
-                <button class="btn btn-sm gap-2">
-                    <BsPrinter className='text-md' />
-                    Print
-                </button>
+
+                <PrintButton />
             </div>
 
             <input type="checkbox" id="create-new-product" class="modal-toggle" />
@@ -164,10 +164,7 @@ const PharmacyProducts = () => {
                                 </div>
                             </div>
 
-                            <button class="btn btn-sm flex items-center gap-2 mt-4">
-                                <BsSave2 className='text-md' />
-                                Save
-                            </button>
+                            <SaveButton />
                         </div>
 
                         <div class="divider lg:divider-horizontal"></div>
@@ -232,10 +229,7 @@ const PharmacyProducts = () => {
                                 </div>
                             </div>
 
-                            <button for="create-new-product" class="btn btn-sm flex items-center gap-2 mt-4">
-                                <FcCancel className='text-lg' />
-                                Cancel
-                            </button>
+                            <CancelButton />
                         </div>
                     </div>
                 </label>
