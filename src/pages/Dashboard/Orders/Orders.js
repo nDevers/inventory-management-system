@@ -1,5 +1,4 @@
 import React from 'react';
-import { BsPrinterFill } from 'react-icons/bs';
 import { MdOutlineAddBox } from 'react-icons/md';
 import PrintButton from '../../../Components/Buttons/PrintButton';
 import OrderRow from './OrderRow';

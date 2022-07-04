@@ -1,7 +1,5 @@
 import React from 'react';
 import PharmacyProductsRow from './PharmacyProductsRow';
-import { BsPrinter, BsSave2 } from 'react-icons/bs';
-import { MdOutlineAddBox } from 'react-icons/md';
 import SaveButton from '../../../../Components/Buttons/SaveButton';
 import CancelButton from '../../../../Components/Buttons/CancelButton';
 import PrintButton from '../../../../Components/Buttons/PrintButton';

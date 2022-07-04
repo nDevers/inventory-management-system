@@ -1,8 +1,5 @@
 import React from 'react';
 import CategoryRow from './CategoryRow';
-import { BsPrinter, BsSave2 } from 'react-icons/bs';
-import { FcCancel } from 'react-icons/fc';
-import { MdOutlineAddBox } from 'react-icons/md';
 import PrintButton from '../../../../Components/Buttons/PrintButton';
 import NewButton from '../../../../Components/Buttons/NewButton';
 
