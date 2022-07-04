@@ -29,7 +29,7 @@ import TermsAndConditions from './Pages/Authentication/TermsAndConditions';
 import PrivacyPolicy from './Pages/Authentication/PrivacyPolicy';
 import PharmacyProducts from './Pages/Dashboard/Products/Pharmacy/PharmacyProducts';
 import NonPharmacyProducts from './Pages/Dashboard/Products/NonPharmacy/NonPharmacyProducts';
-import Category from './Pages/Dashboard/Setup/Category/Category';
+import Category from './Pages/Dashboard/Setup/Category';
 import UnitType from './Pages/Dashboard/Setup/UnitType/UnitType';
 import Company from './Pages/Dashboard/Setup/Company/Company';
 import PharmacyOrderRow from './Pages/Dashboard/Orders/Pharmacy/PharmacyOrderRow';
