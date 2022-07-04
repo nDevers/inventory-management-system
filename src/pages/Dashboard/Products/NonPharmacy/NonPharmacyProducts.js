@@ -5,6 +5,11 @@ import SaveButton from '../../../../Components/Buttons/SaveButton';
 import CancelButton from '../../../../Components/Buttons/CancelButton';
 import NewButton from '../../../../Components/Buttons/NewButton';
 import ItemsViewNumber from '../../../../Components/ItemsViewNumber';
+import ModalCloseButton from '../../../../Components/Buttons/ModalCloseButton';
+import ModalHeading from '../../../../Components/Headings/ModalHeading';
+import Input from '../../../../Components/FormComponents/Input';
+import Select from '../../../../Components/FormComponents/Select';
+import DoubleInput from '../../../../Components/FormComponents/DoubleInput';
 
 const PharmacyProducts = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'TP', 'MRP', 'TP', 'MRP', 'Actions', <ItemsViewNumber />];
@@ -19,62 +24,23 @@ const PharmacyProducts = () => {
         <section>
             <div className="flex justify-between mb-6">
                 <NewButton modalId={'create-new-product'} />
-
                 <PrintButton />
             </div>
 
             <input type="checkbox" id="create-new-product" class="modal-toggle" />
             <label for="create-new-product" class="modal cursor-pointer">
                 <label class="modal-box w-11/12 max-w-4xl relative" for="">
-                    <label for="create-new-product" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                    <ModalCloseButton modalId={'create-new-product'} />
 
-                    <h3 class="font-bold text-lg text-center uppercase mb-2">Create a Non Pharmacy Product</h3>
+                    <ModalHeading modalHeading={'Create a Non Pharmacy Product'} />
 
                     <div className='grid grid-cols-5 gap-4 mb-2'>
-                        <div>
-                            <label class="label">
-                                <span class="label-text">Trade Name</span>
-                            </label>
-                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                        </div>
+                        <Input title={'Trade Name'} />
+                        <Input title={'Generic Name'} />
+                        <Input title={'Strength'} />
 
-                        <div>
-                            <label class="label">
-                                <span class="label-text">Generic Name</span>
-                            </label>
-                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div>
-                            <label class="label">
-                                <span class="label-text">Strength</span>
-                            </label>
-                            <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                        </div>
-
-                        <div className="div">
-                            <label class="label">
-                                <span class="label-text">Category</span>
-                            </label>
-                            <select class="select select-bordered select-xs w-full max-w-xs">
-                                <option disabled selected>Small</option>
-                                <option>Small Apple</option>
-                                <option>Small Orange</option>
-                                <option>Small Tomato</option>
-                            </select>
-                        </div>
-
-                        <div className="div">
-                            <label class="label">
-                                <span class="label-text">Company</span>
-                            </label>
-                            <select class="select select-bordered select-xs w-full max-w-xs">
-                                <option disabled selected>Small</option>
-                                <option>Small Apple</option>
-                                <option>Small Orange</option>
-                                <option>Small Tomato</option>
-                            </select>
-                        </div>
+                        <Select title={'Category'} />
+                        <Select title={'Company'} />
                     </div>
 
                     <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
@@ -82,61 +48,17 @@ const PharmacyProducts = () => {
                             <h3 className='text-xl'>Purchase Area</h3>
 
                             <div className='grid grid-cols-2 gap-x-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Purchase Unit Type</span>
-                                    </label>
-                                    <select class="select select-bordered select-xs w-full max-w-xs">
-                                        <option disabled selected>Small</option>
-                                        <option>Small Apple</option>
-                                        <option>Small Orange</option>
-                                        <option>Small Tomato</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Pack Size</span>
-                                    </label>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
+                                <Select title={'Purchase Unit Type'} />
+                                <Input title={'Pack Size'} />
                             </div>
 
                             <div className='grid grid-cols-2 gap-x-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Pack TP</span>
-                                    </label>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
-
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Unit TP</span>
-                                    </label>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
+                                <Input title={'Pack TP'} />
+                                <Input title={'Unit TP'} />
                             </div>
 
-                            <div>
-                                <label class="label">
-                                    <span class="label-text">Purchase VAT</span>
-                                </label>
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="label">
-                                    <span class="label-text">Purchase Discount</span>
-                                </label>
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
-                            </div>
+                            <DoubleInput title={'Purchase VAT'} />
+                            <DoubleInput title={'Purchase Discount'} />
 
                             <SaveButton />
                         </div>
@@ -147,61 +69,17 @@ const PharmacyProducts = () => {
                             <h3 className='text-xl'>Purchase Area</h3>
 
                             <div className='grid grid-cols-2 gap-x-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Purchase Unit Type</span>
-                                    </label>
-                                    <select class="select select-bordered select-xs w-full max-w-xs">
-                                        <option disabled selected>Small</option>
-                                        <option>Small Apple</option>
-                                        <option>Small Orange</option>
-                                        <option>Small Tomato</option>
-                                    </select>
-                                </div>
-
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Pack Size</span>
-                                    </label>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
+                                <Select title={'Purchase Unit Type'} />
+                                <Input title={'Pack Size'} />
                             </div>
 
                             <div className='grid grid-cols-2 gap-x-4'>
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Pack TP</span>
-                                    </label>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
-
-                                <div>
-                                    <label class="label">
-                                        <span class="label-text">Unit TP</span>
-                                    </label>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
+                                <Input title={'Pack TP'} />
+                                <Input title={'Unit TP'} />
                             </div>
 
-                            <div>
-                                <label class="label">
-                                    <span class="label-text">Purchase VAT</span>
-                                </label>
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="label">
-                                    <span class="label-text">Purchase Discount</span>
-                                </label>
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                    <input type="text" placeholder="Type here" class="input input-xs input-bordered w-full max-w-xs" />
-                                </div>
-                            </div>
+                            <DoubleInput title={'Purchase VAT'} />
+                            <DoubleInput title={'Purchase Discount'} />
 
                             <CancelButton />
                         </div>
