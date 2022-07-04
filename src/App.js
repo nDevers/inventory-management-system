@@ -32,9 +32,7 @@ import NonPharmacyProducts from './Pages/Dashboard/Products/NonPharmacy/NonPharm
 import Category from './Pages/Dashboard/Setup/Category';
 import UnitType from './Pages/Dashboard/Setup/UnitType';
 import Company from './Pages/Dashboard/Setup/Company';
-import PharmacyOrderRow from './Pages/Dashboard/Orders/Pharmacy/PharmacyOrderRow';
 import PharmacyOrders from './Pages/Dashboard/Orders/Pharmacy/PharmacyOrders';
-import NonPharmacyOrderRow from './Pages/Dashboard/Orders/NonPharmacy/NonPharmacyOrderRow';
 import NonPharmacyOrders from './Pages/Dashboard/Orders/NonPharmacy/NonPharmacyOrders';
 
 function App() {
