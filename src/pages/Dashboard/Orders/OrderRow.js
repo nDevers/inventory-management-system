@@ -1,15 +1,14 @@
 import React from 'react';
 
 const OrderRow = () => {
+    const tableRowsData = [`1`, `Cy Ganderton 11`, `Quality Control Specialist`, `Littel, Schaden and Vandervort`, `Canada`, `12/16/2020`, `Blue`];
+
     return (
         <tr>
-            <th>1</th>
-            <td>Cy Ganderton</td>
-            <td>Quality Control Specialist</td>
-            <td>Littel, Schaden and Vandervort</td>
-            <td>Canada</td>
-            <td>12/16/2020</td>
-            <td>Blue</td>
+            {
+                tableRowsData?.map(tableRowData =>
+                    <td>{tableRowData}</td>)
+            }
         </tr>
     );
 };
