@@ -7,24 +7,12 @@ import NewButton from '../../../../Components/Buttons/NewButton';
 import ItemsViewNumber from '../../../../Components/ItemsViewNumber';
 
 const PharmacyProducts = () => {
+    const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'TP', 'MRP', 'TP', 'MRP', 'Actions', <ItemsViewNumber />];
+
     const tableHead = <tr>
-        <th className='text-xs' >SN</th>
-        <th className='text-xs' >Code</th>
-        <th className='text-xs' >Product Name</th>
-        <th className='text-xs' >Category</th>
-        <th className='text-xs' >Strength</th>
-        <th className='text-xs' >Company</th>
-        <th className='text-xs' >Stock</th>
-        <th className='text-xs' >Pack Type</th>
-        <th className='text-xs' >Pack Size</th>
-        <th className='text-xs' >TP</th>
-        <th className='text-xs' >MRP</th>
-        <th className='text-xs' >TP</th>
-        <th className='text-xs' >MRP</th>
-        <th className='text-xs' >Actions</th>
-        <th className='text-xs' >
-            <ItemsViewNumber />
-        </th>
+        {
+            tableHeadItems?.map(tableHeadItem => <th className='text-xs' >{tableHeadItem}</th>)
+        }
     </tr>;
 
     return (
