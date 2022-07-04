@@ -3,323 +3,161 @@ import { AiFillCreditCard, AiFillCopyrightCircle, AiFillSetting } from 'react-ic
 import { BiCategory, BiUnite, BiGitPullRequest } from 'react-icons/bi';
 import { BsCreditCard2BackFill } from 'react-icons/bs';
 import { FaUsers, FaThList, FaUser } from 'react-icons/fa';
-import { FiChevronDown } from 'react-icons/fi';
 import { HiDocumentText } from 'react-icons/hi';
 import { MdLocalPharmacy, MdSpaceDashboard } from 'react-icons/md';
 import { TbTruckReturn, TbTruckDelivery } from 'react-icons/tb';
 import { RiProductHuntFill, RiAdminFill, RiShoppingCartFill, RiProfileFill, RiFileDamageFill } from 'react-icons/ri';
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import LinkComponents from './NavbarComponents/LinkComponents';
+import DetailsComponent from './NavbarComponents/DetailsComponent';
 
 const Sidebar = () => {
     return (
         <div class="drawer drawer-mobile shadow-xl">
-            <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+            <input id="dashboard" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
                 <Outlet />
-                <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-
+                <label for="dashboard" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
             </div>
             <div class="drawer-side">
-                <label for="my-drawer-2" class="drawer-overlay"></label>
+                <label for="dashboard" class="drawer-overlay"></label>
                 <div class="flex flex-col justify-between">
                     <div class="p-2">
                         <nav class="flex flex-col mt-6 space-y-1">
-                            <Link
-                                to=""
-                                class="flex items-center px-4 py-2 text-gray-700 rounded-lg"
-                            >
-                                <MdSpaceDashboard className='text-lg' />
+                            <LinkComponents to={''} icon={<MdSpaceDashboard className='text-lg' />} name={'Dashboard'} />
 
-                                <span class="ml-3 text-sm font-medium"> Dashboard </span>
-                            </Link>
+                            <DetailsComponent
+                                icon={<RiProductHuntFill className='text-lg' />}
+                                name={'Products'}
+                                subMenus={
+                                    [
+                                        <LinkComponents
+                                            to={'products/non-pharmacy'}
+                                            icon={<MdLocalPharmacy className='text-lg' />}
+                                            name={'Pharmacy'} />,
 
-                            <details class="group">
-                                <summary
-                                    class="flex items-center px-4 py-2 rounded-lg cursor-pointer hover:hover:text-gray-700"
-                                >
-                                    <RiProductHuntFill className='text-lg' />
+                                        <LinkComponents
+                                            to={'products/pharmacy'}
+                                            icon={<RiProfileFill className='text-lg' />}
+                                            name={'Non Pharmacy'} />
+                                    ]
+                                } />
 
-                                    <span class="ml-3 text-sm font-medium"> Products </span>
+                            <DetailsComponent
+                                icon={<BiGitPullRequest className='text-lg' />}
+                                name={'Requested Items'}
+                                subMenus={
+                                    [
+                                        <LinkComponents
+                                            to={'requested-items/pharmacy'}
+                                            icon={<MdLocalPharmacy className='text-lg' />}
+                                            name={'Pharmacy'} />,
 
-                                    <span
-                                        class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
-                                    >
-                                        <FiChevronDown className='text-lg' />
-                                    </span>
-                                </summary>
+                                        <LinkComponents
+                                            to={'requested-items/non-pharmacy'}
+                                            icon={<RiProfileFill className='text-lg' />}
+                                            name={'Non Pharmacy'} />
+                                    ]
+                                } />
 
-                                <nav class="mt-1.5 ml-6 flex flex-col">
-                                    <Link
-                                        to="products/pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <MdLocalPharmacy className='text-lg' />
+                            <DetailsComponent
+                                icon={<RiShoppingCartFill className='text-lg' />}
+                                name={'Orders'}
+                                subMenus={
+                                    [
+                                        <LinkComponents
+                                            to={'orders/pharmacy'}
+                                            icon={<MdLocalPharmacy className='text-lg' />}
+                                            name={'Pharmacy'} />,
 
-                                        <span class="ml-3 text-sm font-medium"> Pharmacy </span>
-                                    </Link>
+                                        <LinkComponents
+                                            to={'orders/non-pharmacy'}
+                                            icon={<RiProfileFill className='text-lg' />}
+                                            name={'Non Pharmacy'} />
+                                    ]
+                                } />
 
-                                    <Link
-                                        to="products/non-pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <RiProfileFill className='text-lg' />
+                            <DetailsComponent
+                                icon={<AiFillCreditCard className='text-lg' />}
+                                name={'Purchases'}
+                                subMenus={
+                                    [
+                                        <LinkComponents
+                                            to={'purchases/pharmacy'}
+                                            icon={<MdLocalPharmacy className='text-lg' />}
+                                            name={'Pharmacy'} />,
 
-                                        <span class="ml-3 text-sm font-medium"> Non Pharmacy </span>
-                                    </Link>
-                                </nav>
-                            </details>
+                                        <LinkComponents
+                                            to={'purchases/non-pharmacy'}
+                                            icon={<RiProfileFill className='text-lg' />}
+                                            name={'Non Pharmacy'} />
+                                    ]
+                                } />
 
-                            <details class="group">
-                                <summary
-                                    class="flex items-center px-4 py-2 rounded-lg cursor-pointer hover:hover:text-gray-700"
-                                >
-                                    <BiGitPullRequest className='text-lg' />
+                            <DetailsComponent
+                                icon={<TbTruckReturn className='text-lg' />}
+                                name={'Returns'}
+                                subMenus={
+                                    [
+                                        <LinkComponents
+                                            to={'returns/customer'}
+                                            icon={<FaUser className='text-lg' />}
+                                            name={'Customer'} />,
 
-                                    <span class="ml-3 text-sm font-medium"> Requested Items </span>
+                                        <LinkComponents
+                                            to={'returns/expire-or-damage'}
+                                            icon={<RiFileDamageFill className='Expire / Damage' />}
+                                            name={'Customer'} />
+                                    ]
+                                } />
 
-                                    <span
-                                        class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
-                                    >
-                                        <FiChevronDown className='text-lg' />
-                                    </span>
-                                </summary>
+                            <DetailsComponent
+                                icon={<AiFillSetting className='text-lg' />}
+                                name={'Setup'}
+                                subMenus={
+                                    [
+                                        <LinkComponents
+                                            to={'setup/category'}
+                                            icon={<BiCategory className='text-lg' />}
+                                            name={'Category'} />,
 
-                                <nav class="mt-1.5 ml-6 flex flex-col">
-                                    <Link
-                                        to="requested-items/pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <MdLocalPharmacy className='text-lg' />
+                                        <LinkComponents
+                                            to={'setup/unit-type'}
+                                            icon={<BiUnite className='text-lg' />}
+                                            name={'Unit Type'} />,
 
-                                        <span class="ml-3 text-sm font-medium"> Pharmacy </span>
-                                    </Link>
+                                        <LinkComponents
+                                            to={'setup/company'}
+                                            icon={<AiFillCopyrightCircle className='text-lg' />}
+                                            name={'Company'} />
+                                    ]
+                                } />
 
-                                    <Link
-                                        to="requested-items/non-pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <RiProfileFill className='text-lg' />
+                            <LinkComponents to={'employees'} icon={<RiAdminFill className='text-lg' />} name={'Employees'} />
 
-                                        <span class="ml-3 text-sm font-medium"> Non Pharmacy </span>
-                                    </Link>
-                                </nav>
-                            </details>
+                            <LinkComponents to={'customers'} icon={<FaUsers className='text-lg' />} name={'Customers'} />
 
-                            <details class="group">
-                                <summary
-                                    class="flex items-center px-4 py-2 rounded-lg cursor-pointer hover:hover:text-gray-700"
-                                >
-                                    <RiShoppingCartFill className='text-lg' />
+                            <DetailsComponent
+                                icon={<TbTruckDelivery className='text-lg' />}
+                                name={'Suppliers'}
+                                subMenus={
+                                    [
+                                        <LinkComponents
+                                            to={'suppliers/list'}
+                                            icon={<FaThList className='text-md' />}
+                                            name={'List'} />,
 
-                                    <span class="ml-3 text-sm font-medium"> Orders </span>
+                                        <LinkComponents
+                                            to={'suppliers/payment'}
+                                            icon={<BsCreditCard2BackFill className='text-lg' />}
+                                            name={'Payment'} />,
 
-                                    <span
-                                        class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
-                                    >
-                                        <FiChevronDown className='text-lg' />
-                                    </span>
-                                </summary>
-
-                                <nav class="mt-1.5 ml-6 flex flex-col">
-                                    <Link
-                                        to="orders/pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <MdLocalPharmacy className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Pharmacy </span>
-                                    </Link>
-
-                                    <Link
-                                        to="orders/non-pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <RiProfileFill className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Non Pharmacy </span>
-                                    </Link>
-                                </nav>
-                            </details>
-
-                            <details class="group">
-                                <summary
-                                    class="flex items-center px-4 py-2 rounded-lg cursor-pointer hover:hover:text-gray-700"
-                                >
-                                    <AiFillCreditCard className='text-lg' />
-
-                                    <span class="ml-3 text-sm font-medium"> Purchases </span>
-
-                                    <span
-                                        class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
-                                    >
-                                        <FiChevronDown className='text-lg' />
-                                    </span>
-                                </summary>
-
-                                <nav class="mt-1.5 ml-6 flex flex-col">
-                                    <Link
-                                        to="purchases/pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <MdLocalPharmacy className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Pharmacy </span>
-                                    </Link>
-
-                                    <Link
-                                        to="purchases/non-pharmacy"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <RiProfileFill className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Non Pharmacy </span>
-                                    </Link>
-                                </nav>
-                            </details>
-
-                            <details class="group">
-                                <summary
-                                    class="flex items-center px-4 py-2 rounded-lg cursor-pointer hover:hover:text-gray-700"
-                                >
-                                    <TbTruckReturn className='text-lg' />
-
-                                    <span class="ml-3 text-sm font-medium"> Returns </span>
-
-                                    <span
-                                        class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
-                                    >
-                                        <FiChevronDown className='text-lg' />
-                                    </span>
-                                </summary>
-
-                                <nav class="mt-1.5 ml-6 flex flex-col">
-                                    <Link
-                                        to="returns/customer"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <FaUser className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Customer </span>
-                                    </Link>
-
-                                    <Link
-                                        to="returns/expire-or-damage"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <RiFileDamageFill className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Expire / Damage </span>
-                                    </Link>
-                                </nav>
-                            </details>
-
-                            <details class="group">
-                                <summary
-                                    class="flex items-center px-4 py-2 rounded-lg cursor-pointer hover:hover:text-gray-700"
-                                >
-                                    <AiFillSetting className='text-lg' />
-
-                                    <span class="ml-3 text-sm font-medium"> Setup </span>
-
-                                    <span
-                                        class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
-                                    >
-                                        <FiChevronDown className='text-lg' />
-                                    </span>
-                                </summary>
-
-                                <nav class="mt-1.5 ml-6 flex flex-col">
-                                    <Link
-                                        to="setup/category"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <BiCategory className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Category </span>
-                                    </Link>
-
-                                    <Link
-                                        to="setup/unit-type"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <BiUnite className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Unit Type </span>
-                                    </Link>
-
-                                    <Link
-                                        to="setup/company"
-                                        class="flex items-center px-4 py-2 rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <AiFillCopyrightCircle className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Company </span>
-                                    </Link>
-                                </nav>
-                            </details>
-
-                            <Link
-                                to="employees"
-                                class="flex items-center px-4 py-2 text-gray-700 rounded-lg"
-                            >
-                                <RiAdminFill className='text-lg' />
-
-                                <span class="ml-3 text-sm font-medium"> Employees </span>
-                            </Link>
-
-                            <Link
-                                to="customers"
-                                class="flex items-center px-4 py-2 text-gray-700 rounded-lg"
-                            >
-                                <FaUsers className='text-lg' />
-
-                                <span class="ml-3 text-sm font-medium"> Customers </span>
-                            </Link>
-
-                            <details class="group">
-                                <summary
-                                    class="flex items-center px-4 py-2  rounded-lg cursor-pointer hover:hover:text-gray-700"
-                                >
-                                    <TbTruckDelivery className='text-lg' />
-
-                                    <span class="ml-3 text-sm font-medium"> Suppliers </span>
-
-                                    <span
-                                        class="ml-auto transition duration-300 shrink-0 group-open:-rotate-180"
-                                    >
-                                        <FiChevronDown className='text-lg' />
-                                    </span>
-                                </summary>
-
-                                <nav class="mt-1.5 ml-6 flex flex-col">
-                                    <Link
-                                        to="suppliers/list"
-                                        class="flex items-center px-4 py-2  rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <FaThList className='text-md' />
-
-                                        <span class="ml-3 text-sm font-medium"> List </span>
-                                    </Link>
-
-                                    <Link
-                                        to="suppliers/payment"
-                                        class="flex items-center px-4 py-2  rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <BsCreditCard2BackFill className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Payment </span>
-                                    </Link>
-
-                                    <Link
-                                        to="suppliers/documents"
-                                        class="flex items-center px-4 py-2  rounded-lg hover:hover:text-gray-700"
-                                    >
-                                        <HiDocumentText className='text-lg' />
-
-                                        <span class="ml-3 text-sm font-medium"> Documents </span>
-                                    </Link>
-                                </nav>
-                            </details>
+                                        <LinkComponents
+                                            to={'suppliers/documents'}
+                                            icon={<HiDocumentText className='text-lg' />}
+                                            name={'Documents'} />
+                                    ]
+                                } />
                         </nav>
                     </div>
                 </div>
