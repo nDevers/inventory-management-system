@@ -4,37 +4,15 @@ import PrintButton from '../../../../Components/Buttons/PrintButton';
 import SaveButton from '../../../../Components/Buttons/SaveButton';
 import CancelButton from '../../../../Components/Buttons/CancelButton';
 import NewButton from '../../../../Components/Buttons/NewButton';
+import ItemsViewNumber from '../../../../Components/ItemsViewNumber';
 
 const PharmacyProducts = () => {
+    const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'TP', 'MRP', 'TP', 'MRP', 'Actions', <ItemsViewNumber />];
+
     const tableHead = <tr>
-        <th className='text-xs' >SN</th>
-        <th className='text-xs' >Code</th>
-        <th className='text-xs' >Product Name</th>
-        <th className='text-xs' >Category</th>
-        <th className='text-xs' >Strength</th>
-        <th className='text-xs' >Company</th>
-        <th className='text-xs' >Stock</th>
-        <th className='text-xs' >Pack Type</th>
-        <th className='text-xs' >Pack Size</th>
-        <th className='text-xs' >TP</th>
-        <th className='text-xs' >MRP</th>
-        <th className='text-xs' >TP</th>
-        <th className='text-xs' >MRP</th>
-        <th className='text-xs' >Actions</th>
-        <th className='text-xs' >
-            <select class="select select-bordered select-xs w-full max-w-xs">
-                <option selected>10</option>
-                <option>20</option>
-                <option>30</option>
-                <option>40</option>
-                <option>50</option>
-                <option>60</option>
-                <option>70</option>
-                <option>80</option>
-                <option>90</option>
-                <option>100</option>
-            </select>
-        </th>
+        {
+            tableHeadItems?.map(tableHeadItem => <th className='text-xs' >{tableHeadItem}</th>)
+        }
     </tr>;
 
     return (
