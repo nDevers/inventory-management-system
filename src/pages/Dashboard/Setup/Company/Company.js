@@ -4,6 +4,7 @@ import { BsPrinter, BsSave2 } from 'react-icons/bs';
 import { FcCancel } from 'react-icons/fc';
 import { MdOutlineAddBox } from 'react-icons/md';
 import PrintButton from '../../../../Components/Buttons/PrintButton';
+import NewButton from '../../../../Components/Buttons/NewButton';
 
 const Company = () => {
     const tableHead = <tr>
@@ -69,10 +70,7 @@ const Company = () => {
             </label>
 
             <div className="flex justify-between mb-6">
-                <label for="add-new-company" class="btn btn-sm gap-2 modal-button">
-                    <MdOutlineAddBox className='text-lg' />
-                    New
-                </label>
+                <NewButton modalId={'add-new-company'} />
 
                 <PrintButton />
             </div>
