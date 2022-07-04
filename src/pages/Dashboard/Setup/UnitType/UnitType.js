@@ -4,6 +4,7 @@ import { BsPrinter, BsSave2 } from 'react-icons/bs';
 import { FcCancel } from 'react-icons/fc';
 import { MdOutlineAddBox } from 'react-icons/md';
 import PrintButton from '../../../../Components/Buttons/PrintButton';
+import NewButton from '../../../../Components/Buttons/NewButton';
 
 const UnitType = () => {
     const tableHead = <tr>
@@ -45,10 +46,7 @@ const UnitType = () => {
             </label>
 
             <div className="flex justify-between mb-6">
-                <label for="create-new-unit-type" class="btn btn-sm gap-2 modal-button">
-                    <MdOutlineAddBox className='text-lg' />
-                    New
-                </label>
+                <NewButton modalId={'create-new-unit-type'} />
 
                 <PrintButton />
             </div>
