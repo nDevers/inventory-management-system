@@ -5,6 +5,7 @@ import { MdOutlineAddBox } from 'react-icons/md';
 import SaveButton from '../../../../Components/Buttons/SaveButton';
 import CancelButton from '../../../../Components/Buttons/CancelButton';
 import PrintButton from '../../../../Components/Buttons/PrintButton';
+import NewButton from '../../../../Components/Buttons/NewButton';
 
 const PharmacyProducts = () => {
     const tableHead = <tr>
@@ -41,10 +42,7 @@ const PharmacyProducts = () => {
     return (
         <section>
             <div className="flex justify-between mb-6">
-                <label for="create-new-product" class="btn btn-sm gap-2 modal-button">
-                    <MdOutlineAddBox className='text-lg' />
-                    New
-                </label>
+                <NewButton modalId={'create-new-product'} />
 
                 <PrintButton />
             </div>
