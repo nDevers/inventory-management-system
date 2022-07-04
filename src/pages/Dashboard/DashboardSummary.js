@@ -1,5 +1,8 @@
 import React from 'react';
 import { ComposedChart, XAxis, YAxis, Tooltip, Legend, CartesianGrid, Area, Bar, Line, PieChart, Pie, Cell } from 'recharts';
+import PrintButton from '../../Components/Buttons/PrintButton';
+import RefreshButton from '../../Components/Buttons/RefreshButton';
+import InfoCard from '../../Components/InfoCard';
 
 const DashboardSummary = () => {
     const data = [
@@ -73,6 +76,7 @@ const DashboardSummary = () => {
             "value": 189
         }
     ];
+
     const data02 = [
         {
             "name": "Group A",
@@ -103,63 +107,34 @@ const DashboardSummary = () => {
     return (
         <div className='mx-auto'>
             <div className='grid grid-cols-6 gap-4'>
-                <button class="btn gap-2">
-                    Items
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    Quantity
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    MRP
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    TP
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    RTN MRP
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    RTN TP
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    Discount
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    Net Sale
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    Net TP
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    From
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    To
-                    <div class="badge badge-secondary">+99</div>
-                </button>
-                <button class="btn gap-2">
-                    Period
-                    <div class="badge badge-secondary">+99</div>
-                </button>
+                <InfoCard name={'Items'} status={99} />
+
+                <InfoCard name={'Quantity'} status={99} />
+
+                <InfoCard name={'MRP'} status={99} />
+
+                <InfoCard name={'TP'} status={99} />
+
+                <InfoCard name={'RTN MRP'} status={99} />
+
+                <InfoCard name={'RTN TP'} status={99} />
+
+                <InfoCard name={'Discount'} status={99} />
+
+                <InfoCard name={'Net Sale'} status={99} />
+
+                <InfoCard name={'Net TP'} status={99} />
+
+                <InfoCard name={'From'} status={99} />
+
+                <InfoCard name={'To'} status={99} />
+
+                <InfoCard name={'Period'} status={99} />
             </div>
 
             <div className='flex justify-between mt-6'>
-                <button class="btn btn-sm gap-2">
-                    Refresh
-                </button>
-                <button class="btn btn-sm gap-2">
-                    Print
-                </button>
+                <RefreshButton />
+                <PrintButton />
             </div>
 
             <ComposedChart className='my-6' width={730} height={250} data={data}>
