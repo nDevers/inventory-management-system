@@ -21,7 +21,7 @@ const PharmacyProducts = () => {
     </tr>;
 
     return (
-        <section className='p-2 md:p-3'>
+        <section className='p-1'>
             <div className="flex justify-between mb-6">
                 <NewButton modalId={'create-new-product'} />
                 <PrintButton />
