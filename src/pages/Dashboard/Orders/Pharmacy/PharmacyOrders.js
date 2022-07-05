@@ -94,6 +94,12 @@ const PharmacyOrders = () => {
                                 <h3 className='text-xl'>Order Items</h3>
 
                                 <button>Add From Requested Items</button>
+                                <tbody>
+                                    <OrderRow />
+                                    <OrderRow />
+                                    <OrderRow />
+                                    <OrderRow />
+                                </tbody>
 
                                 <CancelButton extraClass={'mt-4'} />
                             </div>
