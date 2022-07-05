@@ -30,12 +30,12 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
-                                        to={'products/non-pharmacy'}
+                                        to={'products/pharmacy'}
                                         icon={<MdLocalPharmacy className='text-lg' />}
                                         name={'Pharmacy'} />,
 
                                     <LinkComponents
-                                        to={'products/pharmacy'}
+                                        to={'products/non-pharmacy'}
                                         icon={<RiProfileFill className='text-lg' />}
                                         name={'Non Pharmacy'} />
                                 ]
