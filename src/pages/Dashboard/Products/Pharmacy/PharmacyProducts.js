@@ -34,7 +34,7 @@ const PharmacyProducts = () => {
 
                     <ModalHeading modalHeading={'Create a Pharmacy Product'} />
 
-                    <div className='grid grid-cols-5 gap-4 mb-2'>
+                    <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-2'>
                         <Input title={'Trade Name'} />
                         <Input title={'Generic Name'} />
                         <Input title={'Strength'} />
@@ -60,7 +60,7 @@ const PharmacyProducts = () => {
                             <DoubleInput title={'Purchase VAT'} />
                             <DoubleInput title={'Purchase Discount'} />
 
-                            <SaveButton />
+                            <SaveButton extraClass={'mt-4'} />
                         </div>
 
                         <div class="divider lg:divider-horizontal"></div>
@@ -81,7 +81,7 @@ const PharmacyProducts = () => {
                             <DoubleInput title={'Sales VAT'} />
                             <DoubleInput title={'Sales Discount'} />
 
-                            <CancelButton />
+                            <CancelButton extraClass={'mt-4'} />
                         </div>
                     </div>
                 </label>
