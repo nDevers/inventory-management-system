@@ -105,8 +105,13 @@ const DashboardSummary = () => {
     ];
 
     return (
-        <div className='mx-auto'>
-            <div className='grid grid-cols-6 gap-4'>
+        <div className='mx-auto p-2 md:p-3'>
+            <div className='flex justify-between mb-6'>
+                <RefreshButton />
+                <PrintButton />
+            </div>
+
+            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4'>
                 <InfoCard name={'Items'} status={99} />
 
                 <InfoCard name={'Quantity'} status={99} />
@@ -132,12 +137,7 @@ const DashboardSummary = () => {
                 <InfoCard name={'Period'} status={99} />
             </div>
 
-            <div className='flex justify-between mt-6'>
-                <RefreshButton />
-                <PrintButton />
-            </div>
-
-            <ComposedChart className='my-6' width={730} height={250} data={data}>
+            <ComposedChart className='my-6 w-full' data={data}>
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
@@ -148,7 +148,7 @@ const DashboardSummary = () => {
                 <Line type="monotone" dataKey="uv" stroke="#ff7300" />
             </ComposedChart>
 
-            <PieChart width={830} height={350}>
+            <PieChart className='w-full'>
                 <Pie data={data01} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={50} fill="#8884d8" />
                 <Pie data={data02} dataKey="value" nameKey="name" cx="50%" cy="50%" innerRadius={60} outerRadius={80} fill="#82ca9d" label />
             </PieChart>
