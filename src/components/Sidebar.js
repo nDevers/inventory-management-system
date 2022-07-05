@@ -17,7 +17,6 @@ const Sidebar = () => {
             <input id="dashboard" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
                 <Outlet />
-                <label for="dashboard" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
             </div>
             <div class="drawer-side">
                 <label for="dashboard" class="drawer-overlay"></label>
