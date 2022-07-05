@@ -2,13 +2,15 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import logo from '../Assets/logo.png';
 import { HiMenuAlt3 } from 'react-icons/hi';
+import UserLinkComponents from './NavbarComponents/UserLinkComponents';
 
 const DefaultNavbar = () => {
     const defaultNavbarItems = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='about'>About</Link></li>
-        <li><Link to='contact'>Contact</Link></li>
-        <li><Link to='login'>Login</Link></li>
+        <UserLinkComponents to={'/'} name={'Home'} />
+        <UserLinkComponents to={'about'} name={'About'} />
+        <UserLinkComponents to={'contact'} name={'Contact'} />
+        <UserLinkComponents to={'login'} name={'Login'} />
+        <UserLinkComponents to={'/pricing'} extraClass={'btn btn-sm btn-outline'} name={'Get Started'} />
     </>
 
     return (
