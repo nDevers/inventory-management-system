@@ -16,12 +16,12 @@ const PharmacyProducts = () => {
 
     const tableHead = <tr>
         {
-            tableHeadItems?.map(tableHeadItem => <th className='text-xs' >{tableHeadItem}</th>)
+            tableHeadItems?.map(tableHeadItem => <th className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
         }
     </tr>;
 
     return (
-        <section>
+        <section className='p-2 md:p-3'>
             <div className="flex justify-between mb-6">
                 <NewButton modalId={'create-new-product'} />
                 <PrintButton />
@@ -87,7 +87,7 @@ const PharmacyProducts = () => {
                 </label>
             </label>
 
-            <table class="table table-zebra table-compact w-full">
+            <table class="table table-zebra table-compact">
                 <thead>
                     {
                         tableHead
