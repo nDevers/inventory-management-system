@@ -8,7 +8,6 @@ import OrderRow from './PharmacyOrderRow';
 import SaveButton from '../../../../Components/Buttons/SaveButton';
 import CancelButton from '../../../../Components/Buttons/CancelButton';
 import NewButton from '../../../../Components/Buttons/NewButton';
-import DoubleInput from '../../../../Components/FormComponents/DoubleInput';
 import ModalCloseButton from '../../../../Components/Buttons/ModalCloseButton';
 import ModalHeading from '../../../../Components/Headings/ModalHeading';
 
@@ -64,26 +63,27 @@ const PharmacyOrders = () => {
 
                         <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
                             <div class="grid">
-                                <h3 className='text-xl'>Purchase Area</h3>
+                                <h3 className='text-xl'>Choose product</h3>
 
-                                <div className='grid grid-cols-2 gap-x-0'>
-                                    <Select title={'Suplier'} />
-                                    <div class="form-control">
-                                        <label class="label cursor-pointer">
-                                            <span class="label-text">Suplier's only</span> 
-                                            <br></br>
-                                            <input type="checkbox" class="toggle toggle-sm" checked />
-                                        </label>
-                                    </div>
+                                <div class="form-control">
+                                    <label class="label cursor-pointer">
+                                        <span class="label-text">Suplier's only</span> 
+                                        <input type="checkbox" class="toggle toggle-sm" checked />
+                                    </label>
                                 </div>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
-                                    <Input title={'Pack TP'} />
-                                    <Input title={'Unit TP'} />
+                                    <Select title={'Suplier'} />
+                                    <Input title={'Tread Name'} />
                                 </div>
-
-                                <DoubleInput title={'Purchase VAT'} />
-                                <DoubleInput title={'Purchase Discount'} />
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Input title={'Category'} />
+                                    <Input title={'Strength'} />
+                                </div>
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Input title={'Box'} />
+                                    <Input title={'Unit'} />
+                                </div>
 
                                 <SaveButton extraClass={'mt-4'} />
                             </div>
@@ -91,20 +91,15 @@ const PharmacyOrders = () => {
                             <div class="divider lg:divider-horizontal"></div>
 
                             <div class="grid">
-                                <h3 className='text-xl'>Sale Area</h3>
+                                <h3 className='text-xl'>Order Items</h3>
 
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <Select title={'Sales Unit Type'} />
-                                    <Input title={'Pack Size'} />
-                                </div>
-
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <Input title={'Pack MRP'} />
-                                    <Input title={'Unit MRP'} />
-                                </div>
-
-                                <DoubleInput title={'Sales VAT'} />
-                                <DoubleInput title={'Sales Discount'} />
+                                <button>Add From Requested Items</button>
+                                <tbody>
+                                    <OrderRow />
+                                    <OrderRow />
+                                    <OrderRow />
+                                    <OrderRow />
+                                </tbody>
 
                                 <CancelButton extraClass={'mt-4'} />
                             </div>
