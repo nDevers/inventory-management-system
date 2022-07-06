@@ -10,7 +10,7 @@ const DefaultNavbar = () => {
         <UserLinkComponents to={'about'} name={'About'} />
         <UserLinkComponents to={'contact'} name={'Contact'} />
         <UserLinkComponents to={'login'} name={'Login'} />
-        <UserLinkComponents to={'/pricing'} extraClass={'btn btn-sm btn-outline'} name={'Get Started'} />
+        <UserLinkComponents to={'/pricing'} extraClass={'btn btn-sm btn-outline block lg:hidden md:hidden'} name={'Get Started'} />
     </>
 
     return (
