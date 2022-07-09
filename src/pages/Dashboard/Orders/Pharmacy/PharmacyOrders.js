@@ -65,13 +65,6 @@ const PharmacyOrders = () => {
                             <div class="grid">
                                 <h3 className='text-xl'>Choose product</h3>
 
-                                <div class="form-control">
-                                    <label class="label cursor-pointer">
-                                        <span class="label-text">Suplier's only</span> 
-                                        <input type="checkbox" class="toggle toggle-sm" checked />
-                                    </label>
-                                </div>
-
                                 <div className='grid grid-cols-2 gap-x-4'>
                                     <Select title={'Suplier'} />
                                     <Input title={'Tread Name'} />
@@ -84,6 +77,71 @@ const PharmacyOrders = () => {
                                     <Input title={'Box'} />
                                     <Input title={'Unit'} />
                                 </div>
+                                
+                                <div>
+                                    <div class="overflow-x-auto py-3">
+                                        <table class="table table-compact w-full">
+                                            <thead>
+                                            <tr>
+                                                <th></th> 
+                                                <th>Name</th> 
+                                                <th>Str</th> 
+                                                <th>Cat</th> 
+                                                <th>Company</th>
+                                                <th>Pack</th>  
+                                                <th>TP</th> 
+                                            </tr>
+                                            </thead> 
+                                            <tbody>
+                                            <tr>
+                                                <th>1</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>4</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>5</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            </tbody> 
+                                        </table>
+                                    </div>
+                                </div>
 
                                 <SaveButton extraClass={'mt-4'} />
                             </div>
@@ -92,7 +150,7 @@ const PharmacyOrders = () => {
 
                             <div class="grid">
                                 <h3 className='text-xl'>Order Items</h3>
-                                <div class="flex justify-between py-3">
+                                <div class="flex justify-between">
                                     <button class="btn btn-xs btn-outline btn-warning justify-between">Add from Requared Items</button>
                                     <button class="btn btn-xs btn-outline btn-error">Clear All</button>
                                 </div>
@@ -103,40 +161,64 @@ const PharmacyOrders = () => {
                                             <tr>
                                                 <th></th> 
                                                 <th>Name</th> 
-                                                <th>Job</th> 
-                                                <th>company</th> 
+                                                <th>Str</th> 
+                                                <th>Cat</th> 
+                                                <th>Stk</th>
+                                                <th>Qnt</th>  
+                                                <th>TP</th> 
+                                                <th>Act</th>
                                             </tr>
                                             </thead> 
                                             <tbody>
                                             <tr>
                                                 <th>1</th> 
-                                                <td>Canada</td> 
-                                                <td>12/16/2020</td> 
-                                                <td>Blue</td>
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
                                             </tr>
                                             <tr>
                                                 <th>2</th> 
-                                                <td>United States</td> 
-                                                <td>12/5/2020</td> 
-                                                <td>Purple</td>
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
                                             </tr>
                                             <tr>
                                                 <th>3</th> 
-                                                <td>China</td> 
-                                                <td>8/15/2020</td> 
-                                                <td>Red</td>
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
                                             </tr>
                                             <tr>
                                                 <th>4</th> 
-                                                <td>Russia</td> 
-                                                <td>3/25/2021</td> 
-                                                <td>Crimson</td>
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
                                             </tr>
                                             <tr>
                                                 <th>5</th> 
-                                                <td>Brazil</td> 
-                                                <td>5/22/2020</td> 
-                                                <td>Indigo</td>
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
                                             </tr>
                                             </tbody> 
                                         </table>
