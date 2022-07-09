@@ -92,7 +92,10 @@ const PharmacyOrders = () => {
 
                             <div class="grid">
                                 <h3 className='text-xl'>Order Items</h3>
-
+                                <div class="flex justify-between py-3">
+                                    <button class="btn btn-xs btn-outline btn-warning justify-between">Add from Requared Items</button>
+                                    <button class="btn btn-xs btn-outline btn-error">Clear All</button>
+                                </div>
                                 <div>
                                     <div class="overflow-x-auto">
                                         <table class="table table-compact w-full">
