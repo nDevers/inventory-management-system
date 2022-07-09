@@ -93,13 +93,52 @@ const PharmacyOrders = () => {
                             <div class="grid">
                                 <h3 className='text-xl'>Order Items</h3>
 
-                                <button>Add From Requested Items</button>
-                                <tbody>
-                                    <OrderRow />
-                                    <OrderRow />
-                                    <OrderRow />
-                                    <OrderRow />
-                                </tbody>
+                                <div>
+                                    <div class="overflow-x-auto">
+                                        <table class="table table-compact w-full">
+                                            <thead>
+                                            <tr>
+                                                <th></th> 
+                                                <th>Name</th> 
+                                                <th>Job</th> 
+                                                <th>company</th> 
+                                            </tr>
+                                            </thead> 
+                                            <tbody>
+                                            <tr>
+                                                <th>1</th> 
+                                                <td>Canada</td> 
+                                                <td>12/16/2020</td> 
+                                                <td>Blue</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th> 
+                                                <td>United States</td> 
+                                                <td>12/5/2020</td> 
+                                                <td>Purple</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th> 
+                                                <td>China</td> 
+                                                <td>8/15/2020</td> 
+                                                <td>Red</td>
+                                            </tr>
+                                            <tr>
+                                                <th>4</th> 
+                                                <td>Russia</td> 
+                                                <td>3/25/2021</td> 
+                                                <td>Crimson</td>
+                                            </tr>
+                                            <tr>
+                                                <th>5</th> 
+                                                <td>Brazil</td> 
+                                                <td>5/22/2020</td> 
+                                                <td>Indigo</td>
+                                            </tr>
+                                            </tbody> 
+                                        </table>
+                                    </div>
+                                </div>
 
                                 <CancelButton extraClass={'mt-4'} />
                             </div>
