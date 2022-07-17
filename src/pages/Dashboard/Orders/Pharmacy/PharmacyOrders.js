@@ -47,13 +47,6 @@ const PharmacyOrders = () => {
 
                     <NewButton modalId={'create-new-order'} />
                 </div>
-
-
-
-
-
-
-
                 <input type="checkbox" id="create-new-order" class="modal-toggle" />
                 <label for="create-new-order" class="modal cursor-pointer">
                     <label class="modal-box w-11/12 max-w-4xl relative" for="">
@@ -230,23 +223,6 @@ const PharmacyOrders = () => {
                         </div>
                     </label>
                 </label>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
 
             <table class="table table-zebra table-compact w-full">

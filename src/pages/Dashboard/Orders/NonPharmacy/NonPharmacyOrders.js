@@ -1,10 +1,15 @@
 import React from 'react';
-import { MdOutlineAddBox } from 'react-icons/md';
+// import { MdOutlineAddBox } from 'react-icons/md';
 import PrintButton from '../../../../Components/Buttons/PrintButton';
 import Input from '../../../../Components/FormComponents/Input';
 import Select from '../../../../Components/FormComponents/Select';
 import ItemsViewNumber from '../../../../Components/ItemsViewNumber';
 import OrderRow from './NonPharmacyOrderRow';
+import SaveButton from '../../../../Components/Buttons/SaveButton';
+import CancelButton from '../../../../Components/Buttons/CancelButton';
+import NewButton from '../../../../Components/Buttons/NewButton';
+import ModalCloseButton from '../../../../Components/Buttons/ModalCloseButton';
+import ModalHeading from '../../../../Components/Headings/ModalHeading';
 
 const NonPharmacyOrders = () => {
     const tableHeadItems = ['SN', 'Voucher', 'Supplier', 'Creator', 'Status', 'Quantity', 'VAT', 'Discount', 'Price', 'Payable Price', 'Created At', <ItemsViewNumber />];
@@ -37,14 +42,189 @@ const NonPharmacyOrders = () => {
                     <button class="btn btn-xs capitalize">Canceled Order</button>
                 </div>
 
-                <div className='grid grid-cols-2 gap-2 mb-2'>
-                    <PrintButton btnSize={'btn-xs'} />
+                
 
-                    <button class="btn btn-xs gap-2">
-                        New
-                        <MdOutlineAddBox />
-                    </button>
+                <div className='grid grid-cols-2 gap-2 mb-2'>
+                    <PrintButton/>
+
+                    <NewButton modalId={'create-new-order'} />
                 </div>
+                <input type="checkbox" id="create-new-order" class="modal-toggle" />
+                <label for="create-new-order" class="modal cursor-pointer">
+                    <label class="modal-box w-11/12 max-w-4xl relative" for="">
+                        <ModalCloseButton modalId={'create-new-order'} />
+
+                        <ModalHeading modalHeading={'Create a Pharmacy order'} />
+
+                        <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                            <div class="grid">
+                                <h3 className='text-xl'>Choose product</h3>
+
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Select title={'Suplier'} />
+                                    <Input title={'Tread Name'} />
+                                </div>
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Input title={'Category'} />
+                                    <Input title={'Strength'} />
+                                </div>
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Input title={'Box'} />
+                                    <Input title={'Unit'} />
+                                </div>
+                                
+                                <div>
+                                    <div class="overflow-x-auto py-3">
+                                        <table class="table table-compact w-full">
+                                            <thead>
+                                            <tr>
+                                                <th></th> 
+                                                <th>Name</th> 
+                                                <th>Str</th> 
+                                                <th>Cat</th> 
+                                                <th>Company</th>
+                                                <th>Pack</th>  
+                                                <th>TP</th> 
+                                            </tr>
+                                            </thead> 
+                                            <tbody>
+                                            <tr>
+                                                <th>1</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>4</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            <tr>
+                                                <th>5</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>Beximco Pharma</td>
+                                                <td>Box</td>
+                                                <td>510</td>
+                                            </tr>
+                                            </tbody> 
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <SaveButton extraClass={'mt-4'} />
+                            </div>
+
+                            <div class="divider lg:divider-horizontal"></div>
+
+                            <div class="grid">
+                                <h3 className='text-xl'>Order Items</h3>
+                                <div class="flex justify-between">
+                                    <button class="btn btn-xs btn-outline btn-warning justify-between">Add from Requared Items</button>
+                                    <button class="btn btn-xs btn-outline btn-error">Clear All</button>
+                                </div>
+                                <div>
+                                    <div class="overflow-x-auto">
+                                        <table class="table table-compact w-full">
+                                            <thead>
+                                            <tr>
+                                                <th></th> 
+                                                <th>Name</th> 
+                                                <th>Str</th> 
+                                                <th>Cat</th> 
+                                                <th>Stk</th>
+                                                <th>Qnt</th>  
+                                                <th>TP</th> 
+                                                <th>Act</th>
+                                            </tr>
+                                            </thead> 
+                                            <tbody>
+                                            <tr>
+                                                <th>1</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
+                                            </tr>
+                                            <tr>
+                                                <th>2</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
+                                            </tr>
+                                            <tr>
+                                                <th>3</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
+                                            </tr>
+                                            <tr>
+                                                <th>4</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
+                                            </tr>
+                                            <tr>
+                                                <th>5</th> 
+                                                <td>Napa</td> 
+                                                <td>500 MG</td> 
+                                                <td>Tab</td>
+                                                <td>0</td>
+                                                <td>2</td>
+                                                <td>510</td>
+                                                <td>Delete</td>
+                                            </tr>
+                                            </tbody> 
+                                        </table>
+                                    </div>
+                                </div>
+
+                                <CancelButton extraClass={'mt-4'} />
+                            </div>
+                        </div>
+                    </label>
+                </label>
             </div>
 
             <table class="table table-zebra table-compact w-full">
