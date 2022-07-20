@@ -18,7 +18,6 @@ import Contact from './pages/Contact/Contact';
 import Dashboard from './pages/Dashboard/Dashboard';
 import DashboardSummary from './pages/Dashboard/DashboardSummary';
 import RequiredItems from './pages/Dashboard/RequiredItems';
-import Purchases from './pages/Dashboard/Purchases';
 import Returns from './pages/Dashboard/Returns';
 import Employees from './pages/Dashboard/Employees';
 import Customers from './pages/Dashboard/Customers';
@@ -34,6 +33,8 @@ import UnitType from './pages/Dashboard/Setup/UnitType';
 import Company from './pages/Dashboard/Setup/Company';
 import PharmacyOrders from './pages/Dashboard/Orders/Pharmacy/PharmacyOrders';
 import NonPharmacyOrders from './pages/Dashboard/Orders/NonPharmacy/NonPharmacyOrders';
+import PurchaseNonPharmacyProducts from './pages/Dashboard/Purchase/NonPharmacy/PurchaseNonPharmacyProducts';
+import PurchasePharmacyProducts from './pages/Dashboard/Purchase/Pharmacy/PurchasePharmacyProducts';
 
 function App() {
   return (
@@ -64,8 +65,8 @@ function App() {
           <Route path='requested-items/non-pharmacy' element={<RequiredItems />} />
           <Route path='orders/pharmacy' element={<PharmacyOrders />} />
           <Route path='orders/non-pharmacy' element={<NonPharmacyOrders />} />
-          <Route path='purchases/pharmacy' element={<Purchases />} />
-          <Route path='purchases/non-pharmacy' element={<Purchases />} />
+          <Route path='purchases/pharmacy' element={<PurchasePharmacyProducts />} />
+          <Route path='purchases/non-pharmacy' element={<PurchaseNonPharmacyProducts />} />
           <Route path='setup/category' element={<Category />} />
           <Route path='setup/unit-type' element={<UnitType />} />
           <Route path='setup/company' element={<Company />} />
