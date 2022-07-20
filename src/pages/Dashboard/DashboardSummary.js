@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComposedChart, XAxis, YAxis, Tooltip, Legend, CartesianGrid, Area, Bar, Line, PieChart, Pie } from 'recharts';
-import PrintButton from '../../Components/Buttons/PrintButton';
-import RefreshButton from '../../Components/Buttons/RefreshButton';
-import InfoCard from '../../Components/InfoCard';
+import PrintButton from '../../components/Buttons/PrintButton';
+import RefreshButton from '../../components/Buttons/RefreshButton';
+import InfoCard from '../../components/InfoCard';
 
 const DashboardSummary = () => {
     const data = [

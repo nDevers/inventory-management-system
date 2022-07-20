@@ -1,12 +1,12 @@
 import React from 'react';
-import PrintButton from '../../../Components/Buttons/PrintButton';
-import NewButton from '../../../Components/Buttons/NewButton';
-import ModalCloseButton from '../../../Components/Buttons/ModalCloseButton';
-import ModalHeading from '../../../Components/Headings/ModalHeading';
-import Input from '../../../Components/FormComponents/Input';
-import TableRow from '../../../Components/TableRow';
-import DeleteButton from '../../../Components/Buttons/DeleteButton';
-import EditButton from '../../../Components/Buttons/EditButton';
+import PrintButton from '../../../components/Buttons/PrintButton';
+import NewButton from '../../../components/Buttons/NewButton';
+import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
+import ModalHeading from '../../../components/Headings/ModalHeading';
+import Input from '../../../components/FormComponents/Input';
+import TableRow from '../../../components/TableRow';
+import DeleteButton from '../../../components/Buttons/DeleteButton';
+import EditButton from '../../../components/Buttons/EditButton';
 
 const Company = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];

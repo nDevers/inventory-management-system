@@ -1,15 +1,15 @@
 import React from 'react';
 import NonPharmacyProductsRow from './NonPharmacyProductsRow';
-import PrintButton from '../../../../Components/Buttons/PrintButton';
-import SaveButton from '../../../../Components/Buttons/SaveButton';
-import CancelButton from '../../../../Components/Buttons/CancelButton';
-import NewButton from '../../../../Components/Buttons/NewButton';
-import ItemsViewNumber from '../../../../Components/ItemsViewNumber';
-import ModalCloseButton from '../../../../Components/Buttons/ModalCloseButton';
-import ModalHeading from '../../../../Components/Headings/ModalHeading';
-import Input from '../../../../Components/FormComponents/Input';
-import Select from '../../../../Components/FormComponents/Select';
-import DoubleInput from '../../../../Components/FormComponents/DoubleInput';
+import PrintButton from '../../../../components/Buttons/PrintButton';
+import SaveButton from '../../../../components/Buttons/SaveButton';
+import CancelButton from '../../../../components/Buttons/CancelButton';
+import NewButton from '../../../../components/Buttons/NewButton';
+import ItemsViewNumber from '../../../../components/ItemsViewNumber';
+import ModalCloseButton from '../../../../components/Buttons/ModalCloseButton';
+import ModalHeading from '../../../../components/Headings/ModalHeading';
+import Input from '../../../../components/FormComponents/Input';
+import Select from '../../../../components/FormComponents/Select';
+import DoubleInput from '../../../../components/FormComponents/DoubleInput';
 
 const PharmacyProducts = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'TP', 'MRP', 'TP', 'MRP', 'Actions', <ItemsViewNumber />];

@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from '../../Components/Buttons/Button';
+import Button from '../../components/Buttons/Button';
 import { useNavigate } from "react-router-dom";
 
 const ForgotPassword = () => {

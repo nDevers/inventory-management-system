@@ -1,11 +1,11 @@
 import React from 'react';
-import PrintButton from '../../../Components/Buttons/PrintButton';
-import NewButton from '../../../Components/Buttons/NewButton';
-import ModalHeading from '../../../Components/Headings/ModalHeading';
-import Input from '../../../Components/FormComponents/Input';
-import Select from '../../../Components/FormComponents/Select';
-import ModalCloseButton from '../../../Components/Buttons/ModalCloseButton';
-import TableRow from '../../../Components/TableRow';
+import PrintButton from '../../../components/Buttons/PrintButton';
+import NewButton from '../../../components/Buttons/NewButton';
+import ModalHeading from '../../../components/Headings/ModalHeading';
+import Input from '../../../components/FormComponents/Input';
+import Select from '../../../components/FormComponents/Select';
+import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
+import TableRow from '../../../components/TableRow';
 
 const Category = () => {
     const tableHeadItems = ['SN', 'Name', 'Description', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];

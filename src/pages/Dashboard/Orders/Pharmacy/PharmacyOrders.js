@@ -1,15 +1,15 @@
 import React from 'react';
 //import { MdOutlineAddBox } from 'react-icons/md';
-import PrintButton from '../../../../Components/Buttons/PrintButton';
-import Input from '../../../../Components/FormComponents/Input';
-import Select from '../../../../Components/FormComponents/Select';
-import ItemsViewNumber from '../../../../Components/ItemsViewNumber';
+import PrintButton from '../../../../components/Buttons/PrintButton';
+import Input from '../../../../components/FormComponents/Input';
+import Select from '../../../../components/FormComponents/Select';
+import ItemsViewNumber from '../../../../components/ItemsViewNumber';
 import OrderRow from './PharmacyOrderRow';
-import SaveButton from '../../../../Components/Buttons/SaveButton';
-import CancelButton from '../../../../Components/Buttons/CancelButton';
-import NewButton from '../../../../Components/Buttons/NewButton';
-import ModalCloseButton from '../../../../Components/Buttons/ModalCloseButton';
-import ModalHeading from '../../../../Components/Headings/ModalHeading';
+import SaveButton from '../../../../components/Buttons/SaveButton';
+import CancelButton from '../../../../components/Buttons/CancelButton';
+import NewButton from '../../../../components/Buttons/NewButton';
+import ModalCloseButton from '../../../../components/Buttons/ModalCloseButton';
+import ModalHeading from '../../../../components/Headings/ModalHeading';
 
 const PharmacyOrders = () => {
     const tableHeadItems = ['SN', 'Voucher', 'Supplier', 'Creator', 'Status', 'Quantity', 'VAT', 'Discount', 'Price', 'Payable Price', 'Created At', <ItemsViewNumber />];
@@ -43,7 +43,7 @@ const PharmacyOrders = () => {
                 </div>
 
                 <div className='grid grid-cols-2 gap-2 mb-2'>
-                    <PrintButton/>
+                    <PrintButton />
 
                     <NewButton modalId={'create-new-order'} />
                 </div>
@@ -70,68 +70,68 @@ const PharmacyOrders = () => {
                                     <Input title={'Box'} />
                                     <Input title={'Unit'} />
                                 </div>
-                                
+
                                 <div>
                                     <div class="overflow-x-auto py-3">
                                         <table class="table table-compact w-full">
                                             <thead>
-                                            <tr>
-                                                <th></th> 
-                                                <th>Name</th> 
-                                                <th>Str</th> 
-                                                <th>Cat</th> 
-                                                <th>Company</th>
-                                                <th>Pack</th>  
-                                                <th>TP</th> 
-                                            </tr>
-                                            </thead> 
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>Str</th>
+                                                    <th>Cat</th>
+                                                    <th>Company</th>
+                                                    <th>Pack</th>
+                                                    <th>TP</th>
+                                                </tr>
+                                            </thead>
                                             <tbody>
-                                            <tr>
-                                                <th>1</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>Beximco Pharma</td>
-                                                <td>Box</td>
-                                                <td>510</td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>Beximco Pharma</td>
-                                                <td>Box</td>
-                                                <td>510</td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>Beximco Pharma</td>
-                                                <td>Box</td>
-                                                <td>510</td>
-                                            </tr>
-                                            <tr>
-                                                <th>4</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>Beximco Pharma</td>
-                                                <td>Box</td>
-                                                <td>510</td>
-                                            </tr>
-                                            <tr>
-                                                <th>5</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>Beximco Pharma</td>
-                                                <td>Box</td>
-                                                <td>510</td>
-                                            </tr>
-                                            </tbody> 
+                                                <tr>
+                                                    <th>1</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>Beximco Pharma</td>
+                                                    <td>Box</td>
+                                                    <td>510</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>Beximco Pharma</td>
+                                                    <td>Box</td>
+                                                    <td>510</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>3</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>Beximco Pharma</td>
+                                                    <td>Box</td>
+                                                    <td>510</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>Beximco Pharma</td>
+                                                    <td>Box</td>
+                                                    <td>510</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>5</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>Beximco Pharma</td>
+                                                    <td>Box</td>
+                                                    <td>510</td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
@@ -151,69 +151,69 @@ const PharmacyOrders = () => {
                                     <div class="overflow-x-auto">
                                         <table class="table table-compact w-full">
                                             <thead>
-                                            <tr>
-                                                <th></th> 
-                                                <th>Name</th> 
-                                                <th>Str</th> 
-                                                <th>Cat</th> 
-                                                <th>Stk</th>
-                                                <th>Qnt</th>  
-                                                <th>TP</th> 
-                                                <th>Act</th>
-                                            </tr>
-                                            </thead> 
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Name</th>
+                                                    <th>Str</th>
+                                                    <th>Cat</th>
+                                                    <th>Stk</th>
+                                                    <th>Qnt</th>
+                                                    <th>TP</th>
+                                                    <th>Act</th>
+                                                </tr>
+                                            </thead>
                                             <tbody>
-                                            <tr>
-                                                <th>1</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>0</td>
-                                                <td>2</td>
-                                                <td>510</td>
-                                                <td>Delete</td>
-                                            </tr>
-                                            <tr>
-                                                <th>2</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>0</td>
-                                                <td>2</td>
-                                                <td>510</td>
-                                                <td>Delete</td>
-                                            </tr>
-                                            <tr>
-                                                <th>3</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>0</td>
-                                                <td>2</td>
-                                                <td>510</td>
-                                                <td>Delete</td>
-                                            </tr>
-                                            <tr>
-                                                <th>4</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>0</td>
-                                                <td>2</td>
-                                                <td>510</td>
-                                                <td>Delete</td>
-                                            </tr>
-                                            <tr>
-                                                <th>5</th> 
-                                                <td>Napa</td> 
-                                                <td>500 MG</td> 
-                                                <td>Tab</td>
-                                                <td>0</td>
-                                                <td>2</td>
-                                                <td>510</td>
-                                                <td>Delete</td>
-                                            </tr>
-                                            </tbody> 
+                                                <tr>
+                                                    <th>1</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                    <td>510</td>
+                                                    <td>Delete</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>2</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                    <td>510</td>
+                                                    <td>Delete</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>3</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                    <td>510</td>
+                                                    <td>Delete</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>4</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                    <td>510</td>
+                                                    <td>Delete</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>5</th>
+                                                    <td>Napa</td>
+                                                    <td>500 MG</td>
+                                                    <td>Tab</td>
+                                                    <td>0</td>
+                                                    <td>2</td>
+                                                    <td>510</td>
+                                                    <td>Delete</td>
+                                                </tr>
+                                            </tbody>
                                         </table>
                                     </div>
                                 </div>
