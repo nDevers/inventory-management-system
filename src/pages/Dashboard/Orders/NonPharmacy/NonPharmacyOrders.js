@@ -50,8 +50,8 @@ const NonPharmacyOrders = () => {
                 </div>
 
                 <input type="checkbox" id="create-new-order" className="modal-toggle" />
-                <label for="create-new-order" className="modal cursor-pointer">
-                    <label className="modal-box w-11/12 max-w-4xl relative" for="">
+                <label htmlFor="create-new-order" className="modal cursor-pointer">
+                    <label className="modal-box w-11/12 max-w-4xl relative" htmlFor="">
                         <ModalCloseButton modalId={'create-new-order'} />
 
                         <ModalHeading modalHeading={'Create a Pharmacy order'} />

@@ -7,7 +7,7 @@ const EditButton = ({ itemId, modalId }) => {
     }
 
     return (
-        <button onClick={() => editItem(itemId)} for={`${modalId}`}
+        <button onClick={() => editItem(itemId)} htmlFor={`${modalId}`}
             className="z-10 block p-1 text-blue-700 transition-all bg-blue-100 border-2 border-white rounded-full active:bg-blue-50 hover:scale-110 focus:outline-none focus:ring"
             type="button"
         >

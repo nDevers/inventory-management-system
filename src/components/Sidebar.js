@@ -22,7 +22,7 @@ const Sidebar = () => {
                 <Outlet />
             </div>
             <div className="drawer-side bg-green-300 p-0 m-0">
-                <label for="dashboard" className="drawer-overlay"></label>
+                <label htmlFor="dashboard" className="drawer-overlay"></label>
                 <div className="flex flex-col justify-between">
                     <nav className="flex flex-col mt-6 space-y-1">
                         <Link className="text-xl font-semibold uppercase flex items-center mb-8" to='/'>

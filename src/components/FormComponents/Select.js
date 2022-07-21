@@ -7,8 +7,8 @@ const Select = ({ title = 'Select Field', name, isRequired }) => {
                 <span className="label-text">{title}</span>
             </label>
             <select className="select select-bordered select-xs w-full max-w-xs" name={name} required={isRequired}>
-                <option disabled selected>Small</option>
-                <option>Small Apple</option>
+                <option disabled>Choose an option</option>
+                <option >Small Apple</option>
                 <option>Small Orange</option>
                 <option>Small Tomato</option>
             </select>

@@ -21,7 +21,7 @@ const NonPharmacyProducts = () => {
 
     const tableHead = <tr>
         {
-            tableHeadItems?.map(tableHeadItem => <th className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
+            tableHeadItems?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
         }
     </tr>;
 
@@ -94,14 +94,14 @@ const NonPharmacyProducts = () => {
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
-                    <RefreshButton btnSize='btn-xs' />
+                    <RefreshButton btnSize='btn-xs' onClick={() => window.location.reload(true)} />
                     <PrintButton btnSize='btn-xs' />
                 </div>
             </div>
 
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
-            <label for="create-new-product" className="modal cursor-pointer">
-                <label className="modal-box w-7/12 max-w-4xl relative" for="">
+            <label htmlFor="create-new-product" className="modal cursor-pointer">
+                <label className="modal-box w-7/12 max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
                     <ModalHeading modalHeading={'Create a Pharmacy Product'} />
@@ -165,8 +165,8 @@ const NonPharmacyProducts = () => {
 
             {/* update a pharmacy product */}
             <input type="checkbox" id="update-pharmacy-product" className="modal-toggle" />
-            <label for="update-pharmacy-product" className="modal cursor-pointer">
-                <label className="modal-box w-11/12 max-w-4xl relative" for="">
+            <label htmlFor="update-pharmacy-product" className="modal cursor-pointer">
+                <label className="modal-box w-11/12 max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'update-pharmacy-product'} />
 
                     <ModalHeading modalHeading={'Update a Pharmacy Product'} />

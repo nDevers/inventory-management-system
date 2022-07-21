@@ -100,8 +100,8 @@ const PharmacyProducts = () => {
             </div>
 
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
-            <label for="create-new-product" className="modal cursor-pointer">
-                <label className="modal-box w-7/12 max-w-4xl relative" for="">
+            <label htmlFor="create-new-product" className="modal cursor-pointer">
+                <label className="modal-box w-7/12 max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
                     <ModalHeading modalHeading={'Create a Pharmacy Product'} />
@@ -165,8 +165,8 @@ const PharmacyProducts = () => {
 
             {/* update a pharmacy product */}
             <input type="checkbox" id="update-pharmacy-product" className="modal-toggle" />
-            <label for="update-pharmacy-product" className="modal cursor-pointer">
-                <label className="modal-box w-11/12 max-w-4xl relative" for="">
+            <label htmlFor="update-pharmacy-product" className="modal cursor-pointer">
+                <label className="modal-box w-11/12 max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'update-pharmacy-product'} />
 
                     <ModalHeading modalHeading={'Update a Pharmacy Product'} />

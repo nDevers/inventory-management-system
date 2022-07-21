@@ -4,8 +4,8 @@ const TableRow = ({ tableRowsData }) => {
     return (
         <tr>
             {
-                tableRowsData?.map(tableRowData =>
-                    <td>{tableRowData}</td>)
+                tableRowsData?.map((tableRowData, index) =>
+                    <td key={index}>{tableRowData}</td>)
             }
         </tr>
     );

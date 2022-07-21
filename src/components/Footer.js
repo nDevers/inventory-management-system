@@ -24,7 +24,7 @@ const Footer = () => {
 
                         <div className="col-span-2 lg:col-span-3 lg:flex lg:items-end">
                             <form className="w-full text-white">
-                                <label for="email" className="sr-only"> Email </label>
+                                <label htmlFor="email" className="sr-only"> Email </label>
 
                                 <div className="p-2 border sm:flex sm:items-center border-white/10">
                                     <input className="w-full h-12 p-3 text-sm font-medium tracking-widest placeholder-gray-400 uppercase bg-transparent border-none" type="email" id="email" placeholder="Enter your email" />

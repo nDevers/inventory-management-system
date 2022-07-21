@@ -22,7 +22,7 @@ const DetailsComponent = ({ icon, name, subMenus }) => {
 
             <nav className="mt-1.5 ml-6 flex flex-col">
                 {
-                    subMenus?.map(subMenu => <>{subMenu}</>)
+                    subMenus?.map((subMenu, index) => <span key={index}>{subMenu}</span>)
                 }
             </nav>
         </details>
