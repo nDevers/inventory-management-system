@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PrintButton from '../../../components/Buttons/PrintButton';
-import NewButton from '../../../components/Buttons/NewButton';
-import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
-import ModalHeading from '../../../components/Headings/ModalHeading';
 import Input from '../../../components/FormComponents/Input';
-import TextArea from '../../../components/FormComponents/TextArea';
 import TableRow from '../../../components/TableRow';
+import SaveButton from '../../../components/Buttons/SaveButton';
+import Select from '../../../components/FormComponents/Select';
+import EditButton from '../../../components/Buttons/EditButton';
+import DeleteButton from '../../../components/Buttons/DeleteButton';
 
 const UnitTypes = () => {
-    const tableHeadItems = ['SN', 'Name', 'Type', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
+    const tableHeadItems = ['SN', 'Name', 'Description', 'Type', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
 
     const tableHead = <tr>
         {
@@ -16,26 +16,61 @@ const UnitTypes = () => {
         }
     </tr>;
 
+    const addUnitType = event => {
+        event.preventDefault();
+
+        const name = event?.target?.unitName?.value;
+        const description = event?.target?.unitDescription?.value;
+        const type = event?.target?.unitUnitType?.value;
+        const addedBy = 'admin';
+        const addedTime = new Date();
+        const updatedBy = 'admin';
+        const updatedTime = new Date();
+
+        const unitTypeDetails = { name, description, type, addedBy, addedTime, updatedBy, updatedTime };
+
+        // send data to server
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/unitTypes', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(unitTypeDetails)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success');
+            });
+    };
+
+    const [unitTypes, setUnitTypes] = useState([]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/unitTypes')
+            .then(res => res.json())
+            .then(unitType => setUnitTypes(unitType));
+    }, [unitTypes]);
+
     return (
-        <section>
-            <input type="checkbox" id="create-new-unit-type" class="modal-toggle" />
-            <label for="create-new-unit-type" class="modal cursor-pointer">
-                <label class="modal-box w-2/5 h-2/5 max-w-4xl relative p-4" for="">
-                    <ModalCloseButton modalId={'create-new-unit-type'} />
+        <section className='p-4'>
+            <form onSubmit={addUnitType}>
+                <div className="flex justify-between items-center">
+                    <h2 className='text-2xl text-center font-bold'>Unit Types</h2>
 
-                    <ModalHeading modalHeading={'Create a Unit Type'} />
-
-                    <div className='grid grid-cols-1 gap-y-4 place-items-center'>
-                        <Input title={'Name'} />
-                        <TextArea title={'Description'} />
+                    <div className='flex items-center gap-x-4'>
+                        <SaveButton btnSize='btn-xs' />
+                        <PrintButton btnSize='btn-xs' />
                     </div>
-                </label>
-            </label>
+                </div>
 
-            <div className="flex justify-between mb-6">
-                <NewButton modalId={'create-new-unit-type'} />
-                <PrintButton />
-            </div>
+                <div className="flex justify-between items-center">
+                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
+                        <Input title={'Unit Name'} name='unitName' isRequired='required' />
+                        <Input title={'Description'} name='unitDescription' isRequired='required' />
+                        <Select title={'Unit Type'} name='unitUnitType' isRequired='required' />
+                    </div>
+                </div>
+            </form>
 
             <table class="table table-zebra table-compact w-full">
                 <thead>
@@ -44,15 +79,32 @@ const UnitTypes = () => {
                     }
                 </thead>
                 <tbody>
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Pharmacy`, `Admin`, `2-10-22`, `Null`, `Null`, `Edit / Delete`]} />
-                </tbody>
-                <tfoot>
                     {
-                        tableHead
+                        unitTypes.map((category, index) =>
+                            <TableRow
+                                key={category._id}
+                                tableRowsData={
+                                    [
+                                        index + 1,
+                                        category.name,
+                                        category.description,
+                                        category.type,
+                                        category.addedBy,
+                                        category.addedTime,
+                                        category.updatedBy,
+                                        category.updatedTime,
+                                        <span className='flex items-center gap-x-1'>
+                                            <EditButton />
+                                            <DeleteButton
+                                                deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/setup/unitTypes/'
+                                                itemId={category._id} />
+                                        </span>
+                                    ]
+                                } />)
                     }
-                </tfoot>
+                </tbody>
             </table>
-        </section >
+        </section>
     );
 };
 
