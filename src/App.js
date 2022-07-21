@@ -17,10 +17,8 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Dashboard from './pages/Dashboard/Dashboard';
 import DashboardSummary from './pages/Dashboard/DashboardSummary';
-import RequiredItems from './pages/Dashboard/RequiredItems';
-import Returns from './pages/Dashboard/Returns';
+import Customers from './pages/Dashboard/Returns/Customers';
 import Employees from './pages/Dashboard/Employees';
-import Customers from './pages/Dashboard/Customers';
 import Suppliers from './pages/Dashboard/Suppliers';
 import Profile from './pages/User/Profile';
 import Settings from './pages/User/Settings';
@@ -37,6 +35,7 @@ import PurchaseNonPharmacyProducts from './pages/Dashboard/Purchase/NonPharmacy/
 import PurchasePharmacyProducts from './pages/Dashboard/Purchase/Pharmacy/PurchasePharmacyProducts';
 import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacy/NonPharmacyItems';
 import PharmacyItems from './pages/Dashboard/RequestedItems/Pharmacy/PharmacyItems';
+import ExpireOrDamage from './pages/Dashboard/Returns/ExpireOrDamage';
 
 function App() {
   return (
@@ -72,8 +71,8 @@ function App() {
           <Route path='setup/category' element={<Category />} />
           <Route path='setup/unit-type' element={<UnitType />} />
           <Route path='setup/company' element={<Company />} />
-          <Route path='returns/customer' element={<Returns />} />
-          <Route path='returns/expire-or-damage' element={<Returns />} />
+          <Route path='returns/customer' element={<Customers />} />
+          <Route path='returns/expire-or-damage' element={<ExpireOrDamage />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
           <Route path='suppliers/list' element={<Suppliers />} />
