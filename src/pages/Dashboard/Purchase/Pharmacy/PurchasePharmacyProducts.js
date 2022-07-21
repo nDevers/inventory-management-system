@@ -48,11 +48,16 @@ const PurchasePharmacyProducts = () => {
     }
 
     return (
-        <section className='p-1'>
-            <div className="flex justify-between mb-6">
-                <NewButton modalId={'create-new-product'} />
-                <PrintButton />
+        <section className='p-4'>
+            <div className="flex justify-between items-center mb-8">
+                <h2 className='text-2xl text-center font-bold'>Purchase Pharmacy Products</h2>
+
+                <div className='flex items-center gap-x-4'>
+                    <SaveButton btnSize='btn-xs' />
+                    <PrintButton btnSize='btn-xs' />
+                </div>
             </div>
+
 
             <input type="checkbox" id="create-new-product" class="modal-toggle" />
             <label for="create-new-product" class="modal cursor-pointer">
