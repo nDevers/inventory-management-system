@@ -17,7 +17,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Dashboard from './pages/Dashboard/Dashboard';
 import DashboardSummary from './pages/Dashboard/DashboardSummary';
-import Customers from './pages/Dashboard/Returns/Customers';
+import Customers from './pages/Dashboard/Customers';
 import Employees from './pages/Dashboard/Employees';
 import Suppliers from './pages/Dashboard/Suppliers';
 import Profile from './pages/User/Profile';
@@ -36,6 +36,7 @@ import PurchasePharmacyProducts from './pages/Dashboard/Purchase/Pharmacy/Purcha
 import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacy/NonPharmacyItems';
 import PharmacyItems from './pages/Dashboard/RequestedItems/Pharmacy/PharmacyItems';
 import ExpireOrDamage from './pages/Dashboard/Returns/ExpireOrDamage';
+import CustomersReturns from './pages/Dashboard/Returns/Customers/CustomersReturns';
 
 function App() {
   return (
@@ -71,7 +72,7 @@ function App() {
           <Route path='setup/category' element={<Category />} />
           <Route path='setup/unit-type' element={<UnitType />} />
           <Route path='setup/company' element={<Company />} />
-          <Route path='returns/customer' element={<Customers />} />
+          <Route path='returns/customer' element={<CustomersReturns />} />
           <Route path='returns/expire-or-damage' element={<ExpireOrDamage />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
