@@ -2,17 +2,32 @@ import React from 'react';
 import DeleteButton from '../../../../components/Buttons/DeleteButton';
 import EditButton from '../../../../components/Buttons/EditButton';
 
-const PharmacyProductsRow = ({ index, pharmacyProduct }) => {
-    const deletePharmacyProduct = _id => {
-        const url = `https://stringlab-ims-server.herokuapp.com/api/products/pharmacy${_id}`;
-        fetch(url, {
-            method: 'DELETE'
+const PharmacyProductsRow = ({ index, pharmacyProduct, modalId }) => {
+    const updatePharmacyProduct = event => {
+        event.preventDefault();
+
+        const tradeName = event?.target?.tradeName?.value;
+        const genericName = event?.target?.genericName?.value;
+        const strength = event?.target?.strength?.value;
+        const packSize = event?.target?.packSize?.value;
+        const packTp = event?.target?.packTp?.value;
+        const unitTp = event?.target?.unitTp?.value;
+        const productAddedBy = 'admin';
+        const productAddedToDBAt = new Date();
+
+        const productDetails = { tradeName, genericName, strength, packSize, packTp, unitTp, productAddedBy, productAddedToDBAt };
+
+        // send data to server
+        fetch('http://localhost:5000/api/products/pharmacy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(productDetails)
         })
             .then(res => res.json())
             .then(data => {
-                if (data.deletedCount > 0) {
-                    console.log('Deleted');
-                };
+                console.log('success');
             });
     };
 
@@ -31,7 +46,7 @@ const PharmacyProductsRow = ({ index, pharmacyProduct }) => {
         `${pharmacyProduct.unitTp}`,
         `MRP`,
         <span className='flex items-center gap-x-1'>
-            <EditButton />
+            <EditButton modalId={modalId} itemId={pharmacyProduct._id} />
             <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/products/pharmacy/' itemId={pharmacyProduct._id} />
         </span>
     ];
