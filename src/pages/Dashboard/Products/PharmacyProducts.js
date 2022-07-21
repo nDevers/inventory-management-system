@@ -89,7 +89,7 @@ const PharmacyProducts = () => {
 
     return (
         <section className='p-4'>
-            <div className="flex justify-between items-center mb-8">
+            <div className="flex justify-between items-center mb-6">
                 <h2 className='text-2xl text-center font-bold'>Pharmacy Products</h2>
 
                 <div className='flex items-center gap-x-4'>
