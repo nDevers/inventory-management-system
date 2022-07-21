@@ -1,19 +1,19 @@
 import React from 'react';
-import SaveButton from '../../../../components/Buttons/SaveButton';
-import CancelButton from '../../../../components/Buttons/CancelButton';
-import PrintButton from '../../../../components/Buttons/PrintButton';
-import NewButton from '../../../../components/Buttons/NewButton';
-import Input from '../../../../components/FormComponents/Input';
-import Select from '../../../../components/FormComponents/Select';
-import DoubleInput from '../../../../components/FormComponents/DoubleInput';
-import ModalCloseButton from '../../../../components/Buttons/ModalCloseButton';
-import ModalHeading from '../../../../components/Headings/ModalHeading';
+import SaveButton from '../../../components/Buttons/SaveButton';
+import CancelButton from '../../../components/Buttons/CancelButton';
+import PrintButton from '../../../components/Buttons/PrintButton';
+import NewButton from '../../../components/Buttons/NewButton';
+import Input from '../../../components/FormComponents/Input';
+import Select from '../../../components/FormComponents/Select';
+import DoubleInput from '../../../components/FormComponents/DoubleInput';
+import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
+import ModalHeading from '../../../components/Headings/ModalHeading';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import RefreshButton from '../../../../components/Buttons/RefreshButton';
-import TableRow from '../../../../components/TableRow';
-import EditButton from '../../../../components/Buttons/EditButton';
-import DeleteButton from '../../../../components/Buttons/DeleteButton';
+import RefreshButton from '../../../components/Buttons/RefreshButton';
+import TableRow from '../../../components/TableRow';
+import EditButton from '../../../components/Buttons/EditButton';
+import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
 
 const PharmacyProducts = () => {
