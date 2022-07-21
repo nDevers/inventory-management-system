@@ -112,8 +112,8 @@ const Sidebar = () => {
 
                                     <LinkComponents
                                         to={'returns/expire-or-damage'}
-                                        icon={<RiFileDamageFill className='Expire / Damage' />}
-                                        name={'Customer'} />
+                                        icon={<RiFileDamageFill className='text-lg' />}
+                                        name={'Expire / Damage'} />
                                 ]
                             } />
 
