@@ -24,7 +24,7 @@ import Settings from './pages/User/Settings';
 import TermsAndConditions from './pages/Authentication/TermsAndConditions';
 import PrivacyPolicy from './pages/Authentication/PrivacyPolicy';
 import PharmacyProducts from './pages/Dashboard/Products/PharmacyProducts';
-import NonPharmacyProducts from './pages/Dashboard/Products/NonPharmacy/NonPharmacyProducts';
+import NonPharmacyProducts from './pages/Dashboard/Products/NonPharmacyProducts';
 import Categories from './pages/Dashboard/Setup/Categories';
 import UnitTypes from './pages/Dashboard/Setup/UnitTypes';
 import Companies from './pages/Dashboard/Setup/Companies';
