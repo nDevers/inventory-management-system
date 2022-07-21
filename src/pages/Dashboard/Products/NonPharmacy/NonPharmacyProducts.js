@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import NonPharmacyProductsRow from './NonPharmacyProductsRow';
 import PrintButton from '../../../../components/Buttons/PrintButton';
 import SaveButton from '../../../../components/Buttons/SaveButton';
@@ -48,6 +48,14 @@ const PharmacyProducts = () => {
                 console.log('success');
             });
     };
+
+    const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/nonpharmacy')
+            .then(res => res.json())
+            .then(products => setNonPharmacyProducts(products));
+    }, [nonPharmacyProducts]);
 
     return (
         <section>
@@ -125,10 +133,9 @@ const PharmacyProducts = () => {
                     }
                 </thead>
                 <tbody>
-                    <NonPharmacyProductsRow />
-                    <NonPharmacyProductsRow />
-                    <NonPharmacyProductsRow />
-                    <NonPharmacyProductsRow />
+                    {
+                        nonPharmacyProducts.map((pharmacyProduct, index) => <NonPharmacyProductsRow key={pharmacyProduct?._id} index={index} pharmacyProduct={pharmacyProduct} modalId={'update-pharmacy-product'} />)
+                    }
                 </tbody>
                 <tfoot>
                     {
