@@ -1,12 +1,12 @@
 import React from 'react';
 import { FiRefreshCcw } from 'react-icons/fi';
 
-const RefreshButton = () => {
+const RefreshButton = ({ btnSize }) => {
     return (
-        <button class="btn btn-sm flex gap-x-2">
+        <button class={`btn ${btnSize} flex gap-x-2`} >
             <FiRefreshCcw className='text-md' />
             Refresh
-        </button>
+        </button >
     );
 };
 

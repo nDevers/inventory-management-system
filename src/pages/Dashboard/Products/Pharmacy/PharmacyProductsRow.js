@@ -32,18 +32,18 @@ const PharmacyProductsRow = ({ index, pharmacyProduct, modalId }) => {
     };
 
     const tableRowsData = [
-        `${index}`,
+        index,
         `Code Name`,
-        `${pharmacyProduct.tradeName}`,
+        pharmacyProduct.tradeName,
         `Category Name`,
-        `${pharmacyProduct.strength}`,
+        pharmacyProduct.strength,
         `Company Name`,
         `${'Available in Stock'}`,
         `Pack Type`,
-        `${pharmacyProduct.packSize}`,
-        `${pharmacyProduct.packTp}`,
+        pharmacyProduct.packSize,
+        pharmacyProduct.packTp,
         `MRP`,
-        `${pharmacyProduct.unitTp}`,
+        pharmacyProduct.unitTp,
         `MRP`,
         <span className='flex items-center gap-x-1'>
             <EditButton modalId={modalId} itemId={pharmacyProduct._id} />
