@@ -3,6 +3,19 @@ import DeleteButton from '../../../../components/Buttons/DeleteButton';
 import EditButton from '../../../../components/Buttons/EditButton';
 
 const PharmacyProductsRow = ({ index, pharmacyProduct }) => {
+    const deletePharmacyProduct = _id => {
+        const url = `https://stringlab-ims-server.herokuapp.com/api/products/pharmacy${_id}`;
+        fetch(url, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    console.log('Deleted');
+                };
+            });
+    };
+
     const tableRowsData = [
         `${index}`,
         `Code Name`,
@@ -19,7 +32,7 @@ const PharmacyProductsRow = ({ index, pharmacyProduct }) => {
         `MRP`,
         <span className='flex items-center gap-x-1'>
             <EditButton />
-            <DeleteButton />
+            <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/products/pharmacy/' itemId={pharmacyProduct._id} />
         </span>
     ];
 

@@ -56,7 +56,7 @@ const PharmacyProducts = () => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
             .then(res => res.json())
             .then(products => setPharmacyProducts(products));
-    }, []);
+    }, [pharmacyProducts]);
 
     return (
         <section className='p-1'>
