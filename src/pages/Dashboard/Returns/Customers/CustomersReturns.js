@@ -20,10 +20,17 @@ const CustomerReturns = () => {
     </tr>;
 
     return (
-        <div>
-            <h2 className='text-2xl text-center font-bold'>Customers Returns</h2>
+        <section className='p-4'>
+            <div className="flex justify-between items-center mb-4">
+                <h2 className='text-2xl text-center font-bold'>Customers Returns</h2>
 
-            <div className='grid grid-cols-6 gap-4 mb-2'>
+                <div className='flex items-center gap-x-4'>
+                    <SaveButton btnSize='btn-xs' />
+                    <PrintButton btnSize='btn-xs' />
+                </div>
+            </div>
+
+            <div className='grid grid-cols-6 gap-4 mb-4'>
                 <Select title={'From'} />
                 <Select title={'To'} />
                 <Select title={'Period'} />
@@ -242,7 +249,7 @@ const CustomerReturns = () => {
                     }
                 </tfoot>
             </table>
-        </div>
+        </section>
     );
 };
 
