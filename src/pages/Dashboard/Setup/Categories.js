@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PrintButton from '../../../components/Buttons/PrintButton';
-import NewButton from '../../../components/Buttons/NewButton';
-import ModalHeading from '../../../components/Headings/ModalHeading';
 import Input from '../../../components/FormComponents/Input';
 import Select from '../../../components/FormComponents/Select';
-import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
 import TableRow from '../../../components/TableRow';
+import SaveButton from '../../../components/Buttons/SaveButton';
+import EditButton from '../../../components/Buttons/EditButton';
+import DeleteButton from '../../../components/Buttons/DeleteButton';
 
 const Categories = () => {
-    const tableHeadItems = ['SN', 'Name', 'Description', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
+    const tableHeadItems = ['SN', 'Name', 'Description', 'Type', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
 
     const tableHead = <tr>
         {
@@ -16,26 +16,61 @@ const Categories = () => {
         }
     </tr>;
 
+    const addCategory = event => {
+        event.preventDefault();
+
+        const name = event?.target?.categoryName?.value;
+        const description = event?.target?.categoryDescription?.value;
+        const type = event?.target?.categoryType?.value;
+        const addedBy = 'admin';
+        const addedTime = new Date();
+        const updatedBy = 'admin';
+        const updatedTime = new Date();
+
+        const categoryDetails = { name, description, type, addedBy, addedTime, updatedBy, updatedTime };
+
+        // send data to server
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/categories', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(categoryDetails)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success');
+            });
+    };
+
+    const [categories, setCategories] = useState([]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/categories')
+            .then(res => res.json())
+            .then(products => setCategories(products));
+    }, [categories]);
+
     return (
-        <section>
-            <input type="checkbox" id="create-new-category" class="modal-toggle" />
-            <label for="create-new-category" class="modal cursor-pointer">
-                <label class="modal-box w-2/5 h-2/5 max-w-4xl relative p-4" for="">
-                    <ModalCloseButton modalId={'create-new-category'} />
+        <section className='p-4'>
+            <form onSubmit={addCategory}>
+                <div className="flex justify-between items-center">
+                    <h2 className='text-2xl text-center font-bold'>Categories</h2>
 
-                    <ModalHeading modalHeading={'Create a Category'} />
-
-                    <div className='grid grid-cols-2 gap-x-4 place-items-center'>
-                        <Input title={'Name'} />
-                        <Select title={'Type'} />
+                    <div className='flex items-center gap-x-4'>
+                        <SaveButton btnSize='btn-xs' />
+                        <PrintButton btnSize='btn-xs' />
                     </div>
-                </label>
-            </label>
+                </div>
 
-            <div className="flex justify-between mb-6">
-                <NewButton modalId={'create-new-category'} />
-                <PrintButton />
-            </div>
+                <div className="flex justify-between items-center">
+                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
+                        <Input title={'Category Name'} name='categoryName' isRequired='required' />
+                        <Input title={'Description'} name='categoryDescription' isRequired='required' />
+                        <Select title={'Category Type'} name='categoryType' isRequired='required' />
+                    </div>
+                </div>
+            </form>
 
             <table class="table table-zebra table-compact w-full">
                 <thead>
@@ -44,34 +79,32 @@ const Categories = () => {
                     }
                 </thead>
                 <tbody>
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Box of Items`, `Admin`, `2-10-22`, `Null`, `Null`]} />
-                </tbody>
-                <tfoot>
                     {
-                        tableHead
+                        categories.map((category, index) =>
+                            <TableRow
+                                key={category._id}
+                                tableRowsData={
+                                    [
+                                        index + 1,
+                                        category.name,
+                                        category.description,
+                                        category.type,
+                                        category.addedBy,
+                                        category.addedTime,
+                                        category.updatedBy,
+                                        category.updatedTime,
+                                        <span className='flex items-center gap-x-1'>
+                                            <EditButton />
+                                            <DeleteButton
+                                                deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/setup/categories/'
+                                                itemId={category._id} />
+                                        </span>
+                                    ]
+                                } />)
                     }
-                </tfoot>
+                </tbody>
             </table>
-        </section >
+        </section>
     );
 };
 
