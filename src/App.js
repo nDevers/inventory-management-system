@@ -38,6 +38,7 @@ import PharmacyItems from './pages/Dashboard/RequestedItems/Pharmacy/PharmacyIte
 import CustomersReturns from './pages/Dashboard/Returns/Customers/CustomersReturns';
 import ExpireOrDamageReturns from './pages/Dashboard/Returns/ExpireOrDamage/ExpireOrDamageReturns';
 import SuppliersList from './pages/Dashboard/Suppliers/List/SuppliersList';
+import SuppliersDocuments from './pages/Dashboard/Suppliers/Documents/SuppliersDocuments';
 
 function App() {
   return (
@@ -79,7 +80,7 @@ function App() {
           <Route path='customers' element={<Customers />} />
           <Route path='suppliers/list' element={<SuppliersList />} />
           <Route path='suppliers/payment' element={<Suppliers />} />
-          <Route path='suppliers/documents' element={<Suppliers />} />
+          <Route path='suppliers/documents' element={<SuppliersDocuments />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
