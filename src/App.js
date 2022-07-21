@@ -35,8 +35,8 @@ import PurchaseNonPharmacyProducts from './pages/Dashboard/Purchase/NonPharmacy/
 import PurchasePharmacyProducts from './pages/Dashboard/Purchase/Pharmacy/PurchasePharmacyProducts';
 import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacy/NonPharmacyItems';
 import PharmacyItems from './pages/Dashboard/RequestedItems/Pharmacy/PharmacyItems';
-import ExpireOrDamage from './pages/Dashboard/Returns/ExpireOrDamage';
 import CustomersReturns from './pages/Dashboard/Returns/Customers/CustomersReturns';
+import ExpireOrDamageReturns from './pages/Dashboard/Returns/ExpireOrDamage/ExpireOrDamageReturns';
 
 function App() {
   return (
@@ -73,7 +73,7 @@ function App() {
           <Route path='setup/unit-type' element={<UnitType />} />
           <Route path='setup/company' element={<Company />} />
           <Route path='returns/customer' element={<CustomersReturns />} />
-          <Route path='returns/expire-or-damage' element={<ExpireOrDamage />} />
+          <Route path='returns/expire-or-damage' element={<ExpireOrDamageReturns />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
           <Route path='suppliers/list' element={<Suppliers />} />
