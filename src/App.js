@@ -19,7 +19,6 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import DashboardSummary from './pages/Dashboard/DashboardSummary';
 import Customers from './pages/Dashboard/Customers/Customers';
 import Employees from './pages/Dashboard/Employees/Employees';
-import Suppliers from './pages/Dashboard/Suppliers';
 import Profile from './pages/User/Profile';
 import Settings from './pages/User/Settings';
 import TermsAndConditions from './pages/Authentication/TermsAndConditions';
@@ -39,6 +38,7 @@ import CustomersReturns from './pages/Dashboard/Returns/Customers/CustomersRetur
 import ExpireOrDamageReturns from './pages/Dashboard/Returns/ExpireOrDamage/ExpireOrDamageReturns';
 import SuppliersList from './pages/Dashboard/Suppliers/List/SuppliersList';
 import SuppliersDocuments from './pages/Dashboard/Suppliers/Documents/SuppliersDocuments';
+import SuppliersPayments from './pages/Dashboard/Suppliers/Payments/SuppliersPayments';
 
 function App() {
   return (
@@ -79,7 +79,7 @@ function App() {
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
           <Route path='suppliers/list' element={<SuppliersList />} />
-          <Route path='suppliers/payment' element={<Suppliers />} />
+          <Route path='suppliers/payment' element={<SuppliersPayments />} />
           <Route path='suppliers/documents' element={<SuppliersDocuments />} />
         </Route>
         <Route path="*" element={<NotFound />} />
