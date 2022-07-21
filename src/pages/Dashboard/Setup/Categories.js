@@ -7,7 +7,7 @@ import Select from '../../../components/FormComponents/Select';
 import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
 import TableRow from '../../../components/TableRow';
 
-const Category = () => {
+const Categories = () => {
     const tableHeadItems = ['SN', 'Name', 'Description', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
 
     const tableHead = <tr>
@@ -75,4 +75,4 @@ const Category = () => {
     );
 };
 
-export default Category;
+export default Categories;

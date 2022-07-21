@@ -4,11 +4,12 @@ import NewButton from '../../../components/Buttons/NewButton';
 import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
 import ModalHeading from '../../../components/Headings/ModalHeading';
 import Input from '../../../components/FormComponents/Input';
-import TextArea from '../../../components/FormComponents/TextArea';
 import TableRow from '../../../components/TableRow';
+import DeleteButton from '../../../components/Buttons/DeleteButton';
+import EditButton from '../../../components/Buttons/EditButton';
 
-const UnitType = () => {
-    const tableHeadItems = ['SN', 'Name', 'Type', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
+const Companies = () => {
+    const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
 
     const tableHead = <tr>
         {
@@ -18,22 +19,26 @@ const UnitType = () => {
 
     return (
         <section>
-            <input type="checkbox" id="create-new-unit-type" class="modal-toggle" />
-            <label for="create-new-unit-type" class="modal cursor-pointer">
+            <input type="checkbox" id="add-new-company" class="modal-toggle" />
+            <label for="add-new-company" class="modal cursor-pointer">
                 <label class="modal-box w-2/5 h-2/5 max-w-4xl relative p-4" for="">
-                    <ModalCloseButton modalId={'create-new-unit-type'} />
+                    <ModalCloseButton modalId={'add-new-company'} />
 
-                    <ModalHeading modalHeading={'Create a Unit Type'} />
+                    <ModalHeading modalHeading={'Add a Company'} />
 
-                    <div className='grid grid-cols-1 gap-y-4 place-items-center'>
+
+                    <div className='grid grid-cols-2 gap-x-4 place-items-center'>
                         <Input title={'Name'} />
-                        <TextArea title={'Description'} />
+                        <Input title={'Phone'} />
+                        <Input title={'Website'} />
+                        <Input title={'Email'} />
+                        <Input title={'Address'} />
                     </div>
                 </label>
             </label>
 
             <div className="flex justify-between mb-6">
-                <NewButton modalId={'create-new-unit-type'} />
+                <NewButton modalId={'add-new-company'} />
                 <PrintButton />
             </div>
 
@@ -44,7 +49,7 @@ const UnitType = () => {
                     }
                 </thead>
                 <tbody>
-                    <TableRow tableRowsData={[`1`, `Tablet`, `Pharmacy`, `Admin`, `2-10-22`, `Null`, `Null`, `Edit / Delete`]} />
+                    <TableRow tableRowsData={[`1`, `ACMI`, `01700000`, `www.website.com`, `mail@email.com`, `5 / A, Dhaka`, `Admin`, `10-02-2022`, `Null`, `Null`, `DeleteButton, EditButton`]} />
                 </tbody>
                 <tfoot>
                     {
@@ -56,4 +61,4 @@ const UnitType = () => {
     );
 };
 
-export default UnitType;
+export default Companies;

@@ -25,9 +25,9 @@ import TermsAndConditions from './pages/Authentication/TermsAndConditions';
 import PrivacyPolicy from './pages/Authentication/PrivacyPolicy';
 import PharmacyProducts from './pages/Dashboard/Products/Pharmacy/PharmacyProducts';
 import NonPharmacyProducts from './pages/Dashboard/Products/NonPharmacy/NonPharmacyProducts';
-import Category from './pages/Dashboard/Setup/Category';
-import UnitType from './pages/Dashboard/Setup/UnitType';
-import Company from './pages/Dashboard/Setup/Company';
+import Categories from './pages/Dashboard/Setup/Categories';
+import UnitTypes from './pages/Dashboard/Setup/UnitTypes';
+import Companies from './pages/Dashboard/Setup/Companies';
 import PharmacyOrders from './pages/Dashboard/Orders/Pharmacy/PharmacyOrders';
 import NonPharmacyOrders from './pages/Dashboard/Orders/NonPharmacy/NonPharmacyOrders';
 import PurchaseNonPharmacyProducts from './pages/Dashboard/Purchase/NonPharmacy/PurchaseNonPharmacyProducts';
@@ -71,11 +71,11 @@ function App() {
           <Route path='orders/non-pharmacy' element={<NonPharmacyOrders />} />
           <Route path='purchases/pharmacy' element={<PurchasePharmacyProducts />} />
           <Route path='purchases/non-pharmacy' element={<PurchaseNonPharmacyProducts />} />
-          <Route path='setup/category' element={<Category />} />
-          <Route path='setup/unit-type' element={<UnitType />} />
-          <Route path='setup/company' element={<Company />} />
-          <Route path='returns/customer' element={<CustomersReturns />} />
-          <Route path='returns/expire-or-damage' element={<ExpireOrDamageReturns />} />
+          <Route path='setup/categories' element={<Categories />} />
+          <Route path='setup/unit-types' element={<UnitTypes />} />
+          <Route path='setup/companies' element={<Companies />} />
+          <Route path='returns/customers' element={<CustomersReturns />} />
+          <Route path='returns/expires-or-damages' element={<ExpireOrDamageReturns />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
           <Route path='suppliers/list' element={<SuppliersList />} />

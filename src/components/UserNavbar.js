@@ -98,14 +98,14 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
-                                        to={'returns/customer'}
+                                        to={'returns/customers'}
                                         icon={<FaUser className='text-lg' />}
-                                        name={'Customer'} />,
+                                        name={'Customers'} />,
 
                                     <LinkComponents
-                                        to={'returns/expire-or-damage'}
-                                        icon={<RiFileDamageFill className='Expire / Damage' />}
-                                        name={'Customer'} />
+                                        to={'returns/expires-or-damages'}
+                                        icon={<RiFileDamageFill className='text-lg' />}
+                                        name={'Expires / Damages'} />
                                 ]
                             } />
 
@@ -115,19 +115,19 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
-                                        to={'setup/category'}
+                                        to={'setup/categories'}
                                         icon={<BiCategory className='text-lg' />}
-                                        name={'Category'} />,
+                                        name={'Categories'} />,
 
                                     <LinkComponents
-                                        to={'setup/unit-type'}
+                                        to={'setup/unit-types'}
                                         icon={<BiUnite className='text-lg' />}
-                                        name={'Unit Type'} />,
+                                        name={'Unit Types'} />,
 
                                     <LinkComponents
-                                        to={'setup/company'}
+                                        to={'setup/companies'}
                                         icon={<AiFillCopyrightCircle className='text-lg' />}
-                                        name={'Company'} />
+                                        name={'Companies'} />
                                 ]
                             } />
 
