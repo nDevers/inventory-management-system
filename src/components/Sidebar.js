@@ -7,10 +7,11 @@ import { HiDocumentText } from 'react-icons/hi';
 import { MdLocalPharmacy, MdSpaceDashboard } from 'react-icons/md';
 import { TbTruckReturn, TbTruckDelivery } from 'react-icons/tb';
 import { RiProductHuntFill, RiAdminFill, RiShoppingCartFill, RiProfileFill, RiFileDamageFill } from 'react-icons/ri';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import LinkComponents from './NavbarComponents/LinkComponents';
 import DetailsComponent from './NavbarComponents/DetailsComponent';
 import UserNavbar from './UserNavbar';
+import logo from '../Assets/logo.png';
 
 const Sidebar = () => {
     return (
@@ -23,144 +24,147 @@ const Sidebar = () => {
             <div class="drawer-side bg-green-300 p-0 m-0">
                 <label for="dashboard" class="drawer-overlay"></label>
                 <div class="flex flex-col justify-between">
-                    <div>
-                        <nav class="flex flex-col mt-6 space-y-1">
-                            <LinkComponents to={''} icon={<MdSpaceDashboard className='text-lg' />} name={'Dashboard'} />
+                    <nav class="flex flex-col mt-6 space-y-1">
+                        <Link class="btn btn-ghost text-xl uppercase flex items-center mb-8" to='/'>
+                            <img className='w-12' src={logo} alt="logo" />
+                            String LAB
+                        </Link>
 
-                            <DetailsComponent
-                                icon={<RiProductHuntFill className='text-lg' />}
-                                name={'Products'}
-                                subMenus={
-                                    [
-                                        <LinkComponents
-                                            to={'products/pharmacy'}
-                                            icon={<MdLocalPharmacy className='text-lg' />}
-                                            name={'Pharmacy'} />,
+                        <LinkComponents to={''} icon={<MdSpaceDashboard className='text-lg' />} name={'Dashboard'} />
 
-                                        <LinkComponents
-                                            to={'products/non-pharmacy'}
-                                            icon={<RiProfileFill className='text-lg' />}
-                                            name={'Non Pharmacy'} />
-                                    ]
-                                } />
+                        <DetailsComponent
+                            icon={<RiProductHuntFill className='text-lg' />}
+                            name={'Products'}
+                            subMenus={
+                                [
+                                    <LinkComponents
+                                        to={'products/pharmacy'}
+                                        icon={<MdLocalPharmacy className='text-lg' />}
+                                        name={'Pharmacy'} />,
 
-                            <DetailsComponent
-                                icon={<BiGitPullRequest className='text-lg' />}
-                                name={'Requested Items'}
-                                subMenus={
-                                    [
-                                        <LinkComponents
-                                            to={'requested-items/pharmacy'}
-                                            icon={<MdLocalPharmacy className='text-lg' />}
-                                            name={'Pharmacy'} />,
+                                    <LinkComponents
+                                        to={'products/non-pharmacy'}
+                                        icon={<RiProfileFill className='text-lg' />}
+                                        name={'Non Pharmacy'} />
+                                ]
+                            } />
 
-                                        <LinkComponents
-                                            to={'requested-items/non-pharmacy'}
-                                            icon={<RiProfileFill className='text-lg' />}
-                                            name={'Non Pharmacy'} />
-                                    ]
-                                } />
+                        <DetailsComponent
+                            icon={<BiGitPullRequest className='text-lg' />}
+                            name={'Requested Items'}
+                            subMenus={
+                                [
+                                    <LinkComponents
+                                        to={'requested-items/pharmacy'}
+                                        icon={<MdLocalPharmacy className='text-lg' />}
+                                        name={'Pharmacy'} />,
 
-                            <DetailsComponent
-                                icon={<RiShoppingCartFill className='text-lg' />}
-                                name={'Orders'}
-                                subMenus={
-                                    [
-                                        <LinkComponents
-                                            to={'orders/pharmacy'}
-                                            icon={<MdLocalPharmacy className='text-lg' />}
-                                            name={'Pharmacy'} />,
+                                    <LinkComponents
+                                        to={'requested-items/non-pharmacy'}
+                                        icon={<RiProfileFill className='text-lg' />}
+                                        name={'Non Pharmacy'} />
+                                ]
+                            } />
 
-                                        <LinkComponents
-                                            to={'orders/non-pharmacy'}
-                                            icon={<RiProfileFill className='text-lg' />}
-                                            name={'Non Pharmacy'} />
-                                    ]
-                                } />
+                        <DetailsComponent
+                            icon={<RiShoppingCartFill className='text-lg' />}
+                            name={'Orders'}
+                            subMenus={
+                                [
+                                    <LinkComponents
+                                        to={'orders/pharmacy'}
+                                        icon={<MdLocalPharmacy className='text-lg' />}
+                                        name={'Pharmacy'} />,
 
-                            <DetailsComponent
-                                icon={<AiFillCreditCard className='text-lg' />}
-                                name={'Purchases'}
-                                subMenus={
-                                    [
-                                        <LinkComponents
-                                            to={'purchases/pharmacy'}
-                                            icon={<MdLocalPharmacy className='text-lg' />}
-                                            name={'Pharmacy'} />,
+                                    <LinkComponents
+                                        to={'orders/non-pharmacy'}
+                                        icon={<RiProfileFill className='text-lg' />}
+                                        name={'Non Pharmacy'} />
+                                ]
+                            } />
 
-                                        <LinkComponents
-                                            to={'purchases/non-pharmacy'}
-                                            icon={<RiProfileFill className='text-lg' />}
-                                            name={'Non Pharmacy'} />
-                                    ]
-                                } />
+                        <DetailsComponent
+                            icon={<AiFillCreditCard className='text-lg' />}
+                            name={'Purchases'}
+                            subMenus={
+                                [
+                                    <LinkComponents
+                                        to={'purchases/pharmacy'}
+                                        icon={<MdLocalPharmacy className='text-lg' />}
+                                        name={'Pharmacy'} />,
 
-                            <DetailsComponent
-                                icon={<TbTruckReturn className='text-lg' />}
-                                name={'Returns'}
-                                subMenus={
-                                    [
-                                        <LinkComponents
-                                            to={'returns/customer'}
-                                            icon={<FaUser className='text-lg' />}
-                                            name={'Customer'} />,
+                                    <LinkComponents
+                                        to={'purchases/non-pharmacy'}
+                                        icon={<RiProfileFill className='text-lg' />}
+                                        name={'Non Pharmacy'} />
+                                ]
+                            } />
 
-                                        <LinkComponents
-                                            to={'returns/expire-or-damage'}
-                                            icon={<RiFileDamageFill className='Expire / Damage' />}
-                                            name={'Customer'} />
-                                    ]
-                                } />
+                        <DetailsComponent
+                            icon={<TbTruckReturn className='text-lg' />}
+                            name={'Returns'}
+                            subMenus={
+                                [
+                                    <LinkComponents
+                                        to={'returns/customer'}
+                                        icon={<FaUser className='text-lg' />}
+                                        name={'Customer'} />,
 
-                            <DetailsComponent
-                                icon={<AiFillSetting className='text-lg' />}
-                                name={'Setup'}
-                                subMenus={
-                                    [
-                                        <LinkComponents
-                                            to={'setup/category'}
-                                            icon={<BiCategory className='text-lg' />}
-                                            name={'Category'} />,
+                                    <LinkComponents
+                                        to={'returns/expire-or-damage'}
+                                        icon={<RiFileDamageFill className='Expire / Damage' />}
+                                        name={'Customer'} />
+                                ]
+                            } />
 
-                                        <LinkComponents
-                                            to={'setup/unit-type'}
-                                            icon={<BiUnite className='text-lg' />}
-                                            name={'Unit Type'} />,
+                        <DetailsComponent
+                            icon={<AiFillSetting className='text-lg' />}
+                            name={'Setup'}
+                            subMenus={
+                                [
+                                    <LinkComponents
+                                        to={'setup/category'}
+                                        icon={<BiCategory className='text-lg' />}
+                                        name={'Category'} />,
 
-                                        <LinkComponents
-                                            to={'setup/company'}
-                                            icon={<AiFillCopyrightCircle className='text-lg' />}
-                                            name={'Company'} />
-                                    ]
-                                } />
+                                    <LinkComponents
+                                        to={'setup/unit-type'}
+                                        icon={<BiUnite className='text-lg' />}
+                                        name={'Unit Type'} />,
 
-                            <LinkComponents to={'employees'} icon={<RiAdminFill className='text-lg' />} name={'Employees'} />
+                                    <LinkComponents
+                                        to={'setup/company'}
+                                        icon={<AiFillCopyrightCircle className='text-lg' />}
+                                        name={'Company'} />
+                                ]
+                            } />
 
-                            <LinkComponents to={'customers'} icon={<FaUsers className='text-lg' />} name={'Customers'} />
+                        <LinkComponents to={'employees'} icon={<RiAdminFill className='text-lg' />} name={'Employees'} />
 
-                            <DetailsComponent
-                                icon={<TbTruckDelivery className='text-lg' />}
-                                name={'Suppliers'}
-                                subMenus={
-                                    [
-                                        <LinkComponents
-                                            to={'suppliers/list'}
-                                            icon={<FaThList className='text-md' />}
-                                            name={'List'} />,
+                        <LinkComponents to={'customers'} icon={<FaUsers className='text-lg' />} name={'Customers'} />
 
-                                        <LinkComponents
-                                            to={'suppliers/payment'}
-                                            icon={<BsCreditCard2BackFill className='text-lg' />}
-                                            name={'Payment'} />,
+                        <DetailsComponent
+                            icon={<TbTruckDelivery className='text-lg' />}
+                            name={'Suppliers'}
+                            subMenus={
+                                [
+                                    <LinkComponents
+                                        to={'suppliers/list'}
+                                        icon={<FaThList className='text-md' />}
+                                        name={'List'} />,
 
-                                        <LinkComponents
-                                            to={'suppliers/documents'}
-                                            icon={<HiDocumentText className='text-lg' />}
-                                            name={'Documents'} />
-                                    ]
-                                } />
-                        </nav>
-                    </div>
+                                    <LinkComponents
+                                        to={'suppliers/payment'}
+                                        icon={<BsCreditCard2BackFill className='text-lg' />}
+                                        name={'Payment'} />,
+
+                                    <LinkComponents
+                                        to={'suppliers/documents'}
+                                        icon={<HiDocumentText className='text-lg' />}
+                                        name={'Documents'} />
+                                ]
+                            } />
+                    </nav>
                 </div>
             </div>
         </div>

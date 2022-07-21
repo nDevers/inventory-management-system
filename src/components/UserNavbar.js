@@ -158,7 +158,7 @@ const UserNavbar = () => {
                             } />
                     </ul>
                 </div>
-                <Link class="btn btn-ghost text-xl uppercase flex items-center" to='/'>
+                <Link class="btn btn-ghost text-xl uppercase flex items-center md:hidden lg:hidden" to='/'>
                     <img className='w-12' src={logo} alt="logo" />
                     String LAB
                 </Link>
