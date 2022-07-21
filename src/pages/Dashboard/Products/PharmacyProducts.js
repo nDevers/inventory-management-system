@@ -57,7 +57,7 @@ const PharmacyProducts = () => {
         const productDetails = { tradeName, genericName, strength, category, company, stock, packType, purchaseUnitType, purchasePackSize, packTp, unitTp, purchaseVatPercent, purchaseVatTaka, purchaseDiscountPercent, purchaseDiscountTaka, salesUnitType, salePackSize, packMrp, unitMrp, salesVatPercent, salesVatTaka, salesDiscountPercent, salesDiscountTaka, addedBy, addedToDbAt };
 
         // send data to server
-        fetch('http://localhost:5000/api/products/pharmacy', {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
