@@ -1,5 +1,5 @@
 import React from 'react';
-import PharmacyProductsRow from './PharmacyProductsRow';
+import PharmacyItemsRow from './PharmacyItemsRow';
 import SaveButton from '../../../../components/Buttons/SaveButton';
 import CancelButton from '../../../../components/Buttons/CancelButton';
 import PrintButton from '../../../../components/Buttons/PrintButton';
@@ -12,7 +12,7 @@ import ModalHeading from '../../../../components/Headings/ModalHeading';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-const PharmacyProducts = () => {
+const PharmacyItems = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'TP', 'MRP', 'TP', 'MRP', 'Actions'];
 
     const tableHead = <tr>
@@ -197,7 +197,7 @@ const PharmacyProducts = () => {
                 </thead>
                 <tbody>
                     {
-                        pharmacyProducts.map((pharmacyProduct, index) => <PharmacyProductsRow key={pharmacyProduct?._id} index={index} pharmacyProduct={pharmacyProduct} modalId={'update-pharmacy-product'} />)
+                        pharmacyProducts.map((pharmacyProduct, index) => <PharmacyItemsRow key={pharmacyProduct?._id} index={index} pharmacyProduct={pharmacyProduct} modalId={'update-pharmacy-product'} />)
                     }
                 </tbody>
                 <tfoot>
@@ -210,4 +210,4 @@ const PharmacyProducts = () => {
     );
 };
 
-export default PharmacyProducts;
+export default PharmacyItems;

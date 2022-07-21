@@ -2,7 +2,7 @@ import React from 'react';
 import DeleteButton from '../../../../components/Buttons/DeleteButton';
 import EditButton from '../../../../components/Buttons/EditButton';
 
-const PharmacyProductsRow = ({ index, pharmacyProduct, modalId }) => {
+const PharmacyItemsRow = ({ index, pharmacyProduct, modalId }) => {
     const updatePharmacyProduct = event => {
         event.preventDefault();
 
@@ -61,4 +61,4 @@ const PharmacyProductsRow = ({ index, pharmacyProduct, modalId }) => {
     );
 };
 
-export default PharmacyProductsRow;
+export default PharmacyItemsRow;
