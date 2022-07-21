@@ -35,6 +35,7 @@ import PharmacyOrders from './pages/Dashboard/Orders/Pharmacy/PharmacyOrders';
 import NonPharmacyOrders from './pages/Dashboard/Orders/NonPharmacy/NonPharmacyOrders';
 import PurchaseNonPharmacyProducts from './pages/Dashboard/Purchase/NonPharmacy/PurchaseNonPharmacyProducts';
 import PurchasePharmacyProducts from './pages/Dashboard/Purchase/Pharmacy/PurchasePharmacyProducts';
+import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacy/NonPharmacyItems';
 
 function App() {
   return (
@@ -62,7 +63,7 @@ function App() {
           <Route path='products/pharmacy' element={<PharmacyProducts />} />
           <Route path='products/non-pharmacy' element={<NonPharmacyProducts />} />
           <Route path='requested-items/pharmacy' element={<RequiredItems />} />
-          <Route path='requested-items/non-pharmacy' element={<RequiredItems />} />
+          <Route path='requested-items/non-pharmacy' element={<NonPharmacyItems />} />
           <Route path='orders/pharmacy' element={<PharmacyOrders />} />
           <Route path='orders/non-pharmacy' element={<NonPharmacyOrders />} />
           <Route path='purchases/pharmacy' element={<PurchasePharmacyProducts />} />
