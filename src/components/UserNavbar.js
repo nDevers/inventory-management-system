@@ -16,7 +16,7 @@ import { HiDocumentText } from 'react-icons/hi';
 const UserNavbar = () => {
     return (
         <div class="navbar bg-blue-300">
-            <div class="navbar-start">
+            <div class="navbar-start p-0 m-0">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -158,36 +158,34 @@ const UserNavbar = () => {
                             } />
                     </ul>
                 </div>
-                <Link class="btn btn-ghost text-xl uppercase flex items-center md:hidden lg:hidden" to='/'>
+                <Link class="btn btn-ghost text-xl uppercase flex items-center md:hidden lg:hidden p-0 m-0" to='/'>
                     <img className='w-12' src={logo} alt="logo" />
                     String LAB
                 </Link>
             </div>
             <div class="navbar-center hidden lg:flex">
                 <ul class="menu menu-horizontal p-0">
-                    <div className='flex items-center'>
-                        <div class="text-sm breadcrumbs">
-                            <ul>
-                                <UserLinkComponents
-                                    to={'/'}
-                                    icon={<FaRegFolder className='text-md' />}
-                                    name={'Home'} />
+                    <div className='flex items-center text-sm breadcrumbs'>
+                        <ul>
+                            <UserLinkComponents
+                                to={'/'}
+                                icon={<FaRegFolder className='text-md' />}
+                                name={'Home'} />
 
-                                <UserLinkComponents
-                                    to={'/dashboard'}
-                                    icon={<MdSpaceDashboard className='text-md' />}
-                                    name={'Dashboard'} />
+                            <UserLinkComponents
+                                to={'/dashboard'}
+                                icon={<MdSpaceDashboard className='text-md' />}
+                                name={'Dashboard'} />
 
-                                <UserLinkComponents
-                                    to={'/dashboard'}
-                                    icon={<MdSpaceDashboard className='text-md' />}
-                                    name={'Dashboard'} />
-                            </ul>
-                        </div>
+                            <UserLinkComponents
+                                to={'/dashboard'}
+                                icon={<MdSpaceDashboard className='text-md' />}
+                                name={'Dashboard'} />
+                        </ul>
                     </div>
                 </ul>
             </div>
-            <div class="navbar-end">
+            <div class="navbar-end p-0 m-0">
                 <div class="dropdown dropdown-end">
                     <div tabindex="0" className='flex items-center cursor-pointer'>
                         <p className='mr-4'>User Name</p>
