@@ -48,11 +48,6 @@ const CustomerReturns = () => {
                     <button class="btn btn-xs capitalize">Canceled Order</button>
                 </div>
 
-                <div className='grid grid-cols-2 gap-2 mb-2'>
-                    <PrintButton btnSize='btn-xs' />
-
-                    <NewButton modalId={'create-new-order'} btnSize='btn-xs' />
-                </div>
                 <input type="checkbox" id="create-new-order" class="modal-toggle" />
                 <label for="create-new-order" class="modal cursor-pointer">
                     <label class="modal-box w-11/12 max-w-4xl relative" for="">
