@@ -15,13 +15,13 @@ import { HiDocumentText } from 'react-icons/hi';
 
 const UserNavbar = () => {
     return (
-        <div class="navbar bg-blue-300">
-            <div class="navbar-start p-0 m-0">
-                <div class="dropdown">
-                    <label tabindex="0" class="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+        <div className="navbar bg-blue-300">
+            <div className="navbar-start p-0 m-0">
+                <div className="dropdown">
+                    <label tabindex="0" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <LinkComponents to={''} icon={<MdSpaceDashboard className='text-lg' />} name={'Dashboard'} />
 
                         <DetailsComponent
@@ -158,13 +158,13 @@ const UserNavbar = () => {
                             } />
                     </ul>
                 </div>
-                <Link class="btn btn-ghost text-xl uppercase flex items-center md:hidden lg:hidden p-0 m-0" to='/'>
+                <Link className="btn btn-ghost text-xl uppercase flex items-center md:hidden lg:hidden p-0 m-0" to='/'>
                     <img className='w-12' src={logo} alt="logo" />
                     String LAB
                 </Link>
             </div>
-            <div class="navbar-center hidden lg:flex">
-                <ul class="menu menu-horizontal p-0">
+            <div className="navbar-center hidden lg:flex">
+                <ul className="menu menu-horizontal p-0">
                     <div className='flex items-center text-sm breadcrumbs'>
                         <ul>
                             <UserLinkComponents
@@ -185,22 +185,22 @@ const UserNavbar = () => {
                     </div>
                 </ul>
             </div>
-            <div class="navbar-end p-0 m-0">
-                <div class="dropdown dropdown-end">
+            <div className="navbar-end p-0 m-0">
+                <div className="dropdown dropdown-end">
                     <div tabindex="0" className='flex items-center cursor-pointer'>
                         <p className='mr-4'>User Name</p>
-                        <label class="btn btn-ghost btn-circle avatar">
-                            <div class="w-10 rounded-full">
+                        <label className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
                                 <img src="https://api.lorem.space/image/face?hash=33791" alt='user avatar' />
                             </div>
                         </label>
                     </div>
-                    <ul tabindex="0" class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <UserLinkComponents
                             to={'/profile'}
                             icon={<RiProfileLine className='text-lg' />}
                             name={'Profile'}
-                            extraComponent={<span class="badge">New</span>} />
+                            extraComponent={<span className="badge">New</span>} />
 
                         <UserLinkComponents
                             to={'/settings'}

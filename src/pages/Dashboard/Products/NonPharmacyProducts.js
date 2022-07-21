@@ -67,9 +67,9 @@ const NonPharmacyProducts = () => {
             .then(res => res.json())
             .then(data => {
                 toast(
-                    <div class="alert alert-success shadow-lg">
+                    <div className="alert alert-success shadow-lg">
                         <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             <span>{tradeName} added successfully.</span>
                         </div>
                     </div>
@@ -99,9 +99,9 @@ const NonPharmacyProducts = () => {
                 </div>
             </div>
 
-            <input type="checkbox" id="create-new-product" class="modal-toggle" />
-            <label for="create-new-product" class="modal cursor-pointer">
-                <label class="modal-box w-7/12 max-w-4xl relative" for="">
+            <input type="checkbox" id="create-new-product" className="modal-toggle" />
+            <label for="create-new-product" className="modal cursor-pointer">
+                <label className="modal-box w-7/12 max-w-4xl relative" for="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
                     <ModalHeading modalHeading={'Create a Pharmacy Product'} />
@@ -118,8 +118,8 @@ const NonPharmacyProducts = () => {
                             <Select title={'Pack Type'} name='packType' isRequired='required' />
                         </div>
 
-                        <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
-                            <div class="grid">
+                        <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                            <div className="grid">
                                 <h3 className='text-xl'>Purchase Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
@@ -135,12 +135,12 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Purchase VAT'} name1='purchaseVatPercent' name2='purchaseVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
                                 <DoubleInput title={'Purchase Discount'} name1='purchaseDiscountPercent' name2='purchaseDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
 
-                                <SaveButton extraClass={'mt-4'} />
+                                <SaveButton extraclassName={'mt-4'} />
                             </div>
 
-                            <div class="divider lg:divider-horizontal"></div>
+                            <div className="divider lg:divider-horizontal"></div>
 
-                            <div class="grid">
+                            <div className="grid">
                                 <h3 className='text-xl'>Sale Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
@@ -156,7 +156,7 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Sales VAT'} name1='salesVatPercent' name2='salesVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
                                 <DoubleInput title={'Sales Discount'} name1='salesDiscountPercent' name2='salesDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
 
-                                <CancelButton extraClass={'mt-4'} />
+                                <CancelButton extraclassName={'mt-4'} />
                             </div>
                         </div>
                     </form>
@@ -164,9 +164,9 @@ const NonPharmacyProducts = () => {
             </label>
 
             {/* update a pharmacy product */}
-            <input type="checkbox" id="update-pharmacy-product" class="modal-toggle" />
-            <label for="update-pharmacy-product" class="modal cursor-pointer">
-                <label class="modal-box w-11/12 max-w-4xl relative" for="">
+            <input type="checkbox" id="update-pharmacy-product" className="modal-toggle" />
+            <label for="update-pharmacy-product" className="modal cursor-pointer">
+                <label className="modal-box w-11/12 max-w-4xl relative" for="">
                     <ModalCloseButton modalId={'update-pharmacy-product'} />
 
                     <ModalHeading modalHeading={'Update a Pharmacy Product'} />
@@ -181,8 +181,8 @@ const NonPharmacyProducts = () => {
                             <Select title={'Company'} />
                         </div>
 
-                        <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
-                            <div class="grid">
+                        <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                            <div className="grid">
                                 <h3 className='text-xl'>Purchase Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
@@ -198,12 +198,12 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Purchase VAT'} />
                                 <DoubleInput title={'Purchase Discount'} />
 
-                                <SaveButton extraClass={'mt-4'} />
+                                <SaveButton extraclassName={'mt-4'} />
                             </div>
 
-                            <div class="divider lg:divider-horizontal"></div>
+                            <div className="divider lg:divider-horizontal"></div>
 
-                            <div class="grid">
+                            <div className="grid">
                                 <h3 className='text-xl'>Sale Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
@@ -219,14 +219,14 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Sales VAT'} />
                                 <DoubleInput title={'Sales Discount'} />
 
-                                <CancelButton extraClass={'mt-4'} />
+                                <CancelButton extraclassName={'mt-4'} />
                             </div>
                         </div>
                     </form>
                 </label>
             </label>
 
-            <table class="table table-zebra table-compact">
+            <table className="table table-zebra table-compact">
                 <thead>
                     {
                         tableHead

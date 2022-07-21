@@ -5,13 +5,13 @@ const LinkComponents = ({ to, icon, name }) => {
     return (
         <Link
             to={to}
-            class="flex items-center px-4 py-2 text-gray-700 rounded-lg"
+            className="flex items-center px-4 py-2 text-gray-700 rounded-lg"
         >
             {
                 icon
             }
 
-            <span class="ml-3 text-sm font-medium"> {name} </span>
+            <span className="ml-3 text-sm font-medium"> {name} </span>
         </Link>
     );
 };

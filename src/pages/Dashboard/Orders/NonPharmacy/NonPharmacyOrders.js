@@ -42,22 +42,22 @@ const NonPharmacyOrders = () => {
 
             <div className='flex justify-between gap-4 text-xs'>
                 <div className='grid grid-cols-5 gap-2 mb-4'>
-                    <button class="btn btn-xs capitalize">Daily Product Order</button>
-                    <button class="btn btn-xs capitalize">Monthly Product Order</button>
-                    <button class="btn btn-xs capitalize">Supplier Wise Product Order</button>
-                    <button class="btn btn-xs capitalize">Product Order</button>
-                    <button class="btn btn-xs capitalize">Canceled Order</button>
+                    <button className="btn btn-xs capitalize">Daily Product Order</button>
+                    <button className="btn btn-xs capitalize">Monthly Product Order</button>
+                    <button className="btn btn-xs capitalize">Supplier Wise Product Order</button>
+                    <button className="btn btn-xs capitalize">Product Order</button>
+                    <button className="btn btn-xs capitalize">Canceled Order</button>
                 </div>
 
-                <input type="checkbox" id="create-new-order" class="modal-toggle" />
-                <label for="create-new-order" class="modal cursor-pointer">
-                    <label class="modal-box w-11/12 max-w-4xl relative" for="">
+                <input type="checkbox" id="create-new-order" className="modal-toggle" />
+                <label for="create-new-order" className="modal cursor-pointer">
+                    <label className="modal-box w-11/12 max-w-4xl relative" for="">
                         <ModalCloseButton modalId={'create-new-order'} />
 
                         <ModalHeading modalHeading={'Create a Pharmacy order'} />
 
-                        <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
-                            <div class="grid">
+                        <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                            <div className="grid">
                                 <h3 className='text-xl'>Choose product</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
@@ -74,8 +74,8 @@ const NonPharmacyOrders = () => {
                                 </div>
 
                                 <div>
-                                    <div class="overflow-x-auto py-3">
-                                        <table class="table table-compact w-full">
+                                    <div className="overflow-x-auto py-3">
+                                        <table className="table table-compact w-full">
                                             <thead>
                                                 <tr>
                                                     <th></th>
@@ -138,20 +138,20 @@ const NonPharmacyOrders = () => {
                                     </div>
                                 </div>
 
-                                <SaveButton extraClass={'mt-4'} />
+                                <SaveButton extraclassName={'mt-4'} />
                             </div>
 
-                            <div class="divider lg:divider-horizontal"></div>
+                            <div className="divider lg:divider-horizontal"></div>
 
-                            <div class="grid">
+                            <div className="grid">
                                 <h3 className='text-xl'>Order Items</h3>
-                                <div class="flex justify-between">
-                                    <button class="btn btn-xs btn-outline btn-warning justify-between">Add from Requared Items</button>
-                                    <button class="btn btn-xs btn-outline btn-error">Clear All</button>
+                                <div className="flex justify-between">
+                                    <button className="btn btn-xs btn-outline btn-warning justify-between">Add from Requared Items</button>
+                                    <button className="btn btn-xs btn-outline btn-error">Clear All</button>
                                 </div>
                                 <div>
-                                    <div class="overflow-x-auto">
-                                        <table class="table table-compact w-full">
+                                    <div className="overflow-x-auto">
+                                        <table className="table table-compact w-full">
                                             <thead>
                                                 <tr>
                                                     <th></th>
@@ -220,14 +220,14 @@ const NonPharmacyOrders = () => {
                                     </div>
                                 </div>
 
-                                <CancelButton extraClass={'mt-4'} />
+                                <CancelButton extraclassName={'mt-4'} />
                             </div>
                         </div>
                     </label>
                 </label>
             </div>
 
-            <table class="table table-zebra table-compact w-full">
+            <table className="table table-zebra table-compact w-full">
                 <thead>
                     {
                         tableHead

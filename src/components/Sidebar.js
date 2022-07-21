@@ -15,17 +15,17 @@ import logo from '../Assets/logo.png';
 
 const Sidebar = () => {
     return (
-        <div class="drawer drawer-mobile">
-            <input id="dashboard" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content flex flex-col">
+        <div className="drawer drawer-mobile">
+            <input id="dashboard" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content flex flex-col">
                 <UserNavbar />
                 <Outlet />
             </div>
-            <div class="drawer-side bg-green-300 p-0 m-0">
-                <label for="dashboard" class="drawer-overlay"></label>
-                <div class="flex flex-col justify-between">
-                    <nav class="flex flex-col mt-6 space-y-1">
-                        <Link class="text-xl font-semibold uppercase flex items-center mb-8" to='/'>
+            <div className="drawer-side bg-green-300 p-0 m-0">
+                <label for="dashboard" className="drawer-overlay"></label>
+                <div className="flex flex-col justify-between">
+                    <nav className="flex flex-col mt-6 space-y-1">
+                        <Link className="text-xl font-semibold uppercase flex items-center mb-8" to='/'>
                             <img className='w-12' src={logo} alt="logo" />
                             String LAB
                         </Link>

@@ -2,7 +2,7 @@ import React from 'react';
 
 const ItemsViewNumber = () => {
     return (
-        <select class="select select-bordered select-xs w-full max-w-xs">
+        <select className="select select-bordered select-xs w-full max-w-xs">
             <option selected>10</option>
             <option>20</option>
             <option>30</option>

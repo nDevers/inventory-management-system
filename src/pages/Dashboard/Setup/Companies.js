@@ -75,7 +75,7 @@ const Companies = () => {
                 </div>
             </form>
 
-            <table class="table table-zebra table-compact w-full">
+            <table className="table table-zebra table-compact w-full">
                 <thead>
                     {
                         tableHead

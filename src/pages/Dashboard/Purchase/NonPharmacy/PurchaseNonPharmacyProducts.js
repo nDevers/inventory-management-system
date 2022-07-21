@@ -58,9 +58,9 @@ const PurchaseNonPharmacyProducts = () => {
                 </div>
             </div>
 
-            <input type="checkbox" id="create-new-product" class="modal-toggle" />
-            <label for="create-new-product" class="modal cursor-pointer">
-                <label class="modal-box w-11/12 max-w-4xl relative" for="">
+            <input type="checkbox" id="create-new-product" className="modal-toggle" />
+            <label for="create-new-product" className="modal cursor-pointer">
+                <label className="modal-box w-11/12 max-w-4xl relative" for="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
                     <ModalHeading modalHeading={'Create a Pharmacy Product'} />
@@ -75,8 +75,8 @@ const PurchaseNonPharmacyProducts = () => {
                             <Select title={'Company'} />
                         </div>
 
-                        <div class="flex flex-col w-full lg:flex-row mt-4 place-content-center">
-                            <div class="grid">
+                        <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                            <div className="grid">
                                 <h3 className='text-xl'>Purchase Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
@@ -92,12 +92,12 @@ const PurchaseNonPharmacyProducts = () => {
                                 <DoubleInput title={'Purchase VAT'} />
                                 <DoubleInput title={'Purchase Discount'} />
 
-                                <SaveButton extraClass={'mt-4'} />
+                                <SaveButton extraclassName={'mt-4'} />
                             </div>
 
-                            <div class="divider lg:divider-horizontal"></div>
+                            <div className="divider lg:divider-horizontal"></div>
 
-                            <div class="grid">
+                            <div className="grid">
                                 <h3 className='text-xl'>Sale Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
@@ -113,14 +113,14 @@ const PurchaseNonPharmacyProducts = () => {
                                 <DoubleInput title={'Sales VAT'} />
                                 <DoubleInput title={'Sales Discount'} />
 
-                                <CancelButton extraClass={'mt-4'} />
+                                <CancelButton extraclassName={'mt-4'} />
                             </div>
                         </div>
                     </form>
                 </label>
             </label>
 
-            <table class="table table-zebra table-compact">
+            <table className="table table-zebra table-compact">
                 <thead>
                     {
                         tableHead

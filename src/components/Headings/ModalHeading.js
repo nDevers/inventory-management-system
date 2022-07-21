@@ -2,7 +2,7 @@ import React from 'react';
 
 const ModalHeading = ({ modalHeading = 'Modal Heading' }) => {
     return (
-        <h3 class="font-bold text-lg text-center uppercase mb-2">{modalHeading}</h3>
+        <h3 className="font-bold text-lg text-center uppercase mb-2">{modalHeading}</h3>
     );
 };
 

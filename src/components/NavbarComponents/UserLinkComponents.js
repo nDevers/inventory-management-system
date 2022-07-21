@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const UserLinkComponents = ({ to, extraClass, icon, name, extraComponent }) => {
     return (
         <li>
-            <Link to={to} class={`flex items-center gap-x-2 p-0 m-0 ${extraClass}`}>
+            <Link to={to} className={`flex items-center gap-x-2 p-0 m-0 ${extraClass}`}>
                 {icon}
                 {name}
                 {extraComponent}
