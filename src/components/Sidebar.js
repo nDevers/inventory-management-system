@@ -25,7 +25,7 @@ const Sidebar = () => {
                 <label for="dashboard" class="drawer-overlay"></label>
                 <div class="flex flex-col justify-between">
                     <nav class="flex flex-col mt-6 space-y-1">
-                        <Link class="text-xl uppercase flex items-center mb-8" to='/'>
+                        <Link class="text-xl font-semibold uppercase flex items-center mb-8" to='/'>
                             <img className='w-12' src={logo} alt="logo" />
                             String LAB
                         </Link>
