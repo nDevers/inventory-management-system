@@ -1,12 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PrintButton from '../../../components/Buttons/PrintButton';
 import NewButton from '../../../components/Buttons/NewButton';
-import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
-import ModalHeading from '../../../components/Headings/ModalHeading';
 import Input from '../../../components/FormComponents/Input';
 import TableRow from '../../../components/TableRow';
-import DeleteButton from '../../../components/Buttons/DeleteButton';
+import SaveButton from '../../../components/Buttons/SaveButton';
 import EditButton from '../../../components/Buttons/EditButton';
+import DeleteButton from '../../../components/Buttons/DeleteButton';
 
 const Companies = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -17,30 +16,65 @@ const Companies = () => {
         }
     </tr>;
 
+    const addCompany = event => {
+        event.preventDefault();
+
+        const name = event?.target?.companyName?.value;
+        const phone = event?.target?.companyPhone?.value;
+        const website = event?.target?.companyWebsite?.value;
+        const email = event?.target?.companyEmail?.value;
+        const address = event?.target?.companyAddress?.value;
+        const addedBy = 'admin';
+        const addedTime = new Date();
+        const updatedBy = 'admin';
+        const updatedTime = new Date();
+
+        const productDetails = { name, phone, website, email, address, addedBy, addedTime, updatedBy, updatedTime };
+
+        // send data to server
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/companies', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(productDetails)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('success');
+            });
+    };
+
+    const [companies, setCompanies] = useState([]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/companies')
+            .then(res => res.json())
+            .then(products => setCompanies(products));
+    }, [companies]);
+
     return (
-        <section>
-            <input type="checkbox" id="add-new-company" class="modal-toggle" />
-            <label for="add-new-company" class="modal cursor-pointer">
-                <label class="modal-box w-2/5 h-2/5 max-w-4xl relative p-4" for="">
-                    <ModalCloseButton modalId={'add-new-company'} />
+        <section className='p-4'>
+            <form onSubmit={addCompany}>
+                <div className="flex justify-between items-center">
+                    <h2 className='text-2xl text-center font-bold'>Companies</h2>
 
-                    <ModalHeading modalHeading={'Add a Company'} />
-
-
-                    <div className='grid grid-cols-2 gap-x-4 place-items-center'>
-                        <Input title={'Name'} />
-                        <Input title={'Phone'} />
-                        <Input title={'Website'} />
-                        <Input title={'Email'} />
-                        <Input title={'Address'} />
+                    <div className='flex items-center gap-x-4'>
+                        <SaveButton btnSize='btn-xs' />
+                        <PrintButton btnSize='btn-xs' />
                     </div>
-                </label>
-            </label>
+                </div>
 
-            <div className="flex justify-between mb-6">
-                <NewButton modalId={'add-new-company'} />
-                <PrintButton />
-            </div>
+                <div className="flex justify-between items-center">
+                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
+                        <Input title={'Company Name'} name='companyName' isRequired='required' />
+                        <Input title={'Company Phone'} name='companyPhone' isRequired='required' />
+                        <Input title={'Company Website'} name='companyWebsite' isRequired='required' />
+                        <Input title={'Company Email'} name='companyEmail' isRequired='required' />
+                        <Input title={'Company Address'} name='companyAddress' isRequired='required' />
+                    </div>
+                </div>
+            </form>
 
             <table class="table table-zebra table-compact w-full">
                 <thead>
@@ -49,15 +83,29 @@ const Companies = () => {
                     }
                 </thead>
                 <tbody>
-                    <TableRow tableRowsData={[`1`, `ACMI`, `01700000`, `www.website.com`, `mail@email.com`, `5 / A, Dhaka`, `Admin`, `10-02-2022`, `Null`, `Null`, `DeleteButton, EditButton`]} />
-                </tbody>
-                <tfoot>
                     {
-                        tableHead
+                        companies.map((company, index) =>
+                            <TableRow key={company._id} tableRowsData={
+                                [
+                                    index,
+                                    company.name,
+                                    company.phone,
+                                    company.website, company.email,
+                                    company.address,
+                                    company.addedBy,
+                                    company.addedTime,
+                                    company.updatedBy,
+                                    company.updatedTime,
+                                    <span className='flex items-center gap-x-1'>
+                                        <EditButton />
+                                        <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/setup/companies/' itemId={company._id} />
+                                    </span>
+                                ]
+                            } />)
                     }
-                </tfoot>
+                </tbody>
             </table>
-        </section >
+        </section>
     );
 };
 
