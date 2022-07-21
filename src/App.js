@@ -37,6 +37,7 @@ import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacy/NonPh
 import PharmacyItems from './pages/Dashboard/RequestedItems/Pharmacy/PharmacyItems';
 import CustomersReturns from './pages/Dashboard/Returns/Customers/CustomersReturns';
 import ExpireOrDamageReturns from './pages/Dashboard/Returns/ExpireOrDamage/ExpireOrDamageReturns';
+import SuppliersList from './pages/Dashboard/Suppliers/List/SuppliersList';
 
 function App() {
   return (
@@ -76,7 +77,7 @@ function App() {
           <Route path='returns/expire-or-damage' element={<ExpireOrDamageReturns />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
-          <Route path='suppliers/list' element={<Suppliers />} />
+          <Route path='suppliers/list' element={<SuppliersList />} />
           <Route path='suppliers/payment' element={<Suppliers />} />
           <Route path='suppliers/documents' element={<Suppliers />} />
         </Route>
