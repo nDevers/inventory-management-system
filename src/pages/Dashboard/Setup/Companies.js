@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import PrintButton from '../../../components/Buttons/PrintButton';
-import NewButton from '../../../components/Buttons/NewButton';
 import Input from '../../../components/FormComponents/Input';
 import TableRow from '../../../components/TableRow';
 import SaveButton from '../../../components/Buttons/SaveButton';
