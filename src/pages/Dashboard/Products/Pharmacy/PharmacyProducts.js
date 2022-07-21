@@ -10,9 +10,11 @@ import Select from '../../../../components/FormComponents/Select';
 import DoubleInput from '../../../../components/FormComponents/DoubleInput';
 import ModalCloseButton from '../../../../components/Buttons/ModalCloseButton';
 import ModalHeading from '../../../../components/Headings/ModalHeading';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const PharmacyProducts = () => {
-    const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'TP', 'MRP', 'TP', 'MRP', 'Actions', <ItemsViewNumber />];
+    const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'TP', 'MRP', 'TP', 'MRP', 'Actions'];
 
     const tableHead = <tr>
         {
@@ -46,7 +48,15 @@ const PharmacyProducts = () => {
             .then(data => {
                 console.log('success');
             });
-    }
+    };
+
+    const [pharmacyProducts, setPharmacyProducts] = useState([]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+            .then(res => res.json())
+            .then(products => setPharmacyProducts(products));
+    }, []);
 
     return (
         <section className='p-1'>
@@ -124,10 +134,9 @@ const PharmacyProducts = () => {
                     }
                 </thead>
                 <tbody>
-                    <PharmacyProductsRow />
-                    <PharmacyProductsRow />
-                    <PharmacyProductsRow />
-                    <PharmacyProductsRow />
+                    {
+                        pharmacyProducts.map((pharmacyProduct, index) => <PharmacyProductsRow key={pharmacyProduct?._id} index={index} pharmacyProduct={pharmacyProduct} />)
+                    }
                 </tbody>
                 <tfoot>
                     {

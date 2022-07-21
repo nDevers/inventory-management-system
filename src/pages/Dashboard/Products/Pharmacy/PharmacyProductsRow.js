@@ -1,7 +1,27 @@
 import React from 'react';
+import DeleteButton from '../../../../components/Buttons/DeleteButton';
+import EditButton from '../../../../components/Buttons/EditButton';
 
-const PharmacyProductsRow = () => {
-    const tableRowsData = [`1`, `Cy Ganderton 11`, `Quality Control`, `Littel, Schaden and Vandervort`, `Canada`, `12/16/2020`, `Blue`];
+const PharmacyProductsRow = ({ index, pharmacyProduct }) => {
+    const tableRowsData = [
+        `${index}`,
+        `Code Name`,
+        `${pharmacyProduct.tradeName}`,
+        `Category Name`,
+        `${pharmacyProduct.strength}`,
+        `Company Name`,
+        `${'Available in Stock'}`,
+        `Pack Type`,
+        `${pharmacyProduct.packSize}`,
+        `${pharmacyProduct.packTp}`,
+        `MRP`,
+        `${pharmacyProduct.unitTp}`,
+        `MRP`,
+        <span className='flex items-center gap-x-1'>
+            <EditButton />
+            <DeleteButton />
+        </span>
+    ];
 
     return (
         <tr>
