@@ -17,7 +17,7 @@ const CustomersStories = () => {
 
                     <a
                         className="inline-flex items-center flex-shrink-0 px-5 py-3 mt-8 font-medium text-pink-600 border border-pink-600 rounded-full sm:mt-0 lg:mt-8 hover:bg-pink-600 hover:text-white"
-                        href=""
+                        href="/"
                     >
                         Read all reviews
 
@@ -28,7 +28,7 @@ const CustomersStories = () => {
                             viewBox="0 0 24 24"
                             stroke="currentColor"
                         >
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                         </svg>
                     </a>
                 </div>

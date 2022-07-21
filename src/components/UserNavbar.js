@@ -18,10 +18,10 @@ const UserNavbar = () => {
         <div className="navbar bg-blue-300">
             <div className="navbar-start p-0 m-0">
                 <div className="dropdown">
-                    <label tabindex="0" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
-                    <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <LinkComponents to={''} icon={<MdSpaceDashboard className='text-lg' />} name={'Dashboard'} />
 
                         <DetailsComponent
@@ -187,7 +187,7 @@ const UserNavbar = () => {
             </div>
             <div className="navbar-end p-0 m-0">
                 <div className="dropdown dropdown-end">
-                    <div tabindex="0" className='flex items-center cursor-pointer'>
+                    <div tabIndex="0" className='flex items-center cursor-pointer'>
                         <p className='mr-4'>User Name</p>
                         <label className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
@@ -195,7 +195,7 @@ const UserNavbar = () => {
                             </div>
                         </label>
                     </div>
-                    <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <UserLinkComponents
                             to={'/profile'}
                             icon={<RiProfileLine className='text-lg' />}

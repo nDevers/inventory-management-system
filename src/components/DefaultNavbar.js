@@ -34,10 +34,10 @@ const DefaultNavbar = () => {
             </div>
             <div className="navbar-end">
                 <div className="dropdown dropdown-end">
-                    <label tabindex="0" className="btn btn-ghost lg:hidden">
+                    <label tabIndex="0" className="btn btn-ghost lg:hidden">
                         <HiMenuAlt3 className='text-2xl' />
                     </label>
-                    <ul tabindex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         {
                             defaultNavbarItems
                         }
