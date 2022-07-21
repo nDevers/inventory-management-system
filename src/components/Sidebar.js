@@ -10,18 +10,20 @@ import { RiProductHuntFill, RiAdminFill, RiShoppingCartFill, RiProfileFill, RiFi
 import { Outlet } from 'react-router-dom';
 import LinkComponents from './NavbarComponents/LinkComponents';
 import DetailsComponent from './NavbarComponents/DetailsComponent';
+import UserNavbar from './UserNavbar';
 
 const Sidebar = () => {
     return (
-        <div class="drawer drawer-mobile shadow-xl">
+        <div class="drawer drawer-mobile">
             <input id="dashboard" type="checkbox" class="drawer-toggle" />
             <div class="drawer-content flex flex-col">
+                <UserNavbar />
                 <Outlet />
             </div>
-            <div class="drawer-side">
+            <div class="drawer-side bg-green-300 p-0 m-0">
                 <label for="dashboard" class="drawer-overlay"></label>
                 <div class="flex flex-col justify-between">
-                    <div class="p-2">
+                    <div>
                         <nav class="flex flex-col mt-6 space-y-1">
                             <LinkComponents to={''} icon={<MdSpaceDashboard className='text-lg' />} name={'Dashboard'} />
 
