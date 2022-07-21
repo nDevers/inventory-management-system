@@ -20,10 +20,17 @@ const SuppliersList = () => {
     </tr>;
 
     return (
-        <div>
-            <h2 className='text-2xl text-center font-bold'>Suppliers List</h2>
+        <section className='p-4'>
+            <div className="flex justify-between items-center mb-4">
+                <h2 className='text-2xl text-center font-bold'>Suppliers Lists</h2>
 
-            <div className='grid grid-cols-6 gap-4 mb-2'>
+                <div className='flex items-center gap-x-4'>
+                    <SaveButton btnSize='btn-xs' />
+                    <PrintButton btnSize='btn-xs' />
+                </div>
+            </div>
+
+            <div className='grid grid-cols-6 gap-4 mb-4'>
                 <Select title={'From'} />
                 <Select title={'To'} />
                 <Select title={'Period'} />
@@ -41,11 +48,6 @@ const SuppliersList = () => {
                     <button class="btn btn-xs capitalize">Canceled Order</button>
                 </div>
 
-                <div className='grid grid-cols-2 gap-2 mb-2'>
-                    <PrintButton btnSize='btn-xs' />
-
-                    <NewButton modalId={'create-new-order'} btnSize='btn-xs' />
-                </div>
                 <input type="checkbox" id="create-new-order" class="modal-toggle" />
                 <label for="create-new-order" class="modal cursor-pointer">
                     <label class="modal-box w-11/12 max-w-4xl relative" for="">
@@ -242,7 +244,7 @@ const SuppliersList = () => {
                     }
                 </tfoot>
             </table>
-        </div>
+        </section>
     );
 };
 
