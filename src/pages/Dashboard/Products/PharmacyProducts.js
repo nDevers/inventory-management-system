@@ -16,16 +16,16 @@ import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
 
-const PharmacyProducts = () => {
+const NonPharmacyProducts = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
 
     const tableHead = <tr>
         {
-            tableHeadItems?.map(tableHeadItem => <th className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
+            tableHeadItems?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
         }
     </tr>;
 
-    const addPharmacyProduct = event => {
+    const addNonPharmacyProduct = event => {
         event.preventDefault();
 
         const tradeName = event?.target?.tradeName?.value;
@@ -76,37 +76,37 @@ const PharmacyProducts = () => {
                 );
             });
 
-        // event.target.reset();
+        event.target.reset();
     };
 
-    const [pharmacyProducts, setPharmacyProducts] = useState([]);
+    const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
             .then(res => res.json())
-            .then(products => setPharmacyProducts(products));
-    }, [pharmacyProducts]);
+            .then(products => setNonPharmacyProducts(products));
+    }, [nonPharmacyProducts]);
 
     return (
-        <section className='p-4'>
-            <div className="flex justify-between items-center mb-6">
-                <h2 className='text-2xl text-center font-bold'>Pharmacy Products</h2>
+        <section className='lg:p-4 md:p-2 p-1'>
+            <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
+                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Pharmacy Products</h2>
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
-                    <RefreshButton btnSize='btn-xs' />
+                    <RefreshButton btnSize='btn-xs' onClick={() => window.location.reload(true)} />
                     <PrintButton btnSize='btn-xs' />
                 </div>
             </div>
 
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
             <label htmlFor="create-new-product" className="modal cursor-pointer">
-                <label className="modal-box w-7/12 max-w-4xl relative" htmlFor="">
+                <label className="modal-box lg:w-7/12 md:w-10/12 w-11/12 max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
                     <ModalHeading modalHeading={'Create a Pharmacy Product'} />
 
-                    <form onSubmit={addPharmacyProduct}>
+                    <form onSubmit={addNonPharmacyProduct}>
                         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 mb-2'>
                             <Input title={'Trade Name'} type='text' placeholder='Trade name' name='tradeName' isRequired='required' />
                             <Input title={'Generic Name'} type='text' placeholder='Generic name' name='genericName' isRequired='required' />
@@ -135,7 +135,7 @@ const PharmacyProducts = () => {
                                 <DoubleInput title={'Purchase VAT'} name1='purchaseVatPercent' name2='purchaseVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
                                 <DoubleInput title={'Purchase Discount'} name1='purchaseDiscountPercent' name2='purchaseDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
 
-                                <SaveButton extraclassName={'mt-4'} />
+                                <SaveButton extraClass={'mt-4'} />
                             </div>
 
                             <div className="divider lg:divider-horizontal"></div>
@@ -156,7 +156,7 @@ const PharmacyProducts = () => {
                                 <DoubleInput title={'Sales VAT'} name1='salesVatPercent' name2='salesVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
                                 <DoubleInput title={'Sales Discount'} name1='salesDiscountPercent' name2='salesDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
 
-                                <CancelButton extraclassName={'mt-4'} />
+                                <CancelButton extraClass={'mt-4'} />
                             </div>
                         </div>
                     </form>
@@ -198,7 +198,7 @@ const PharmacyProducts = () => {
                                 <DoubleInput title={'Purchase VAT'} />
                                 <DoubleInput title={'Purchase Discount'} />
 
-                                <SaveButton extraclassName={'mt-4'} />
+                                <SaveButton extraClass='mt-4' />
                             </div>
 
                             <div className="divider lg:divider-horizontal"></div>
@@ -219,7 +219,7 @@ const PharmacyProducts = () => {
                                 <DoubleInput title={'Sales VAT'} />
                                 <DoubleInput title={'Sales Discount'} />
 
-                                <CancelButton extraclassName={'mt-4'} />
+                                <CancelButton extraClass='mt-4' />
                             </div>
                         </div>
                     </form>
@@ -234,7 +234,7 @@ const PharmacyProducts = () => {
                 </thead>
                 <tbody>
                     {
-                        pharmacyProducts.map((product, index) =>
+                        nonPharmacyProducts.map((product, index) =>
                             <TableRow
                                 key={product._id}
                                 tableRowsData={
@@ -253,11 +253,11 @@ const PharmacyProducts = () => {
                                         product.unitTp,
                                         product.unitMrp,
                                         product.addedBy,
-                                        product.addedToDbAt.slice(0, 10),
+                                        product?.addedToDbAt?.slice(0, 10),
                                         <span className='flex items-center gap-x-1'>
                                             <EditButton />
                                             <DeleteButton
-                                                deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/setup/categories/'
+                                                deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/products/nonPharmacy/'
                                                 itemId={product._id} />
                                         </span>
                                     ]
@@ -269,4 +269,4 @@ const PharmacyProducts = () => {
     );
 };
 
-export default PharmacyProducts;
+export default NonPharmacyProducts;
