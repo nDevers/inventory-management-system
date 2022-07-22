@@ -94,7 +94,7 @@ const NonPharmacyProducts = () => {
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
-                    <RefreshButton btnSize='btn-xs' onClick={() => window.location.reload(true)} />
+                    <RefreshButton btnSize='btn-xs' />
                     <PrintButton btnSize='btn-xs' />
                 </div>
             </div>

@@ -66,11 +66,11 @@ const Companies = () => {
 
                 <div className="flex justify-between items-center">
                     <div className='flex place-items-center gap-4 mt-4 mb-8'>
-                        <Input title={'Company Name'} name='companyName' isRequired='required' />
-                        <Input title={'Company Phone'} name='companyPhone' isRequired='required' />
-                        <Input title={'Company Website'} name='companyWebsite' isRequired='required' />
-                        <Input title={'Company Email'} name='companyEmail' isRequired='required' />
-                        <Input title={'Company Address'} name='companyAddress' isRequired='required' />
+                        <Input title={'Company Name'} name='companyName' isRequired='required' type='text' />
+                        <Input title={'Company Phone'} name='companyPhone' isRequired='required' type='number' />
+                        <Input title={'Company Website'} name='companyWebsite' isRequired='required' type='text' />
+                        <Input title={'Company Email'} name='companyEmail' isRequired='required' type='email' />
+                        <Input title={'Company Address'} name='companyAddress' isRequired='required' type='text' />
                     </div>
                 </div>
             </form>
@@ -86,7 +86,7 @@ const Companies = () => {
                         companies.map((company, index) =>
                             <TableRow key={company._id} tableRowsData={
                                 [
-                                    index,
+                                    index + 1,
                                     company.name,
                                     company.phone,
                                     company.website, company.email,

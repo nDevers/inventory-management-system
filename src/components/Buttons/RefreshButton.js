@@ -5,7 +5,7 @@ const RefreshButton = ({ btnSize }) => {
     console.log('refresh')
 
     return (
-        <button className={`btn ${btnSize} flex gap-x-2`} onClick={() => window.location.reload(true)} >
+        <button className={`btn ${btnSize} flex gap-x-2`} >
             <FiRefreshCcw className='text-md' />
             Refresh
         </button >

@@ -94,7 +94,7 @@ const NonPharmacyProducts = () => {
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
-                    <RefreshButton btnSize='btn-xs' onClick={() => window.location.reload(true)} />
+                    <RefreshButton btnSize='btn-xs' />
                     <PrintButton btnSize='btn-xs' />
                 </div>
             </div>
@@ -257,7 +257,7 @@ const NonPharmacyProducts = () => {
                                         <span className='flex items-center gap-x-1'>
                                             <EditButton />
                                             <DeleteButton
-                                                deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/products/nonPharmacy/'
+                                                deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/products/pharmacy/'
                                                 itemId={product._id} />
                                         </span>
                                     ]
