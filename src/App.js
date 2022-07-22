@@ -18,7 +18,7 @@ import Contact from './pages/Contact/Contact';
 import Dashboard from './pages/Dashboard/Dashboard';
 import DashboardSummary from './pages/Dashboard/DashboardSummary';
 import Customers from './pages/Dashboard/Customers/Customers';
-import Employees from './pages/Dashboard/Employees/Employees';
+import Employees from './pages/Dashboard/Employees';
 import Profile from './pages/User/Profile';
 import Settings from './pages/User/Settings';
 import TermsAndConditions from './pages/Authentication/TermsAndConditions';
