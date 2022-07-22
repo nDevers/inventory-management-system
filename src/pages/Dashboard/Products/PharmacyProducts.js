@@ -80,12 +80,33 @@ const NonPharmacyProducts = () => {
     };
 
     const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [companies, setCompanies] = useState([]);
+    const [unitTypes, setUnitTypes] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
             .then(res => res.json())
             .then(products => setNonPharmacyProducts(products));
     }, [nonPharmacyProducts]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/categories')
+            .then(res => res.json())
+            .then(c => setCategories(c));
+    }, [categories]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/companies')
+            .then(res => res.json())
+            .then(c => setCompanies(c));
+    }, [companies]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/unitTypes')
+            .then(res => res.json())
+            .then(ut => setUnitTypes(ut));
+    }, [unitTypes]);
 
     return (
         <section className='lg:p-4 md:p-2 p-1'>
@@ -112,8 +133,8 @@ const NonPharmacyProducts = () => {
                             <Input title={'Generic Name'} type='text' placeholder='Generic name' name='genericName' isRequired='required' />
                             <Input title={'Strength'} type='number' placeholder='Strength' name='strength' isRequired='required' />
 
-                            <Select title={'Category'} name='category' isRequired='required' />
-                            <Select title={'Company'} name='company' isRequired='required' />
+                            <Select title={'Category'} name='category' isRequired='required' options={categories.map(c => c.name)} />
+                            <Select title={'Company'} name='company' isRequired='required' options={companies.map(c => c.name)} />
                             <Input title={'Stock'} type='number' placeholder='Stock' name='stock' isRequired='required' />
                             <Select title={'Pack Type'} name='packType' isRequired='required' />
                         </div>
@@ -123,7 +144,7 @@ const NonPharmacyProducts = () => {
                                 <h3 className='text-xl'>Purchase Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
-                                    <Select title={'Purchase Unit Type'} name='purchaseUnitType' isRequired='required' />
+                                    <Select title={'Purchase Unit Type'} name='purchaseUnitType' isRequired='required' options={unitTypes.map(c => c.name)} />
                                     <Input title={'Pack Size'} type='number' placeholder='Pack size' name='packSize' isRequired='required' />
                                 </div>
 
@@ -144,7 +165,7 @@ const NonPharmacyProducts = () => {
                                 <h3 className='text-xl'>Sale Area</h3>
 
                                 <div className='grid grid-cols-2 gap-x-4'>
-                                    <Select title={'Sales Unit Type'} name='salesUnitType' isRequired='required' />
+                                    <Select title={'Sales Unit Type'} name='salesUnitType' isRequired='required' options={unitTypes.map(c => c.name)} />
                                     <Input title={'Pack Size'} type='number' name='salePackSize' placeholder='Pack size' isRequired='required' />
                                 </div>
 
