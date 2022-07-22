@@ -21,7 +21,7 @@ const Sidebar = () => {
                 <UserNavbar />
                 <Outlet />
             </div>
-            <div className="drawer-side bg-green-300 p-0 m-0">
+            <div className="drawer-side lg:bg-green-300 md:bg-green-300 p-0 m-0">
                 <label htmlFor="dashboard" className="drawer-overlay"></label>
                 <div className="flex flex-col justify-between">
                     <nav className="flex flex-col mt-6 space-y-1">
