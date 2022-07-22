@@ -28,8 +28,8 @@ import NonPharmacyProducts from './pages/Dashboard/Products/NonPharmacyProducts'
 import Categories from './pages/Dashboard/Setup/Categories';
 import UnitTypes from './pages/Dashboard/Setup/UnitTypes';
 import Companies from './pages/Dashboard/Setup/Companies';
-import PharmacyOrders from './pages/Dashboard/Orders/Pharmacy/PharmacyOrders';
-import NonPharmacyOrders from './pages/Dashboard/Orders/NonPharmacy/NonPharmacyOrders';
+import PharmacyOrders from './pages/Dashboard/Orders/PharmacyOrders';
+import NonPharmacyOrders from './pages/Dashboard/Orders/NonPharmacyOrders';
 import PurchaseNonPharmacyProducts from './pages/Dashboard/Purchase/NonPharmacy/PurchaseNonPharmacyProducts';
 import PurchasePharmacyProducts from './pages/Dashboard/Purchase/Pharmacy/PurchasePharmacyProducts';
 import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacyItems';
