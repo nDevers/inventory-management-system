@@ -76,7 +76,7 @@ const NonPharmacyProducts = () => {
                 );
             });
 
-        // event.target.reset();
+        event.target.reset();
     };
 
     const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
@@ -88,7 +88,7 @@ const NonPharmacyProducts = () => {
     }, [nonPharmacyProducts]);
 
     return (
-        <section className='p-4'>
+        <section className='lg:p-4 md:p-2 p-1'>
             <div className="flex justify-between items-center mb-6">
                 <h2 className='text-2xl text-center font-bold'>Non Pharmacy Products</h2>
 
@@ -101,10 +101,10 @@ const NonPharmacyProducts = () => {
 
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
             <label htmlFor="create-new-product" className="modal cursor-pointer">
-                <label className="modal-box w-7/12 max-w-4xl relative" htmlFor="">
+                <label className="modal-box lg:w-7/12 md:w-10/12 w-full max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
-                    <ModalHeading modalHeading={'Create a Pharmacy Product'} />
+                    <ModalHeading modalHeading={'Create a Non Pharmacy Product'} />
 
                     <form onSubmit={addNonPharmacyProduct}>
                         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 mb-2'>
@@ -135,7 +135,7 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Purchase VAT'} name1='purchaseVatPercent' name2='purchaseVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
                                 <DoubleInput title={'Purchase Discount'} name1='purchaseDiscountPercent' name2='purchaseDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
 
-                                <SaveButton extraclassName={'mt-4'} />
+                                <SaveButton extraClass={'mt-4'} />
                             </div>
 
                             <div className="divider lg:divider-horizontal"></div>
@@ -156,7 +156,7 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Sales VAT'} name1='salesVatPercent' name2='salesVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
                                 <DoubleInput title={'Sales Discount'} name1='salesDiscountPercent' name2='salesDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
 
-                                <CancelButton extraclassName={'mt-4'} />
+                                <CancelButton extraClass={'mt-4'} />
                             </div>
                         </div>
                     </form>
@@ -198,7 +198,7 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Purchase VAT'} />
                                 <DoubleInput title={'Purchase Discount'} />
 
-                                <SaveButton extraclassName={'mt-4'} />
+                                <SaveButton extraClass='mt-4' />
                             </div>
 
                             <div className="divider lg:divider-horizontal"></div>
@@ -219,7 +219,7 @@ const NonPharmacyProducts = () => {
                                 <DoubleInput title={'Sales VAT'} />
                                 <DoubleInput title={'Sales Discount'} />
 
-                                <CancelButton extraclassName={'mt-4'} />
+                                <CancelButton extraClass='mt-4' />
                             </div>
                         </div>
                     </form>
@@ -253,7 +253,7 @@ const NonPharmacyProducts = () => {
                                         product.unitTp,
                                         product.unitMrp,
                                         product.addedBy,
-                                        product.addedToDbAt.slice(0, 10),
+                                        product?.addedToDbAt?.slice(0, 10),
                                         <span className='flex items-center gap-x-1'>
                                             <EditButton />
                                             <DeleteButton
