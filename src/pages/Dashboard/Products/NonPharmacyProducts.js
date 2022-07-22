@@ -101,7 +101,7 @@ const NonPharmacyProducts = () => {
 
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
             <label htmlFor="create-new-product" className="modal cursor-pointer">
-                <label className="modal-box lg:w-7/12 md:w-10/12 w-full max-w-4xl relative" htmlFor="">
+                <label className="modal-box lg:w-7/12 md:w-10/12 w-11/12 max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
                     <ModalHeading modalHeading={'Create a Non Pharmacy Product'} />
