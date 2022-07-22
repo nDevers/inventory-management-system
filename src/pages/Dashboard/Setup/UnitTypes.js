@@ -41,6 +41,8 @@ const UnitTypes = () => {
             .then(data => {
                 console.log('success');
             });
+
+        event.target.reset();
     };
 
     const [unitTypes, setUnitTypes] = useState([]);
@@ -67,7 +69,12 @@ const UnitTypes = () => {
                     <div className='flex place-items-center gap-4 mt-4 mb-8'>
                         <Input title={'Unit Name'} name='unitName' isRequired='required' />
                         <Input title={'Description'} name='unitDescription' isRequired='required' />
-                        <Select title={'Unit Type'} name='unitUnitType' isRequired='required' />
+                        <Select
+                            title={'Unit Type'}
+                            name='unitUnitType'
+                            isRequired='required'
+                            options={['Pharmacy', 'Non Pharmacy']}
+                        />
                     </div>
                 </div>
             </form>
