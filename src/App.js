@@ -17,7 +17,7 @@ import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
 import Dashboard from './pages/Dashboard/Dashboard';
 import DashboardSummary from './pages/Dashboard/DashboardSummary';
-import Customers from './pages/Dashboard/Customers/Customers';
+import Customers from './pages/Dashboard/Customers';
 import Employees from './pages/Dashboard/Employees';
 import Profile from './pages/User/Profile';
 import Settings from './pages/User/Settings';
