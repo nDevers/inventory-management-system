@@ -164,7 +164,7 @@ const UserNavbar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal">
                     <div className='flex items-center text-sm breadcrumbs'>
                         <ul>
                             <UserLinkComponents
@@ -185,7 +185,7 @@ const UserNavbar = () => {
                     </div>
                 </ul>
             </div>
-            <div className="navbar-end p-0 m-0">
+            <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <div tabIndex="0" className='flex items-center cursor-pointer'>
                         <p className='mr-4 hidden md:block lg:block'>User Name</p>
