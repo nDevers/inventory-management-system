@@ -188,7 +188,7 @@ const UserNavbar = () => {
             <div className="navbar-end p-0 m-0">
                 <div className="dropdown dropdown-end">
                     <div tabIndex="0" className='flex items-center cursor-pointer'>
-                        <p className='mr-4'>User Name</p>
+                        <p className='mr-4 hidden md:block lg:block'>User Name</p>
                         <label className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src="https://api.lorem.space/image/face?hash=33791" alt='user avatar' />
