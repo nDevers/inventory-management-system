@@ -18,7 +18,7 @@ const EditButton = ({ id }) => {
     const [unitTypes, setUnitTypes] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/products/pharmacy/${id}`)
+        fetch(`https://stringlab-ims-server.herokuapp.com/api/products/pharmacy/${id}`)
             .then(res => res.json())
             .then(products => setPharmacyProduct(products));
     }, [pharmacyProduct]);
