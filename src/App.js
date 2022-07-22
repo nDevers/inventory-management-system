@@ -34,8 +34,8 @@ import PurchaseNonPharmacyProducts from './pages/Dashboard/Purchase/PurchaseNonP
 import PurchasePharmacyProducts from './pages/Dashboard/Purchase/PurchasePharmacyProducts';
 import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacyItems';
 import PharmacyItems from './pages/Dashboard/RequestedItems/PharmacyItems';
-import CustomersReturns from './pages/Dashboard/Returns/Customers/CustomersReturns';
-import ExpireOrDamageReturns from './pages/Dashboard/Returns/ExpireOrDamage/ExpireOrDamageReturns';
+import CustomersReturns from './pages/Dashboard/Returns/CustomersReturns';
+import ExpiresOrDamagesReturns from './pages/Dashboard/Returns/ExpiresOrDamagesReturns';
 import SuppliersList from './pages/Dashboard/Suppliers/List/SuppliersList';
 import SuppliersDocuments from './pages/Dashboard/Suppliers/Documents/SuppliersDocuments';
 import SuppliersPayments from './pages/Dashboard/Suppliers/Payments/SuppliersPayments';
@@ -75,7 +75,7 @@ function App() {
           <Route path='setup/unit-types' element={<UnitTypes />} />
           <Route path='setup/companies' element={<Companies />} />
           <Route path='returns/customers' element={<CustomersReturns />} />
-          <Route path='returns/expires-or-damages' element={<ExpireOrDamageReturns />} />
+          <Route path='returns/expires-or-damages' element={<ExpiresOrDamagesReturns />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
           <Route path='suppliers/list' element={<SuppliersList />} />
