@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ComposedChart, XAxis, YAxis, Tooltip, Legend, CartesianGrid, Area, Bar, Line, PieChart, Pie } from 'recharts';
 import PrintButton from '../../components/Buttons/PrintButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
@@ -104,6 +104,35 @@ const DashboardSummary = () => {
         }
     ];
 
+    const [pharmacyProducts, setPharmacyProducts] = useState([]);
+    const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+    const [employees, setEmployees] = useState([]);
+    const [customers, setCustomers] = useState([]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+            .then(res => res.json())
+            .then(products => setPharmacyProducts(products.length));
+    }, [pharmacyProducts]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+            .then(res => res.json())
+            .then(products => setNonPharmacyProducts(products.length));
+    }, [nonPharmacyProducts]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+            .then(res => res.json())
+            .then(e => setEmployees(e.length));
+    }, [employees]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+            .then(res => res.json())
+            .then(e => setCustomers(e.length));
+    }, [customers]);
+
     return (
         <div className='mx-auto p-2 md:p-3'>
             <div className='flex justify-between mb-6'>
@@ -112,13 +141,13 @@ const DashboardSummary = () => {
             </div>
 
             <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4'>
-                <InfoCard name={'Items'} status={99} />
+                <InfoCard name={'Non Pharmacy Items'} status={nonPharmacyProducts} />
 
-                <InfoCard name={'Quantity'} status={99} />
+                <InfoCard name={'Pharmacy Items'} status={pharmacyProducts} />
 
-                <InfoCard name={'MRP'} status={99} />
+                <InfoCard name={'Employees'} status={employees} />
 
-                <InfoCard name={'TP'} status={99} />
+                <InfoCard name={'Customers'} status={customers} />
 
                 <InfoCard name={'RTN MRP'} status={99} />
 

@@ -2,10 +2,10 @@ import React from 'react';
 
 const InfoCard = ({ name, status }) => {
     return (
-        <button className="btn gap-2 btn-sm md:btn-md lg-btn-lg">
-            {name}
-            <div className="badge badge-secondary">+{status}</div>
-        </button>
+        <div className="flex flex-col items-center justify-center gap-2 bg-teal-500 text-white rounded-md p-2">
+            <p className='font-semibold'>{name}</p>
+            <h3 className="text-xl font-bold badge badge-lg badge-secondary">+{status}</h3>
+        </div>
     );
 };
 
