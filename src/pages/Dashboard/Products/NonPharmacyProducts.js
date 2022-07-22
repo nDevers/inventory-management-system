@@ -89,8 +89,8 @@ const NonPharmacyProducts = () => {
 
     return (
         <section className='lg:p-4 md:p-2 p-1'>
-            <div className="flex justify-between items-center mb-6">
-                <h2 className='text-2xl text-center font-bold'>Non Pharmacy Products</h2>
+            <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
+                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Non Pharmacy Products</h2>
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
