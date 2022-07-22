@@ -11,7 +11,7 @@ const Companies = () => {
 
     const tableHead = <tr>
         {
-            tableHeadItems?.map(tableHeadItem => <th className='text-xs' >{tableHeadItem}</th>)
+            tableHeadItems?.map((tableHeadItem, index) => <th key={index} className='text-xs' >{tableHeadItem}</th>)
         }
     </tr>;
 
