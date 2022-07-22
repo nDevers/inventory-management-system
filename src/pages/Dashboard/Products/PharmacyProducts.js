@@ -79,7 +79,7 @@ const NonPharmacyProducts = () => {
         event.target.reset();
     };
 
-    const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+    const [pharmacyProducts, setPharmacyProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [companies, setCompanies] = useState([]);
     const [unitTypes, setUnitTypes] = useState([]);
@@ -87,8 +87,8 @@ const NonPharmacyProducts = () => {
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
             .then(res => res.json())
-            .then(products => setNonPharmacyProducts(products));
-    }, [nonPharmacyProducts]);
+            .then(products => setPharmacyProducts(products));
+    }, [pharmacyProducts]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/setup/categories')
@@ -111,7 +111,9 @@ const NonPharmacyProducts = () => {
     return (
         <section className='lg:p-4 md:p-2 p-1'>
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Pharmacy Products</h2>
+                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>
+                    Pharmacy Products: <span className='badge badge-lg badge-secondary'>{pharmacyProducts.length}</span>
+                </h2>
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
@@ -255,7 +257,7 @@ const NonPharmacyProducts = () => {
                 </thead>
                 <tbody>
                     {
-                        nonPharmacyProducts.map((product, index) =>
+                        pharmacyProducts.map((product, index) =>
                             <TableRow
                                 key={product._id}
                                 tableRowsData={
