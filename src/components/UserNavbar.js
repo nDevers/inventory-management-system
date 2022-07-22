@@ -141,14 +141,14 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
-                                        to={'suppliers/list'}
+                                        to={'suppliers/lists'}
                                         icon={<FaThList className='text-md' />}
-                                        name={'List'} />,
+                                        name={'Lists'} />,
 
                                     <LinkComponents
-                                        to={'suppliers/payment'}
+                                        to={'suppliers/payments'}
                                         icon={<BsCreditCard2BackFill className='text-lg' />}
-                                        name={'Payment'} />,
+                                        name={'Payments'} />,
 
                                     <LinkComponents
                                         to={'suppliers/documents'}

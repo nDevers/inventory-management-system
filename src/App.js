@@ -36,9 +36,9 @@ import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacyItems'
 import PharmacyItems from './pages/Dashboard/RequestedItems/PharmacyItems';
 import CustomersReturns from './pages/Dashboard/Returns/CustomersReturns';
 import ExpiresOrDamagesReturns from './pages/Dashboard/Returns/ExpiresOrDamagesReturns';
-import SuppliersList from './pages/Dashboard/Suppliers/List/SuppliersList';
-import SuppliersDocuments from './pages/Dashboard/Suppliers/Documents/SuppliersDocuments';
-import SuppliersPayments from './pages/Dashboard/Suppliers/Payments/SuppliersPayments';
+import SuppliersList from './pages/Dashboard/Suppliers/SuppliersList';
+import SuppliersDocuments from './pages/Dashboard/Suppliers/SuppliersDocuments';
+import SuppliersPayments from './pages/Dashboard/Suppliers/SuppliersPayments';
 
 function App() {
   return (
@@ -78,8 +78,8 @@ function App() {
           <Route path='returns/expires-or-damages' element={<ExpiresOrDamagesReturns />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
-          <Route path='suppliers/list' element={<SuppliersList />} />
-          <Route path='suppliers/payment' element={<SuppliersPayments />} />
+          <Route path='suppliers/lists' element={<SuppliersList />} />
+          <Route path='suppliers/payments' element={<SuppliersPayments />} />
           <Route path='suppliers/documents' element={<SuppliersDocuments />} />
         </Route>
         <Route path="*" element={<NotFound />} />
