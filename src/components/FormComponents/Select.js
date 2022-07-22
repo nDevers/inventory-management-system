@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Select = ({ title = 'Select Field', name, isRequired }) => {
+const Select = ({ title = 'Select Field', name, isRequired, options = ['Option 1', 'Option 2'] }) => {
     return (
         <div className="div">
             <label className="label">
@@ -8,9 +8,10 @@ const Select = ({ title = 'Select Field', name, isRequired }) => {
             </label>
             <select className="select select-bordered select-xs w-full max-w-xs" name={name} required={isRequired}>
                 <option disabled>Choose an option</option>
-                <option >Small Apple</option>
-                <option>Small Orange</option>
-                <option>Small Tomato</option>
+
+                {
+                    options.map((option, index) => <option key={index}>{option}</option>)
+                }
             </select>
         </div>
     );

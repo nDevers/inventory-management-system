@@ -67,7 +67,12 @@ const Categories = () => {
                     <div className='flex place-items-center gap-4 mt-4 mb-8'>
                         <Input title={'Category Name'} name='categoryName' isRequired='required' />
                         <Input title={'Description'} name='categoryDescription' isRequired='required' />
-                        <Select title={'Category Type'} name='categoryType' isRequired='required' />
+                        <Select
+                            title={'Category Type'}
+                            name='categoryType'
+                            isRequired='required'
+                            options={['Pharmacy', 'Non Pharmacy']}
+                        />
                     </div>
                 </div>
             </form>
@@ -90,9 +95,9 @@ const Categories = () => {
                                         category.description,
                                         category.type,
                                         category.addedBy,
-                                        category.addedTime,
+                                        category?.addedTime?.slice(0, 10),
                                         category.updatedBy,
-                                        category.updatedTime,
+                                        category?.updatedTime?.slice(0, 10),
                                         <span className='flex items-center gap-x-1'>
                                             <EditButton />
                                             <DeleteButton
