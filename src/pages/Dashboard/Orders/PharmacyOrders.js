@@ -5,7 +5,6 @@ import PrintButton from '../../../components/Buttons/PrintButton';
 import NewButton from '../../../components/Buttons/NewButton';
 import Input from '../../../components/FormComponents/Input';
 import Select from '../../../components/FormComponents/Select';
-import DoubleInput from '../../../components/FormComponents/DoubleInput';
 import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
 import ModalHeading from '../../../components/Headings/ModalHeading';
 import { useState } from 'react';
