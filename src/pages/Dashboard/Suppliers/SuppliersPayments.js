@@ -11,9 +11,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import RefreshButton from '../../../components/Buttons/RefreshButton';
 import TableRow from '../../../components/TableRow';
-import EditButton from '../../../components/Buttons/EditButton';
-import DeleteButton from '../../../components/Buttons/DeleteButton';
-import { toast } from 'react-toastify';
 import InfoCard from '../../../components/InfoCard';
 
 const SuppliersPayments = () => {
