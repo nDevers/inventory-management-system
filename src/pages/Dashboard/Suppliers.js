@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import PrintButton from '../../../components/Buttons/PrintButton';
-import Input from '../../../components/FormComponents/Input';
-import TableRow from '../../../components/TableRow';
-import SaveButton from '../../../components/Buttons/SaveButton';
-import EditButton from '../../../components/Buttons/EditButton';
-import DeleteButton from '../../../components/Buttons/DeleteButton';
+import PrintButton from '../../components/Buttons/PrintButton';
+import Input from '../../components/FormComponents/Input';
+import TableRow from '../../components/TableRow';
+import SaveButton from '../../components/Buttons/SaveButton';
+import EditButton from '../../components/Buttons/EditButton';
+import DeleteButton from '../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
+import Select from '../../components/FormComponents/Select';
 
 const SuppliersList = () => {
-    const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
+    const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Policy', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
 
     const tableHead = <tr>
         {
@@ -24,12 +25,13 @@ const SuppliersList = () => {
         const website = event?.target?.SupplierWebsite?.value;
         const email = event?.target?.SupplierEmail?.value;
         const address = event?.target?.SupplierAddress?.value;
+        const policy = event?.target?.policy?.value;
         const addedBy = 'admin';
         const addedTime = new Date();
         const updatedBy = 'admin';
         const updatedTime = new Date();
 
-        const supplierDetails = { name, phone, website, email, address, addedBy, addedTime, updatedBy, updatedTime };
+        const supplierDetails = { name, phone, website, email, address, policy, addedBy, addedTime, updatedBy, updatedTime };
 
         // send data to server
         fetch('https://stringlab-ims-server.herokuapp.com/api/suppliers/lists', {
@@ -50,6 +52,8 @@ const SuppliersList = () => {
                     </div>
                 );
             });
+
+        event.target.reset();
     };
 
     const [suppliers, setSuppliers] = useState([]);
@@ -75,10 +79,11 @@ const SuppliersList = () => {
                 <div className="flex justify-between items-center">
                     <div className='flex place-items-center gap-4 mt-4 mb-8'>
                         <Input title={'Supplier Name'} name='SupplierName' isRequired='required' type='text' />
-                        <Input title={'Supplier Phone'} name='SupplierPhone' isRequired='required' type='number' />
+                        <Input title={'Supplier Phone'} name='SupplierPhone' isRequired='required' type='text' />
                         <Input title={'Supplier Website'} name='SupplierWebsite' isRequired='required' type='text' />
                         <Input title={'Supplier Email'} name='SupplierEmail' isRequired='required' type='email' />
                         <Input title={'Supplier Address'} name='SupplierAddress' isRequired='required' type='text' />
+                        <Select title='Policy' name='policy' isRequired='required' options={['Credit', 'After Sale', 'One after one']} />
                     </div>
                 </div>
             </form>
@@ -99,6 +104,7 @@ const SuppliersList = () => {
                                     supplier.phone,
                                     supplier.website, supplier.email,
                                     supplier.address,
+                                    supplier.policy,
                                     supplier.addedBy,
                                     supplier?.addedTime?.slice(0, 10),
                                     supplier.updatedBy,

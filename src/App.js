@@ -36,9 +36,7 @@ import NonPharmacyItems from './pages/Dashboard/RequestedItems/NonPharmacyItems'
 import PharmacyItems from './pages/Dashboard/RequestedItems/PharmacyItems';
 import CustomersReturns from './pages/Dashboard/Returns/CustomersReturns';
 import ExpiresOrDamagesReturns from './pages/Dashboard/Returns/ExpiresOrDamagesReturns';
-import SuppliersList from './pages/Dashboard/Suppliers/SuppliersList';
-import SuppliersDocuments from './pages/Dashboard/Suppliers/SuppliersDocuments';
-import SuppliersPayments from './pages/Dashboard/Suppliers/SuppliersPayments';
+import Suppliers from './pages/Dashboard/Suppliers';
 
 function App() {
   return (
@@ -78,9 +76,7 @@ function App() {
           <Route path='returns/expires-or-damages' element={<ExpiresOrDamagesReturns />} />
           <Route path='employees' element={<Employees />} />
           <Route path='customers' element={<Customers />} />
-          <Route path='suppliers/lists' element={<SuppliersList />} />
-          <Route path='suppliers/payments' element={<SuppliersPayments />} />
-          <Route path='suppliers/documents' element={<SuppliersDocuments />} />
+          <Route path='suppliers' element={<Suppliers />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
