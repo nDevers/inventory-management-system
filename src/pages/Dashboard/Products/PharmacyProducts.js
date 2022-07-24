@@ -137,8 +137,6 @@ const NonPharmacyProducts = () => {
 
                             <Select title={'Category'} name='category' isRequired='required' options={categories.map(c => c.name)} />
                             <Select title={'Company'} name='company' isRequired='required' options={companies.map(c => c.name)} />
-                            <Input title={'Stock'} type='number' placeholder='Stock' name='stock' isRequired='required' />
-                            <Select title={'Pack Type'} name='packType' isRequired='required' />
                         </div>
 
                         <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
