@@ -92,9 +92,9 @@ const Companies = () => {
                                     company.website, company.email,
                                     company.address,
                                     company.addedBy,
-                                    company.addedTime,
+                                    company?.addedTime?.slice(0, 10),
                                     company.updatedBy,
-                                    company.updatedTime,
+                                    company?.updatedTime?.slice(0, 10),
                                     <span className='flex items-center gap-x-1'>
                                         <EditButton />
                                         <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/setup/companies/' itemId={company._id} />
