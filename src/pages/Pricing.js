@@ -1,8 +1,8 @@
 import React from 'react';
 import { FaLongArrowAltRight } from 'react-icons/fa';
 import { RiArrowRightCircleFill } from 'react-icons/ri';
-import DefaultNavbar from '../../components/DefaultNavbar';
-import Footer from '../../components/Footer';
+import DefaultNavbar from '../components/DefaultNavbar';
+import Footer from '../components/Footer';
 
 const Pricing = () => {
     const pricing = [

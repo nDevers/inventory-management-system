@@ -9,7 +9,7 @@ import FindExperts from './pages/FindExperts';
 import ForgotPassword from './pages/authentication/ForgotPassword';
 import Integrations from './pages/Integrations';
 import Login from './pages/authentication/Login';
-import Pricing from './pages/pricing/Pricing';
+import Pricing from './pages/Pricing';
 import Register from './pages/authentication/Register';
 import Resources from './pages/Resources';
 import NotFound from './pages/NotFound';
