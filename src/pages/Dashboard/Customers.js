@@ -100,7 +100,7 @@ const Customers = () => {
                                     customer?.updatedTime?.slice(0, 10),
                                     <span className='flex items-center gap-x-1'>
                                         <EditButton />
-                                        <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/customers' itemId={customer._id} />
+                                        <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/customers/' itemId={customer._id} />
                                     </span>
                                 ]
                             } />)
