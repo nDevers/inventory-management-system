@@ -14,6 +14,7 @@ import TableRow from '../../../components/TableRow';
 import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
+import TotalItems from '../../../components/TotalItems';
 
 const NonPharmacyOrders = () => {
     const tableHeadItems = ['SN', 'Voucher', 'Supplier', 'Status', 'Quantity', 'TP', 'Vat', 'Discount', 'MRP', 'Creator', 'Created At', 'Actions'];
@@ -113,7 +114,7 @@ const NonPharmacyOrders = () => {
     return (
         <section className='lg:p-4 md:p-2 p-1'>
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Non Pharmacy Orders</h2>
+                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Non Pharmacy Orders: <TotalItems text={nonPharmacyOrders.length} /></h2>
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-non-pharmacy-order' btnSize='btn-xs' />
