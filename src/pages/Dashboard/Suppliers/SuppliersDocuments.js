@@ -2,7 +2,6 @@ import React from 'react';
 import SaveButton from '../../../components/Buttons/SaveButton';
 import CancelButton from '../../../components/Buttons/CancelButton';
 import PrintButton from '../../../components/Buttons/PrintButton';
-import NewButton from '../../../components/Buttons/NewButton';
 import Input from '../../../components/FormComponents/Input';
 import Select from '../../../components/FormComponents/Select';
 import DoubleInput from '../../../components/FormComponents/DoubleInput';
@@ -15,8 +14,8 @@ import TableRow from '../../../components/TableRow';
 import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
-import TotalItems from '../../../components/TotalItems';
 import DashboardPageHeading from '../../../components/Headings/DashboardPageHeading';
+import UploadButton from '../../../components/Buttons/UploadButton';
 
 const SuppliersDocuments = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
@@ -95,7 +94,7 @@ const SuppliersDocuments = () => {
                 name='Suppliers Documents'
                 value={documents.length}
                 buttons={[
-                    <SaveButton />,
+                    <UploadButton />,
                     <RefreshButton />,
                     <PrintButton />
                 ]}
