@@ -1,22 +1,21 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
 import { RiSettings5Fill, RiProfileLine, RiLogoutBoxRFill, RiProductHuntFill, RiProfileFill, RiShoppingCartFill, RiFileDamageFill, RiAdminFill } from 'react-icons/ri';
-import UserLinkComponents from './navbar/UserLinkComponents';
-import LinkComponents from './navbar/LinkComponents';
 import { MdLocalPharmacy, MdSpaceDashboard } from 'react-icons/md';
-import DetailsComponent from './navbar/DetailsComponent';
 import { BiCategory, BiGitPullRequest, BiUnite } from 'react-icons/bi';
 import { AiFillCopyrightCircle, AiFillCreditCard, AiFillSetting } from 'react-icons/ai';
 import { TbTruckDelivery, TbTruckReturn } from 'react-icons/tb';
 import { FaThList, FaUser, FaUsers, FaRegFolder } from 'react-icons/fa';
 import { BsCreditCard2BackFill } from 'react-icons/bs';
 import { HiDocumentText } from 'react-icons/hi';
+import DetailsComponent from './navbar/DetailsComponent';
+import LinkComponents from './navbar/LinkComponents';
+import UserLinkComponents from './navbar/UserLinkComponents';
 
 const UserNavbar = () => {
     return (
-        <div className="navbar bg-blue-300">
-            <div className="navbar-start p-0 m-0">
+        <div className="navbar">
+            <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
                         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -30,11 +29,13 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
+                                        key={1}
                                         to={'products/pharmacy'}
                                         icon={<MdLocalPharmacy className='text-lg' />}
                                         name={'Pharmacy'} />,
 
                                     <LinkComponents
+                                        key={2}
                                         to={'products/non-pharmacy'}
                                         icon={<RiProfileFill className='text-lg' />}
                                         name={'Non Pharmacy'} />
@@ -47,11 +48,13 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
+                                        key={3}
                                         to={'requested-items/pharmacy'}
                                         icon={<MdLocalPharmacy className='text-lg' />}
                                         name={'Pharmacy'} />,
 
                                     <LinkComponents
+                                        key={4}
                                         to={'requested-items/non-pharmacy'}
                                         icon={<RiProfileFill className='text-lg' />}
                                         name={'Non Pharmacy'} />
@@ -64,11 +67,13 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
+                                        key={5}
                                         to={'orders/pharmacy'}
                                         icon={<MdLocalPharmacy className='text-lg' />}
                                         name={'Pharmacy'} />,
 
                                     <LinkComponents
+                                        key={6}
                                         to={'orders/non-pharmacy'}
                                         icon={<RiProfileFill className='text-lg' />}
                                         name={'Non Pharmacy'} />
@@ -81,11 +86,13 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
+                                        key={7}
                                         to={'purchases/pharmacy'}
                                         icon={<MdLocalPharmacy className='text-lg' />}
                                         name={'Pharmacy'} />,
 
                                     <LinkComponents
+                                        key={8}
                                         to={'purchases/non-pharmacy'}
                                         icon={<RiProfileFill className='text-lg' />}
                                         name={'Non Pharmacy'} />
@@ -98,14 +105,16 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
-                                        to={'returns/customers'}
+                                        key={9}
+                                        to={'returns/customer'}
                                         icon={<FaUser className='text-lg' />}
-                                        name={'Customers'} />,
+                                        name={'Customer'} />,
 
                                     <LinkComponents
-                                        to={'returns/expires-or-damages'}
-                                        icon={<RiFileDamageFill className='text-lg' />}
-                                        name={'Expires / Damages'} />
+                                        key={10}
+                                        to={'returns/expire-or-damage'}
+                                        icon={<RiFileDamageFill className='Expire / Damage' />}
+                                        name={'Customer'} />
                                 ]
                             } />
 
@@ -115,19 +124,22 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
-                                        to={'setup/categories'}
+                                        key={11}
+                                        to={'setup/category'}
                                         icon={<BiCategory className='text-lg' />}
-                                        name={'Categories'} />,
+                                        name={'Category'} />,
 
                                     <LinkComponents
-                                        to={'setup/unit-types'}
+                                        key={12}
+                                        to={'setup/unit-type'}
                                         icon={<BiUnite className='text-lg' />}
-                                        name={'Unit Types'} />,
+                                        name={'Unit Type'} />,
 
                                     <LinkComponents
-                                        to={'setup/companies'}
+                                        key={13}
+                                        to={'setup/company'}
                                         icon={<AiFillCopyrightCircle className='text-lg' />}
-                                        name={'Companies'} />
+                                        name={'Company'} />
                                 ]
                             } />
 
@@ -141,16 +153,19 @@ const UserNavbar = () => {
                             subMenus={
                                 [
                                     <LinkComponents
-                                        to={'suppliers/lists'}
+                                        key={14}
+                                        to={'suppliers/list'}
                                         icon={<FaThList className='text-md' />}
-                                        name={'Lists'} />,
+                                        name={'List'} />,
 
                                     <LinkComponents
-                                        to={'suppliers/payments'}
+                                        key={15}
+                                        to={'suppliers/payment'}
                                         icon={<BsCreditCard2BackFill className='text-lg' />}
-                                        name={'Payments'} />,
+                                        name={'Payment'} />,
 
                                     <LinkComponents
+                                        key={16}
                                         to={'suppliers/documents'}
                                         icon={<HiDocumentText className='text-lg' />}
                                         name={'Documents'} />
@@ -158,37 +173,39 @@ const UserNavbar = () => {
                             } />
                     </ul>
                 </div>
-                <Link className="btn btn-ghost text-xl uppercase flex items-center md:hidden lg:hidden p-0 m-0" to='/'>
+                <a href='/' className="btn btn-ghost text-xl uppercase flex items-center">
                     <img className='w-12' src={logo} alt="logo" />
                     String LAB
-                </Link>
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal">
-                    <div className='flex items-center text-sm breadcrumbs'>
-                        <ul>
-                            <UserLinkComponents
-                                to={'/'}
-                                icon={<FaRegFolder className='text-md' />}
-                                name={'Home'} />
+                <ul className="menu menu-horizontal p-0">
+                    <div className='flex items-center'>
+                        <div className="text-sm breadcrumbs">
+                            <ul>
+                                <UserLinkComponents
+                                    to={'/'}
+                                    icon={<FaRegFolder className='text-md' />}
+                                    name={'Home'} />
 
-                            <UserLinkComponents
-                                to={'/dashboard'}
-                                icon={<MdSpaceDashboard className='text-md' />}
-                                name={'Dashboard'} />
+                                <UserLinkComponents
+                                    to={'/dashboard'}
+                                    icon={<MdSpaceDashboard className='text-md' />}
+                                    name={'Dashboard'} />
 
-                            <UserLinkComponents
-                                to={'/dashboard'}
-                                icon={<MdSpaceDashboard className='text-md' />}
-                                name={'Dashboard'} />
-                        </ul>
+                                <UserLinkComponents
+                                    to={'/dashboard'}
+                                    icon={<MdSpaceDashboard className='text-md' />}
+                                    name={'Dashboard'} />
+                            </ul>
+                        </div>
                     </div>
                 </ul>
             </div>
             <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <div tabIndex="0" className='flex items-center cursor-pointer'>
-                        <p className='mr-4 hidden md:block lg:block'>User Name</p>
+                        <p className='mr-4'>User Name</p>
                         <label className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 <img src="https://api.lorem.space/image/face?hash=33791" alt='user avatar' />
