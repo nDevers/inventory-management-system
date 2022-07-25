@@ -1,6 +1,6 @@
 import React from 'react';
 import { BsGithub, BsLinkedin, BsFacebook } from 'react-icons/bs';
-import montasim from '../../assets/images/montasim.jpg';
+import montasim from '../assets/images/montasim.jpg';
 
 const About = () => {
     return (
