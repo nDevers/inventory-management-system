@@ -16,6 +16,7 @@ import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
 import TotalItems from '../../../components/TotalItems';
+import DashboardPageHeading from '../../../components/Headings/DashboardPageHeading';
 
 const SuppliersDocuments = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
@@ -90,15 +91,15 @@ const SuppliersDocuments = () => {
 
     return (
         <section className='lg:p-4 md:p-2 p-1'>
-            <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Suppliers Documents : <TotalItems text={documents.length} /></h2>
-
-                <div className='flex items-center gap-x-4'>
-                    <NewButton modalId='create-new-product' btnSize='btn-xs' />
-                    <RefreshButton btnSize='btn-xs' />
-                    <PrintButton btnSize='btn-xs' />
-                </div>
-            </div>
+            <DashboardPageHeading
+                name='Suppliers Documents'
+                value={documents.length}
+                buttons={[
+                    <SaveButton />,
+                    <RefreshButton />,
+                    <PrintButton />
+                ]}
+            />
 
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
             <label htmlFor="create-new-product" className="modal cursor-pointer">
