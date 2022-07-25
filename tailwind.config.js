@@ -10,10 +10,16 @@ module.exports = {
     themes: [
       {
         simpleInventory: {
-          primary: "#a991f7",
-          secondary: "#f6d860",
-          accent: "#37cdbe",
-          neutral: "#3d4451",
+          "primary": "#05cbbf",
+          "primary-light": "#e1f8f7",
+          "secondary": "#edc14c",
+          "neutral": "#edc14c",
+          "info": "#fbf3db",
+          "success": "#fbf3db",
+          "warning": "#fbf3db",
+          "error": "#fbf3db",
+          "accent": "#3b3b3b",
+          "neutral": "#6f5f65",
           "base-100": "#ffffff",
         },
       },
