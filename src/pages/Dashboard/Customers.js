@@ -2,11 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PrintButton from '../../components/Buttons/PrintButton';
 import Input from '../../components/FormComponents/Input';
 import TableRow from '../../components/TableRow';
-import SaveButton from '../../components/Buttons/SaveButton';
 import EditButton from '../../components/Buttons/EditButton';
 import DeleteButton from '../../components/Buttons/DeleteButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
-import TotalItems from '../../components/TotalItems';
 import DashboardPageHeading from '../../components/Headings/DashboardPageHeading';
 
 const Customers = () => {
