@@ -1,7 +1,7 @@
 import React from 'react';
 import { FiRefreshCcw } from 'react-icons/fi';
 
-const RefreshButton = ({ btnSize = 'btn-sm' }) => {
+const RefreshButton = ({ btnSize = 'btn-xs' }) => {
     console.log('refresh')
 
     return (

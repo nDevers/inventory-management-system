@@ -65,15 +65,15 @@ const SuppliersList = () => {
     return (
         <section className='p-4'>
             <form onSubmit={addSupplier}>
-                <div className="flex justify-between items-center">
-                    <DashboardPageHeading name='Suppliers lists' value={suppliers.length} />
-
-                    <div className='flex items-center gap-x-4'>
-                        <SaveButton btnSize='btn-xs' />
-                        <RefreshButton btnSize='btn-xs' />
-                        <PrintButton btnSize='btn-xs' />
-                    </div>
-                </div>
+                <DashboardPageHeading
+                    name='Suppliers lists'
+                    value={suppliers.length}
+                    buttons={[
+                        <SaveButton />,
+                        <RefreshButton />,
+                        <PrintButton />
+                    ]}
+                />
 
                 <div className="flex justify-between items-center">
                     <div className='flex place-items-center gap-4 mt-4 mb-8'>
