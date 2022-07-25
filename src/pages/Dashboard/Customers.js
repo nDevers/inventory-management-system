@@ -6,6 +6,7 @@ import SaveButton from '../../components/Buttons/SaveButton';
 import EditButton from '../../components/Buttons/EditButton';
 import DeleteButton from '../../components/Buttons/DeleteButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
+import TotalItems from '../../components/TotalItems';
 
 const Customers = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -57,7 +58,7 @@ const Customers = () => {
         <section className='p-4'>
             <form onSubmit={addCustomer}>
                 <div className="flex justify-between items-center">
-                    <h2 className='text-2xl text-center font-bold'>Customers</h2>
+                    <h2 className='text-2xl text-center font-bold'>Customers: <TotalItems text={customers.length} /></h2>
 
                     <div className='flex items-center gap-x-4'>
                         <SaveButton btnSize='btn-xs' />
