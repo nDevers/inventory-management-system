@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import RefreshButton from '../../../components/Buttons/RefreshButton';
 import TableRow from '../../../components/TableRow';
 import InfoCard from '../../../components/InfoCard';
+import DashboardPageHeading from '../../../components/Headings/DashboardPageHeading';
 
 const SuppliersPayments = () => {
     const tableHeadItems = ['SN', 'Due', 'Paid', 'Total', 'Receivable Due', 'Received', 'Actions'];
@@ -32,14 +33,14 @@ const SuppliersPayments = () => {
 
     return (
         <section className='lg:p-4 md:p-2 p-1'>
-            <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Suppliers Payments: <span className='badge badge-lg badge-secondary'>{suppliersPayments.length}</span></h2>
-
-                <div className='flex items-center gap-x-4'>
-                    <RefreshButton btnSize='btn-xs' />
-                    <PrintButton btnSize='btn-xs' />
-                </div>
-            </div>
+            <DashboardPageHeading
+                name='Suppliers Payments'
+                value={suppliersPayments.length}
+                buttons={[
+                    <RefreshButton />,
+                    <PrintButton />
+                ]}
+            />
 
             <div className='flex gap-x-4 justify-around my-6'>
                 <InfoCard extraClass='w-44' name='Total Deu' status={'00'} />
