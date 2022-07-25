@@ -7,6 +7,8 @@ import EditButton from '../../components/Buttons/EditButton';
 import DeleteButton from '../../components/Buttons/DeleteButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
 import DashboardPageHeading from '../../components/Headings/DashboardPageHeading';
+import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
+import { toast } from 'react-toastify';
 
 const Employees = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -42,7 +44,12 @@ const Employees = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('success');
+                toast(
+                    <div className="p-2 rounded-lg flex items-center gap-x-3">
+                        <BsFillArrowUpRightSquareFill className='text-success text-3xl' />
+                        <p className='text-center text-black'>Added successfully.</p>
+                    </div>
+                );
             });
     };
 
