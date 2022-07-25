@@ -55,7 +55,7 @@ const Companies = () => {
     }, [companies]);
 
     return (
-        <section className='p-4'>
+        <section className='p-4 mt-16'>
             <form onSubmit={addCompany}>
                 <div className="flex justify-between items-center">
                     <h2 className='text-2xl text-center font-bold'>Companies: <TotalItems text={companies.length} /></h2>

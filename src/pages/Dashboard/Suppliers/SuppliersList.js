@@ -63,7 +63,7 @@ const SuppliersList = () => {
     }, [suppliers]);
 
     return (
-        <section className='p-4'>
+        <section className='p-4 mt-16'>
             <form onSubmit={addSupplier}>
                 <DashboardPageHeading
                     name='Suppliers lists'

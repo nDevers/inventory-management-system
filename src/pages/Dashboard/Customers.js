@@ -55,7 +55,7 @@ const Customers = () => {
     }, [customers]);
 
     return (
-        <section className='p-4'>
+        <section className='p-4 mt-16'>
             <form onSubmit={addCustomer}>
                 <DashboardPageHeading
                     name='Customers'

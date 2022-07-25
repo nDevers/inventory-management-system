@@ -52,7 +52,7 @@ const Categories = () => {
     }, [categories]);
 
     return (
-        <section className='p-4'>
+        <section className='p-4 mt-16'>
             <form onSubmit={addCategory}>
                 <div className="flex justify-between items-center">
                     <h2 className='text-2xl text-center font-bold'>Categories: <TotalItems text={categories.length} /></h2>

@@ -32,7 +32,7 @@ const SuppliersPayments = () => {
     }, [suppliersPayments]);
 
     return (
-        <section className='lg:p-4 md:p-2 p-1'>
+        <section className='p-4 mt-16'>
             <DashboardPageHeading
                 name='Suppliers Payments'
                 value={suppliersPayments.length}

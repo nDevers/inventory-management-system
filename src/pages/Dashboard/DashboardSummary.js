@@ -134,7 +134,7 @@ const DashboardSummary = () => {
     }, [customers]);
 
     return (
-        <div className='mx-auto p-2 md:p-3'>
+        <div className='p-4 mt-16'>
             <div className='flex justify-between mb-6'>
                 <RefreshButton />
                 <PrintButton />

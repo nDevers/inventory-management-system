@@ -54,7 +54,7 @@ const UnitTypes = () => {
     }, [unitTypes]);
 
     return (
-        <section className='p-4'>
+        <section className='p-4 mt-16'>
             <form onSubmit={addUnitType}>
                 <div className="flex justify-between items-center">
                     <h2 className='text-2xl text-center font-bold'>Unit Types: <TotalItems text={unitTypes.length} /></h2>

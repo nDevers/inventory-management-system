@@ -89,7 +89,7 @@ const PharmacyItems = () => {
     }, [pharmacyItems]);
 
     return (
-        <section className='lg:p-4 md:p-2 p-1'>
+        <section className='p-4 mt-16'>
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
                 <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>
                     Pharmacy Requested Items: <TotalItems text={pharmacyItems.length} />
