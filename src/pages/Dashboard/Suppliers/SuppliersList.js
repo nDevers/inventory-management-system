@@ -76,7 +76,7 @@ const SuppliersList = () => {
                 />
 
                 <div className="flex justify-between items-center">
-                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
+                    <div className='flex place-items-center gap-4 mb-8'>
                         <Input title={'Supplier Name'} name='SupplierName' isRequired='required' type='text' />
                         <Input title={'Supplier Phone'} name='SupplierPhone' isRequired='required' type='number' />
                         <Input title={'Supplier Website'} name='SupplierWebsite' isRequired='required' type='text' />
