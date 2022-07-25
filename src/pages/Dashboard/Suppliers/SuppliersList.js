@@ -7,7 +7,7 @@ import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
 import RefreshButton from '../../../components/Buttons/RefreshButton';
-import TotalItems from '../../../components/TotalItems';
+import DashboardPageHeading from '../../../components/Headings/DashboardPageHeading';
 
 const SuppliersList = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -66,7 +66,7 @@ const SuppliersList = () => {
         <section className='p-4'>
             <form onSubmit={addSupplier}>
                 <div className="flex justify-between items-center">
-                    <h2 className='text-2xl text-center font-bold'>Suppliers Lists : <TotalItems text={suppliers.length} /></h2>
+                    <DashboardPageHeading name='Suppliers lists' value={suppliers.length} />
 
                     <div className='flex items-center gap-x-4'>
                         <SaveButton btnSize='btn-xs' />
