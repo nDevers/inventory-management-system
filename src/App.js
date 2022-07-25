@@ -2,7 +2,7 @@ import './App.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Routes, Route } from "react-router-dom";
-import Home from './pages/home/Home';
+import Home from './pages/Home';
 import Features from './pages/Features';
 import CustomerStories from './pages/CustomerStories';
 import FindExperts from './pages/FindExperts';
