@@ -6,6 +6,7 @@ import SaveButton from '../../components/Buttons/SaveButton';
 import EditButton from '../../components/Buttons/EditButton';
 import DeleteButton from '../../components/Buttons/DeleteButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
+import TotalItems from '../../components/TotalItems';
 
 const Employees = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -45,19 +46,19 @@ const Employees = () => {
             });
     };
 
-    const [Employees, setEmployees] = useState([]);
+    const [employees, setEmployees] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/employees')
             .then(res => res.json())
             .then(products => setEmployees(products));
-    }, [Employees]);
+    }, [employees]);
 
     return (
         <section className='p-4'>
             <form onSubmit={addEmployee}>
                 <div className="flex justify-between items-center">
-                    <h2 className='text-2xl text-center font-bold'>Employees</h2>
+                    <h2 className='text-2xl text-center font-bold'>Employees: <TotalItems text={employees.length} /></h2>
 
                     <div className='flex items-center gap-x-4'>
                         <SaveButton btnSize='btn-xs' />
@@ -85,7 +86,7 @@ const Employees = () => {
                 </thead>
                 <tbody>
                     {
-                        Employees.map((employee, index) =>
+                        employees.map((employee, index) =>
                             <TableRow key={employee._id} tableRowsData={
                                 [
                                     index + 1,
