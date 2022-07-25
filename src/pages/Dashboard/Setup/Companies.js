@@ -5,6 +5,7 @@ import TableRow from '../../../components/TableRow';
 import SaveButton from '../../../components/Buttons/SaveButton';
 import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
+import RefreshButton from '../../../components/Buttons/RefreshButton';
 
 const Companies = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -60,6 +61,7 @@ const Companies = () => {
 
                     <div className='flex items-center gap-x-4'>
                         <SaveButton btnSize='btn-xs' />
+                        <RefreshButton btnSize='btn-xs' />
                         <PrintButton btnSize='btn-xs' />
                     </div>
                 </div>
