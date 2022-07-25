@@ -7,6 +7,7 @@ import EditButton from '../../components/Buttons/EditButton';
 import DeleteButton from '../../components/Buttons/DeleteButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
 import TotalItems from '../../components/TotalItems';
+import DashboardPageHeading from '../../components/Headings/DashboardPageHeading';
 
 const Customers = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -57,15 +58,14 @@ const Customers = () => {
     return (
         <section className='p-4'>
             <form onSubmit={addCustomer}>
-                <div className="flex justify-between items-center">
-                    <h2 className='text-2xl text-center font-bold'>Customers: <TotalItems text={customers.length} /></h2>
-
-                    <div className='flex items-center gap-x-4'>
-                        <SaveButton btnSize='btn-xs' />
-                        <RefreshButton btnSize='btn-xs' />
-                        <PrintButton btnSize='btn-xs' />
-                    </div>
-                </div>
+                <DashboardPageHeading
+                    name='Customers'
+                    value={customers.length}
+                    buttons={[
+                        <RefreshButton />,
+                        <PrintButton />
+                    ]}
+                />
 
                 <div className="flex justify-between items-center">
                     <div className='flex place-items-center gap-4 mt-4 mb-8'>
