@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from "react-router-dom";
-import registerGif from '../../Assets/GIF/register.gif';
+import registerGif from '../../assets/gif/register.gif';
 
 const Register = () => {
     const navigate = useNavigate();

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from '../Assets/logo.png';
+import logo from '../assets/logo.png';
 import { HiMenuAlt3 } from 'react-icons/hi';
 import UserLinkComponents from './NavbarComponents/UserLinkComponents';
 

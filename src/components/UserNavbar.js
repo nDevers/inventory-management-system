@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from '../Assets/logo.png';
+import logo from '../assets/logo.png';
 import { RiSettings5Fill, RiProfileLine, RiLogoutBoxRFill, RiProductHuntFill, RiProfileFill, RiShoppingCartFill, RiFileDamageFill, RiAdminFill } from 'react-icons/ri';
 import UserLinkComponents from './NavbarComponents/UserLinkComponents';
 import LinkComponents from './NavbarComponents/LinkComponents';

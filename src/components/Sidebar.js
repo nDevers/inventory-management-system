@@ -11,7 +11,7 @@ import { Link, Outlet } from 'react-router-dom';
 import LinkComponents from './NavbarComponents/LinkComponents';
 import DetailsComponent from './NavbarComponents/DetailsComponent';
 import UserNavbar from './UserNavbar';
-import logo from '../Assets/logo.png';
+import logo from '../assets/logo.png';
 
 const Sidebar = () => {
     return (
