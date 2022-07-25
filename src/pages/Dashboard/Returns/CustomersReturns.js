@@ -15,6 +15,7 @@ import TableRow from '../../../components/TableRow';
 import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
+import TotalItems from '../../../components/TotalItems';
 
 const CustomersReturns = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
@@ -25,7 +26,7 @@ const CustomersReturns = () => {
         }
     </tr>;
 
-    const addNonPharmacyProduct = event => {
+    const customerReturn = event => {
         event.preventDefault();
 
         const tradeName = event?.target?.tradeName?.value;
@@ -79,18 +80,18 @@ const CustomersReturns = () => {
         event.target.reset();
     };
 
-    const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+    const [customersReturns, setCustomersReturns] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/returns/customers')
             .then(res => res.json())
-            .then(products => setNonPharmacyProducts(products));
-    }, [nonPharmacyProducts]);
+            .then(products => setCustomersReturns(products));
+    }, [customersReturns]);
 
     return (
         <section className='lg:p-4 md:p-2 p-1'>
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Customers Returns</h2>
+                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Customers Returns: <TotalItems text={customersReturns.length} /></h2>
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
@@ -106,7 +107,7 @@ const CustomersReturns = () => {
 
                     <ModalHeading modalHeading={'Create a Customer Return'} />
 
-                    <form onSubmit={addNonPharmacyProduct}>
+                    <form onSubmit={customerReturn}>
                         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 mb-2'>
                             <Input title={'Trade Name'} type='text' placeholder='Trade name' name='tradeName' isRequired='required' />
                             <Input title={'Generic Name'} type='text' placeholder='Generic name' name='genericName' isRequired='required' />
@@ -234,7 +235,7 @@ const CustomersReturns = () => {
                 </thead>
                 <tbody>
                     {
-                        nonPharmacyProducts.map((product, index) =>
+                        customersReturns.map((product, index) =>
                             <TableRow
                                 key={product._id}
                                 tableRowsData={
