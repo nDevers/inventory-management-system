@@ -1,6 +1,5 @@
 import React from 'react';
 import { BsGithub, BsLinkedin, BsFacebook } from 'react-icons/bs';
-import { MdSubdirectoryArrowRight } from 'react-icons/md';
 import montasim from '../../assets/images/montasim.jpg';
 
 const About = () => {
