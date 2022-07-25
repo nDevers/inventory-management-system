@@ -1,21 +1,21 @@
 import React from 'react';
-import SaveButton from '../../../components/Buttons/SaveButton';
-import CancelButton from '../../../components/Buttons/CancelButton';
-import PrintButton from '../../../components/Buttons/PrintButton';
-import Input from '../../../components/FormComponents/Input';
-import Select from '../../../components/FormComponents/Select';
-import DoubleInput from '../../../components/FormComponents/DoubleInput';
-import ModalCloseButton from '../../../components/Buttons/ModalCloseButton';
-import ModalHeading from '../../../components/Headings/ModalHeading';
+import SaveButton from '../../../components/buttons/SaveButton';
+import CancelButton from '../../../components/buttons/CancelButton';
+import PrintButton from '../../../components/buttons/PrintButton';
+import Input from '../../../components/form/Input';
+import Select from '../../../components/form/Select';
+import DoubleInput from '../../../components/form/DoubleInput';
+import ModalCloseButton from '../../../components/buttons/ModalCloseButton';
+import ModalHeading from '../../../components/headings/ModalHeading';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import RefreshButton from '../../../components/Buttons/RefreshButton';
+import RefreshButton from '../../../components/buttons/RefreshButton';
 import TableRow from '../../../components/TableRow';
-import EditButton from '../../../components/Buttons/EditButton';
-import DeleteButton from '../../../components/Buttons/DeleteButton';
+import EditButton from '../../../components/buttons/EditButton';
+import DeleteButton from '../../../components/buttons/DeleteButton';
 import { toast } from 'react-toastify';
-import DashboardPageHeading from '../../../components/Headings/DashboardPageHeading';
-import UploadButton from '../../../components/Buttons/UploadButton';
+import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
+import UploadButton from '../../../components/buttons/UploadButton';
 
 const SuppliersDocuments = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];

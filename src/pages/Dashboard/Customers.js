@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import PrintButton from '../../components/Buttons/PrintButton';
-import Input from '../../components/FormComponents/Input';
+import PrintButton from '../../components/buttons/PrintButton';
+import Input from '../../components/form/Input';
 import TableRow from '../../components/TableRow';
-import EditButton from '../../components/Buttons/EditButton';
-import DeleteButton from '../../components/Buttons/DeleteButton';
-import RefreshButton from '../../components/Buttons/RefreshButton';
-import DashboardPageHeading from '../../components/Headings/DashboardPageHeading';
-import SaveButton from '../../components/Buttons/SaveButton';
+import EditButton from '../../components/buttons/EditButton';
+import DeleteButton from '../../components/buttons/DeleteButton';
+import RefreshButton from '../../components/buttons/RefreshButton';
+import DashboardPageHeading from '../../components/headings/DashboardPageHeading';
+import SaveButton from '../../components/buttons/SaveButton';
 
 const Customers = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];

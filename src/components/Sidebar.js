@@ -8,8 +8,8 @@ import { MdLocalPharmacy, MdSpaceDashboard } from 'react-icons/md';
 import { TbTruckReturn, TbTruckDelivery } from 'react-icons/tb';
 import { RiProductHuntFill, RiAdminFill, RiShoppingCartFill, RiProfileFill, RiFileDamageFill } from 'react-icons/ri';
 import { Link, Outlet } from 'react-router-dom';
-import LinkComponents from './NavbarComponents/LinkComponents';
-import DetailsComponent from './NavbarComponents/DetailsComponent';
+import LinkComponents from './navbar/LinkComponents';
+import DetailsComponent from './navbar/DetailsComponent';
 import UserNavbar from './UserNavbar';
 import logo from '../assets/logo.png';
 

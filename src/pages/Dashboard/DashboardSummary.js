@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ComposedChart, XAxis, YAxis, Tooltip, Legend, CartesianGrid, Area, Bar, Line, PieChart, Pie } from 'recharts';
-import PrintButton from '../../components/Buttons/PrintButton';
-import RefreshButton from '../../components/Buttons/RefreshButton';
+import PrintButton from '../../components/buttons/PrintButton';
+import RefreshButton from '../../components/buttons/RefreshButton';
 import InfoCard from '../../components/InfoCard';
 
 const DashboardSummary = () => {

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-dom";
 import logo from '../assets/logo.png';
 import { HiMenuAlt3 } from 'react-icons/hi';
-import UserLinkComponents from './NavbarComponents/UserLinkComponents';
+import UserLinkComponents from './navbar/UserLinkComponents';
 
 const DefaultNavbar = () => {
     const defaultNavbarItems = <>
