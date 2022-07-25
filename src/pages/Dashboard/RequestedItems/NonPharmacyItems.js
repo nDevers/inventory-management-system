@@ -15,6 +15,7 @@ import TableRow from '../../../components/TableRow';
 import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
+import TotalItems from '../../../components/TotalItems';
 
 const NonPharmacyItems = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
@@ -25,7 +26,7 @@ const NonPharmacyItems = () => {
         }
     </tr>;
 
-    const addNonPharmacyProduct = event => {
+    const addNonPharmacyRequestedItem = event => {
         event.preventDefault();
 
         const tradeName = event?.target?.tradeName?.value;
@@ -79,18 +80,20 @@ const NonPharmacyItems = () => {
         event.target.reset();
     };
 
-    const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+    const [nonPharmacyRequestedItems, setNonPharmacyRequestedItems] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/requestedItems/nonPharmacy')
             .then(res => res.json())
-            .then(products => setNonPharmacyProducts(products));
-    }, [nonPharmacyProducts]);
+            .then(products => setNonPharmacyRequestedItems(products));
+    }, [nonPharmacyRequestedItems]);
 
     return (
         <section className='lg:p-4 md:p-2 p-1'>
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Non Pharmacy Requested Items</h2>
+                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>
+                    Non Pharmacy Requested Items: <TotalItems text={nonPharmacyRequestedItems.length} />
+                </h2>
 
                 <div className='flex items-center gap-x-4'>
                     <NewButton modalId='create-new-product' btnSize='btn-xs' />
@@ -106,7 +109,7 @@ const NonPharmacyItems = () => {
 
                     <ModalHeading modalHeading={'Create a Non Pharmacy Requested Item'} />
 
-                    <form onSubmit={addNonPharmacyProduct}>
+                    <form onSubmit={addNonPharmacyRequestedItem}>
                         <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 mb-2'>
                             <Input title={'Trade Name'} type='text' placeholder='Trade name' name='tradeName' isRequired='required' />
                             <Input title={'Generic Name'} type='text' placeholder='Generic name' name='genericName' isRequired='required' />
@@ -234,7 +237,7 @@ const NonPharmacyItems = () => {
                 </thead>
                 <tbody>
                     {
-                        nonPharmacyProducts.map((product, index) =>
+                        nonPharmacyRequestedItems.map((product, index) =>
                             <TableRow
                                 key={product._id}
                                 tableRowsData={
