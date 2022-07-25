@@ -22,18 +22,18 @@ const SuppliersPayments = () => {
         }
     </tr>;
 
-    const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+    const [suppliersPayments, setSuppliersPayments] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/suppliers/payments')
             .then(res => res.json())
-            .then(products => setNonPharmacyProducts(products));
-    }, [nonPharmacyProducts]);
+            .then(products => setSuppliersPayments(products));
+    }, [suppliersPayments]);
 
     return (
         <section className='lg:p-4 md:p-2 p-1'>
             <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Suppliers Payments</h2>
+                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Suppliers Payments: <span className='badge badge-lg badge-secondary'>{suppliersPayments.length}</span></h2>
 
                 <div className='flex items-center gap-x-4'>
                     <RefreshButton btnSize='btn-xs' />
@@ -42,9 +42,9 @@ const SuppliersPayments = () => {
             </div>
 
             <div className='flex gap-x-4 justify-around my-6'>
-                <InfoCard name='Total Deu' status={'00'} />
-                <InfoCard name='Total Paid' status={'00'} />
-                <InfoCard name='Total Received' status={'99'} />
+                <InfoCard extraClass='w-44' name='Total Deu' status={'00'} />
+                <InfoCard extraClass='w-44' name='Total Paid' status={'00'} />
+                <InfoCard extraClass='w-44' name='Total Received' status={'99'} />
             </div>
 
             {/* update a pharmacy product */}
@@ -118,7 +118,7 @@ const SuppliersPayments = () => {
                 </thead>
                 <tbody>
                     {
-                        nonPharmacyProducts.map((product, index) =>
+                        suppliersPayments.map((product, index) =>
                             <TableRow
                                 key={product._id}
                                 tableRowsData={
