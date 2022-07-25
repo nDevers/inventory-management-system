@@ -1,8 +1,11 @@
 import React from 'react';
+import DefaultNavbar from '../components/DefaultNavbar';
+import Footer from '../components/Footer';
 
 const Contact = () => {
     return (
         <div>
+            <DefaultNavbar />
             <div className="container my-24 px-6 mx-auto">
                 <section className="mb-32 text-gray-800">
 
@@ -182,6 +185,7 @@ const Contact = () => {
                 </section>
 
             </div>
+            <Footer />
         </div>
     );
 };
