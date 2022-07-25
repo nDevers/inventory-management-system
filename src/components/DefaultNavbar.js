@@ -1,26 +1,88 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import logo from '../assets/logo.png';
-import { HiMenuAlt3 } from 'react-icons/hi';
-import UserLinkComponents from './navbar/UserLinkComponents';
+import { HiMenuAlt3 } from 'react-icons/hi'
+import logo from '../assets/logo.png'
 
 const DefaultNavbar = () => {
+    const defaultNavbarMenus = [
+        {
+            "id": 1,
+            "link": "/",
+            "icon": "",
+            "name": "Home",
+            "extraComponent": "",
+            "extraClass": ""
+        },
+        {
+            "id": 7,
+            "link": "dashboard",
+            "icon": "",
+            "name": "Dashboard",
+            "extraComponent": "",
+            "extraClass": ""
+        },
+        {
+            "id": 2,
+            "link": "about",
+            "icon": "",
+            "name": "About",
+            "extraComponent": "",
+            "extraClass": ""
+        },
+        {
+            "id": 3,
+            "link": "contact",
+            "icon": "",
+            "name": "Contact",
+            "extraComponent": "",
+            "extraClass": ""
+        },
+        {
+            "id": 4,
+            "link": "login",
+            "icon": "",
+            "name": "Login",
+            "extraComponent": "",
+            "extraClass": ""
+        },
+        {
+            "id": 5,
+            "link": "pricing",
+            "icon": "",
+            "name": "Get Started",
+            "extraComponent": "",
+            "extraClass": "btn btn-sm btn-secondary text-white border-0 block lg:hidden md:hidden hover:bg-secondary hover:opacity-90"
+        }
+    ];
+
     const defaultNavbarItems = <>
-        <UserLinkComponents to={'/'} name={'Home'} />
-        <UserLinkComponents to={'about'} name={'About'} />
-        <UserLinkComponents to={'contact'} name={'Contact'} />
-        <UserLinkComponents to={'login'} name={'Login'} />
-        <UserLinkComponents to={'/pricing'} extraclassName={'btn btn-sm btn-outline block lg:hidden md:hidden'} name={'Get Started'} />
+        {
+            defaultNavbarMenus.map(defaultNavbarMenu =>
+                <li key={defaultNavbarMenu.id}>
+                    <a href={defaultNavbarMenu.link}>
+                        <span className={`flex items-center gap-x-2 ${defaultNavbarMenu.extraClass}`}>
+                            {defaultNavbarMenu.icon}
+                            {defaultNavbarMenu.name}
+                            {defaultNavbarMenu.extraComponent}
+                        </span>
+                    </a>
+                </li>)
+        }
     </>
 
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
-                <Link className="text-lg md:text-lg lg:text-xl font-semibold uppercase flex items-center" to='/'>
-                    <img className='w-12' src={logo} alt="logo" />
+                <a href='/' className="text-lg md:text-lg lg:text-xl font-semibold uppercase flex items-center" >
+                    <img
+                        width={45}
+                        height={45}
+                        src={logo}
+                        alt="logo" />
                     String LAB
-                </Link>
+                </a>
             </div>
+
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
                     {
@@ -29,9 +91,10 @@ const DefaultNavbar = () => {
                 </ul>
 
                 <div className='block md:hidden lg:hidden'>
-                    <Link className=" btn btn-sm md:btn-md lg:btn-md" to='/pricing'>Get started</Link>
+                    <a className=" btn btn-sm md:btn-md lg:btn-md" href='/pricing'>Get started</a>
                 </div>
             </div>
+
             <div className="navbar-end">
                 <div className="dropdown dropdown-end">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -45,7 +108,7 @@ const DefaultNavbar = () => {
                 </div>
 
                 <div className='hidden md:block lg:block'>
-                    <Link className=" btn btn-sm md:btn-md lg:btn-md" to='/pricing'>Get started</Link>
+                    <a href='/pricing'><span className=" btn bg-secondary border-0 text-white hover:bg-secondary hover:opacity-90">Get started</span></a>
                 </div>
             </div>
         </div>
