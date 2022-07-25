@@ -15,13 +15,13 @@ import logo from '../assets/logo.png';
 
 const Sidebar = () => {
     return (
-        <div className="drawer drawer-mobile">
+        <div className="drawer drawer-mobile fixed top-0 left-0 right-0">
             <input id="dashboard" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content flex flex-col">
                 <UserNavbar />
                 <Outlet />
             </div>
-            <div className="drawer-side lg:bg-green-300 md:bg-green-300 p-0 m-0">
+            <div className="drawer-side lg:bg-yellow-200 md:bg-yellow-200 w-52">
                 <label htmlFor="dashboard" className="drawer-overlay"></label>
                 <div className="flex flex-col justify-between">
                     <nav className="flex flex-col mt-6 space-y-1">

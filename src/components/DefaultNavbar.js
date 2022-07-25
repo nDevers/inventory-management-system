@@ -73,14 +73,14 @@ const DefaultNavbar = () => {
     return (
         <div className="navbar bg-base-100">
             <div className="navbar-start">
-                <a href='/' className="text-lg md:text-lg lg:text-xl font-semibold uppercase flex items-center" >
+                <Link to='/' className="text-lg md:text-lg lg:text-xl font-semibold uppercase flex items-center" >
                     <img
                         width={45}
                         height={45}
                         src={logo}
                         alt="logo" />
                     String LAB
-                </a>
+                </Link>
             </div>
 
             <div className="navbar-center hidden lg:flex">

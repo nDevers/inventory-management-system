@@ -6,19 +6,60 @@ import { BiCategory, BiGitPullRequest, BiUnite } from 'react-icons/bi';
 import { AiFillCopyrightCircle, AiFillCreditCard, AiFillSetting } from 'react-icons/ai';
 import { TbTruckDelivery, TbTruckReturn } from 'react-icons/tb';
 import { FaThList, FaUser, FaUsers, FaRegFolder } from 'react-icons/fa';
+import { BiMenuAltRight } from 'react-icons/bi';
 import { BsCreditCard2BackFill } from 'react-icons/bs';
 import { HiDocumentText } from 'react-icons/hi';
 import DetailsComponent from './navbar/DetailsComponent';
 import LinkComponents from './navbar/LinkComponents';
 import UserLinkComponents from './navbar/UserLinkComponents';
+import { Link } from 'react-router-dom';
 
 const UserNavbar = () => {
     return (
-        <div className="navbar">
+        <div className="navbar bg-yellow-200 fixed top-0 left-0 right-0 z-50">
             <div className="navbar-start">
-                <div className="dropdown">
+                <Link to='/' className="text-xl font-semibold uppercase flex items-center md:hidden lg:hidden">
+                    <img className='w-12' src={logo} alt="logo" />
+                    String LAB
+                </Link>
+            </div>
+
+            <div className="navbar-center hidden lg:flex">
+
+            </div>
+
+            <div className="navbar-end">
+                <div className="dropdown dropdown-end hidden md:block lg:block">
+                    <div tabIndex="0" className='flex items-center cursor-pointer'>
+                        <p className='mr-4'>User Name</p>
+                        <label className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img src="https://api.lorem.space/image/face?hash=33791" alt='user avatar' />
+                            </div>
+                        </label>
+                    </div>
+                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                        <UserLinkComponents
+                            to={'/profile'}
+                            icon={<RiProfileLine className='text-lg' />}
+                            name={'Profile'}
+                            extraComponent={<span className="badge">New</span>} />
+
+                        <UserLinkComponents
+                            to={'/settings'}
+                            icon={<RiSettings5Fill className='text-lg' />}
+                            name={'Settings'} />
+
+                        <UserLinkComponents
+                            to={'/'}
+                            icon={<RiLogoutBoxRFill className='text-lg' />}
+                            name={'Logout'} />
+                    </ul>
+                </div>
+
+                <div className="dropdown dropdown-left">
                     <label tabIndex="0" className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <BiMenuAltRight className='text-2xl font-bold' />
                     </label>
                     <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                         <LinkComponents to={''} icon={<MdSpaceDashboard className='text-lg' />} name={'Dashboard'} />
@@ -171,63 +212,6 @@ const UserNavbar = () => {
                                         name={'Documents'} />
                                 ]
                             } />
-                    </ul>
-                </div>
-                <a href='/' className="btn btn-ghost text-xl uppercase flex items-center">
-                    <img className='w-12' src={logo} alt="logo" />
-                    String LAB
-                </a>
-            </div>
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
-                    <div className='flex items-center'>
-                        <div className="text-sm breadcrumbs">
-                            <ul>
-                                <UserLinkComponents
-                                    to={'/'}
-                                    icon={<FaRegFolder className='text-md' />}
-                                    name={'Home'} />
-
-                                <UserLinkComponents
-                                    to={'/dashboard'}
-                                    icon={<MdSpaceDashboard className='text-md' />}
-                                    name={'Dashboard'} />
-
-                                <UserLinkComponents
-                                    to={'/dashboard'}
-                                    icon={<MdSpaceDashboard className='text-md' />}
-                                    name={'Dashboard'} />
-                            </ul>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-            <div className="navbar-end">
-                <div className="dropdown dropdown-end">
-                    <div tabIndex="0" className='flex items-center cursor-pointer'>
-                        <p className='mr-4'>User Name</p>
-                        <label className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="https://api.lorem.space/image/face?hash=33791" alt='user avatar' />
-                            </div>
-                        </label>
-                    </div>
-                    <ul tabIndex="0" className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <UserLinkComponents
-                            to={'/profile'}
-                            icon={<RiProfileLine className='text-lg' />}
-                            name={'Profile'}
-                            extraComponent={<span className="badge">New</span>} />
-
-                        <UserLinkComponents
-                            to={'/settings'}
-                            icon={<RiSettings5Fill className='text-lg' />}
-                            name={'Settings'} />
-
-                        <UserLinkComponents
-                            to={'/'}
-                            icon={<RiLogoutBoxRFill className='text-lg' />}
-                            name={'Logout'} />
                     </ul>
                 </div>
             </div>
