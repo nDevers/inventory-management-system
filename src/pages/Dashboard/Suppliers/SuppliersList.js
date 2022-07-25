@@ -6,6 +6,7 @@ import SaveButton from '../../../components/Buttons/SaveButton';
 import EditButton from '../../../components/Buttons/EditButton';
 import DeleteButton from '../../../components/Buttons/DeleteButton';
 import { toast } from 'react-toastify';
+import RefreshButton from '../../../components/Buttons/RefreshButton';
 
 const SuppliersList = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -68,6 +69,7 @@ const SuppliersList = () => {
 
                     <div className='flex items-center gap-x-4'>
                         <SaveButton btnSize='btn-xs' />
+                        <RefreshButton btnSize='btn-xs' />
                         <PrintButton btnSize='btn-xs' />
                     </div>
                 </div>
