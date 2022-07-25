@@ -6,6 +6,7 @@ import EditButton from '../../components/Buttons/EditButton';
 import DeleteButton from '../../components/Buttons/DeleteButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
 import DashboardPageHeading from '../../components/Headings/DashboardPageHeading';
+import SaveButton from '../../components/Buttons/SaveButton';
 
 const Customers = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -60,6 +61,7 @@ const Customers = () => {
                     name='Customers'
                     value={customers.length}
                     buttons={[
+                        <SaveButton />,
                         <RefreshButton />,
                         <PrintButton />
                     ]}
