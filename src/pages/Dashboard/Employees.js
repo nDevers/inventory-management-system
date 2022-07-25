@@ -6,7 +6,6 @@ import SaveButton from '../../components/Buttons/SaveButton';
 import EditButton from '../../components/Buttons/EditButton';
 import DeleteButton from '../../components/Buttons/DeleteButton';
 import RefreshButton from '../../components/Buttons/RefreshButton';
-import TotalItems from '../../components/TotalItems';
 import DashboardPageHeading from '../../components/Headings/DashboardPageHeading';
 
 const Employees = () => {
