@@ -8,6 +8,10 @@ import DeleteButton from '../../../components/buttons/DeleteButton';
 import RefreshButton from '../../../components/buttons/RefreshButton';
 import TotalItems from '../../../components/TotalItems';
 import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
+import CancelButton from '../../../components/buttons/CancelButton';
+import ModalHeading from '../../../components/headings/ModalHeading';
+import ModalCloseButton from '../../../components/buttons/ModalCloseButton';
+import NewButton from '../../../components/buttons/NewButton';
 
 const Companies = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -57,25 +61,48 @@ const Companies = () => {
 
     return (
         <section className='p-4 mt-16'>
-            <form onSubmit={addCompany}>
+            <div>
                 <DashboardPageHeading
                     name='Customers Returns'
                     value={companies.length}
                     buttons={[
-                        <SaveButton />,
+                        <NewButton modalId='create-new-product' />,
                         <RefreshButton />,
                         <PrintButton />
                     ]}
                 />
 
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
-                    <Input title={'Company Name'} name='companyName' isRequired='required' type='text' />
-                    <Input title={'Company Phone'} name='companyPhone' isRequired='required' type='number' />
-                    <Input title={'Company Website'} name='companyWebsite' isRequired='required' type='text' />
-                    <Input title={'Company Email'} name='companyEmail' isRequired='required' type='email' />
-                    <Input title={'Company Address'} name='companyAddress' isRequired='required' type='text' />
-                </div>
-            </form>
+                <input type="checkbox" id="create-new-product" className="modal-toggle" />
+                <label htmlFor="create-new-product" className="modal cursor-pointer">
+                    <label className="modal-box lg:w-5/12 md:w-5/12 w-11/12 max-w-4xl relative" htmlFor="">
+                        <ModalCloseButton modalId={'create-new-product'} />
+
+                        <ModalHeading modalHeading={'Add a new Company'} />
+
+                        <form onSubmit={addCompany} className='mx-auto'>
+                            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
+                                <Input title={'Company Name'} name='companyName' isRequired='required' type='text' />
+                                <Input title={'Company Phone'} name='companyPhone' isRequired='required' type='text' />
+                                <Input title={'Company Website'} name='companyWebsite' isRequired='required' type='text' />
+                                <Input title={'Company Email'} name='companyEmail' isRequired='required' type='email' />
+                                <Input title={'Company Address'} name='companyAddress' isRequired='required' type='text' />
+                            </div>
+
+                            <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                                <div className="grid">
+                                    <SaveButton extraClass='mt-4' />
+                                </div>
+
+                                <div className="divider lg:divider-horizontal"></div>
+
+                                <div className="grid">
+                                    <CancelButton extraClass='mt-4' />
+                                </div>
+                            </div>
+                        </form>
+                    </label>
+                </label>
+            </div>
 
             <table className="table table-zebra table-compact w-full">
                 <thead>
