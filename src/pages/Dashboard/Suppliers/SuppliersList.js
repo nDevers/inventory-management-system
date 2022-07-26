@@ -100,10 +100,10 @@ const SuppliersList = () => {
                                     <SaveButton extraClass='mt-4' />
                                 </div>
 
-                                <div className="divider lg:divider-horizontal"></div>
+                                <div className="divider lg:divider-horizontal hidden md:block lg:block"></div>
 
                                 <div className="grid">
-                                    <CancelButton extraClass='mt-4' />
+                                    <CancelButton extraClass='lg:mt-4 md:mt-3 mt-2' />
                                 </div>
                             </div>
                         </form>
