@@ -63,7 +63,7 @@ const Companies = () => {
         <section className='p-4 mt-16'>
             <div>
                 <DashboardPageHeading
-                    name='Customers Returns'
+                    name='Companies'
                     value={companies.length}
                     buttons={[
                         <NewButton modalId='create-new-product' />,
