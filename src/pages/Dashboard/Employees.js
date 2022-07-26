@@ -9,6 +9,10 @@ import RefreshButton from '../../components/buttons/RefreshButton';
 import DashboardPageHeading from '../../components/headings/DashboardPageHeading';
 import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 import { toast } from 'react-toastify';
+import CancelButton from '../../components/buttons/CancelButton';
+import ModalHeading from '../../components/headings/ModalHeading';
+import ModalCloseButton from '../../components/buttons/ModalCloseButton';
+import NewButton from '../../components/buttons/NewButton';
 
 const Employees = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -63,25 +67,48 @@ const Employees = () => {
 
     return (
         <section className='p-4 mt-16'>
-            <form onSubmit={addEmployee}>
+            <div>
                 <DashboardPageHeading className='fixed top-0 left-0 right-0'
                     name='Employees'
                     value={employees.length}
                     buttons={[
-                        <SaveButton />,
+                        <NewButton modalId='create-new-product' />,
                         <RefreshButton />,
                         <PrintButton />
                     ]}
                 />
 
-                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
-                    <Input title={'Employee Name'} name='employeeName' isRequired='required' type='text' />
-                    <Input title={'Employee Phone'} name='employeePhone' isRequired='required' type='text' />
-                    <Input title={'Employee Website'} name='employeeWebsite' isRequired='required' type='text' />
-                    <Input title={'Employee Email'} name='employeeEmail' isRequired='required' type='email' />
-                    <Input title={'Employee Address'} name='employeeAddress' isRequired='required' type='text' />
-                </div>
-            </form>
+                <input type="checkbox" id="create-new-product" className="modal-toggle" />
+                <label htmlFor="create-new-product" className="modal cursor-pointer">
+                    <label className="modal-box lg:w-5/12 md:w-5/12 w-11/12 max-w-4xl relative" htmlFor="">
+                        <ModalCloseButton modalId={'create-new-product'} />
+
+                        <ModalHeading modalHeading={'Add a new Employee'} />
+
+                        <form onSubmit={addEmployee} className='mx-auto'>
+                            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
+                                <Input title={'Employee Name'} name='employeeName' isRequired='required' type='text' />
+                                <Input title={'Employee Phone'} name='employeePhone' isRequired='required' type='text' />
+                                <Input title={'Employee Website'} name='employeeWebsite' isRequired='required' type='text' />
+                                <Input title={'Employee Email'} name='employeeEmail' isRequired='required' type='email' />
+                                <Input title={'Employee Address'} name='employeeAddress' isRequired='required' type='text' />
+                            </div>
+
+                            <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                                <div className="grid">
+                                    <SaveButton extraClass='mt-4' />
+                                </div>
+
+                                <div className="divider lg:divider-horizontal"></div>
+
+                                <div className="grid">
+                                    <CancelButton extraClass='mt-4' />
+                                </div>
+                            </div>
+                        </form>
+                    </label>
+                </label>
+            </div>
 
             <table className="table table-zebra table-compact w-full">
                 <thead>
