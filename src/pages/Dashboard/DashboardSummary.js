@@ -106,8 +106,22 @@ const DashboardSummary = () => {
 
     const [pharmacyProducts, setPharmacyProducts] = useState([]);
     const [nonPharmacyProducts, setNonPharmacyProducts] = useState([]);
+    const [pharmacyRequestedItems, setPharmacyRequestedItems] = useState([]);
+    const [nonPharmacyRequestedItems, setNonPharmacyRequestedItems] = useState([]);
+    const [pharmacyOrders, setPharmacyOrders] = useState([]);
+    const [nonPharmacyOrders, setNonPharmacyOrders] = useState([]);
+    const [pharmacyPurchases, setPharmacyPurchases] = useState([]);
+    const [nonPharmacyPurchases, setNonPharmacyPurchases] = useState([]);
+    const [returnsCustomers, setReturnsCustomers] = useState([]);
+    const [returnsExpiresOrDamages, setReturnsExpiresOrDamages] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [unitTypes, setUnitTypes] = useState([]);
+    const [companies, setCompanies] = useState([]);
     const [employees, setEmployees] = useState([]);
     const [customers, setCustomers] = useState([]);
+    const [suppliersLists, setSuppliersLists] = useState([]);
+    const [suppliersPayments, setSuppliersPayments] = useState([]);
+    const [suppliersDocuments, setsuppliersDocuments] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
@@ -116,22 +130,106 @@ const DashboardSummary = () => {
     }, [pharmacyProducts]);
 
     useEffect(() => {
-        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+        fetch('https://stringlab-ims-server.herokuapp.com/api/products/nonPharmacy')
             .then(res => res.json())
             .then(products => setNonPharmacyProducts(products.length));
     }, [nonPharmacyProducts]);
 
     useEffect(() => {
-        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+        fetch('https://stringlab-ims-server.herokuapp.com/api/requestedItems/pharmacy')
+            .then(res => res.json())
+            .then(products => setPharmacyRequestedItems(products.length));
+    }, [pharmacyRequestedItems]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/requestedItems/nonPharmacy')
+            .then(res => res.json())
+            .then(products => setNonPharmacyRequestedItems(products.length));
+    }, [nonPharmacyRequestedItems]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/orders/pharmacy')
+            .then(res => res.json())
+            .then(products => setPharmacyOrders(products.length));
+    }, [pharmacyOrders]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/orders/nonPharmacy')
+            .then(res => res.json())
+            .then(products => setNonPharmacyOrders(products.length));
+    }, [nonPharmacyOrders]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/purchases/pharmacy')
+            .then(res => res.json())
+            .then(products => setPharmacyPurchases(products.length));
+    }, [pharmacyPurchases]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/purchases/nonPharmacy')
+            .then(res => res.json())
+            .then(products => setNonPharmacyPurchases(products.length));
+    }, [nonPharmacyPurchases]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/returns/customers')
+            .then(res => res.json())
+            .then(products => setReturnsCustomers(products.length));
+    }, [returnsCustomers]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/returns/expiresOrDamages')
+            .then(res => res.json())
+            .then(products => setReturnsExpiresOrDamages(products.length));
+    }, [returnsExpiresOrDamages]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/categories')
+            .then(res => res.json())
+            .then(products => setCategories(products.length));
+    }, [categories]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/unitTypes')
+            .then(res => res.json())
+            .then(products => setUnitTypes(products.length));
+    }, [unitTypes]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/companies')
+            .then(res => res.json())
+            .then(products => setCompanies(products.length));
+    }, [companies]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/employees')
             .then(res => res.json())
             .then(e => setEmployees(e.length));
     }, [employees]);
 
     useEffect(() => {
-        fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
+        fetch('https://stringlab-ims-server.herokuapp.com/api/customers')
             .then(res => res.json())
             .then(e => setCustomers(e.length));
     }, [customers]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/suppliers/lists')
+            .then(res => res.json())
+            .then(products => setSuppliersLists(products.length));
+    }, [suppliersLists]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/suppliers/payments')
+            .then(res => res.json())
+            .then(e => setSuppliersPayments(e.length));
+    }, [suppliersPayments]);
+
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/suppliers/documents')
+            .then(res => res.json())
+            .then(e => setsuppliersDocuments(e.length));
+    }, [suppliersDocuments]);
 
     return (
         <div className='p-4 mt-16'>
@@ -140,30 +238,42 @@ const DashboardSummary = () => {
                 <PrintButton />
             </div>
 
-            <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4'>
-                <InfoCard name={'Non Pharmacy Items'} status={nonPharmacyProducts} />
+            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
+                <InfoCard name={'Products Non Pharmacy'} status={nonPharmacyProducts} />
 
-                <InfoCard name={'Pharmacy Items'} status={pharmacyProducts} />
+                <InfoCard name={'Products Pharmacy'} status={pharmacyProducts} />
+
+                <InfoCard name={'Requested Items Pharmacy'} status={pharmacyRequestedItems} />
+
+                <InfoCard name={'Requested Items Non Pharmacy'} status={nonPharmacyRequestedItems} />
+
+                <InfoCard name={'Orders Pharmacy'} status={pharmacyOrders} />
+
+                <InfoCard name={'Orders Non Pharmacy'} status={nonPharmacyOrders} />
+
+                <InfoCard name={'Purchases Pharmacy'} status={pharmacyPurchases} />
+
+                <InfoCard name={'Purchases Non Pharmacy'} status={nonPharmacyPurchases} />
+
+                <InfoCard name={'Returns Customers'} status={returnsCustomers} />
+
+                <InfoCard name={'Returns Expires / Returns'} status={returnsExpiresOrDamages} />
+
+                <InfoCard name={'Categories'} status={categories} />
+
+                <InfoCard name={'Unit Types'} status={unitTypes} />
+
+                <InfoCard name={'Companies'} status={companies} />
 
                 <InfoCard name={'Employees'} status={employees} />
 
                 <InfoCard name={'Customers'} status={customers} />
 
-                <InfoCard name={'RTN MRP'} status={99} />
+                <InfoCard name={'Suppliers'} status={suppliersLists} />
 
-                <InfoCard name={'RTN TP'} status={99} />
+                <InfoCard name={'Payments'} status={suppliersPayments} />
 
-                <InfoCard name={'Discount'} status={99} />
-
-                <InfoCard name={'Net Sale'} status={99} />
-
-                <InfoCard name={'Net TP'} status={99} />
-
-                <InfoCard name={'From'} status={99} />
-
-                <InfoCard name={'To'} status={99} />
-
-                <InfoCard name={'Period'} status={99} />
+                <InfoCard name={'Documents'} status={suppliersDocuments} />
             </div>
 
             <ComposedChart className='my-6 w-full' data={data}>
