@@ -84,10 +84,10 @@ const PurchasePharmacyProducts = () => {
                 name='Purchase Pharmacy Products'
                 value={pharmacyProducts.length}
                 buttons={[
-                    <NewButton modalId='create-new-product' />,
+                    <NewButton modalId='create-new-product'/>,
+                    <NewButton modalId='create-direct-purchase' title="Direct_Purchase"/>,
                     <RefreshButton />,
-                    <PrintButton />,
-                    <NewButton modalId='create-direct-purchase' />
+                    <PrintButton />
                 ]}
             />
 
