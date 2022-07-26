@@ -67,14 +67,12 @@ const Customers = () => {
                     ]}
                 />
 
-                <div className="flex justify-between items-center">
-                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
-                        <Input title={'Customer Name'} name='customerName' isRequired='required' type='text' />
-                        <Input title={'Customer Phone'} name='customerPhone' isRequired='required' type='text' />
-                        <Input title={'Customer Website'} name='customerWebsite' type='text' />
-                        <Input title={'Customer Email'} name='customerEmail' type='email' />
-                        <Input title={'Customer Address'} name='customerAddress' isRequired='required' type='text' />
-                    </div>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
+                    <Input title={'Customer Name'} name='customerName' isRequired='required' type='text' />
+                    <Input title={'Customer Phone'} name='customerPhone' isRequired='required' type='text' />
+                    <Input title={'Customer Website'} name='customerWebsite' type='text' />
+                    <Input title={'Customer Email'} name='customerEmail' type='email' />
+                    <Input title={'Customer Address'} name='customerAddress' isRequired='required' type='text' />
                 </div>
             </form>
 
