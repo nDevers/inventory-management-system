@@ -7,12 +7,12 @@ import EditButton from '../../components/buttons/EditButton';
 import DeleteButton from '../../components/buttons/DeleteButton';
 import RefreshButton from '../../components/buttons/RefreshButton';
 import DashboardPageHeading from '../../components/headings/DashboardPageHeading';
-import { BsFillArrowUpRightSquareFill } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import CancelButton from '../../components/buttons/CancelButton';
 import ModalHeading from '../../components/headings/ModalHeading';
 import ModalCloseButton from '../../components/buttons/ModalCloseButton';
 import NewButton from '../../components/buttons/NewButton';
+import AddModal from '../../components/modals/AddModal';
 
 const Employees = () => {
     const tableHeadItems = ['SN', 'Name', 'Phone', 'Website', 'Email', 'Address', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -49,10 +49,7 @@ const Employees = () => {
             .then(res => res.json())
             .then(data => {
                 toast(
-                    <div className="p-2 rounded-lg flex items-center gap-x-3">
-                        <BsFillArrowUpRightSquareFill className='text-success text-3xl' />
-                        <p className='text-center text-black'>Added successfully.</p>
-                    </div>
+                    <AddModal name={name} />
                 );
             });
     };
