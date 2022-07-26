@@ -107,7 +107,7 @@ const DefaultNavbar = () => {
                     </ul>
                 </div>
 
-                <div className='hidden md:block lg:block'>
+                <div className='hidden md:hidden lg:block'>
                     <a href='/pricing'><span className=" btn bg-secondary border-0 text-white hover:bg-secondary hover:opacity-90">Get started</span></a>
                 </div>
             </div>
