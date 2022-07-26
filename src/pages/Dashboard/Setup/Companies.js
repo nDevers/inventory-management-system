@@ -68,14 +68,12 @@ const Companies = () => {
                     ]}
                 />
 
-                <div className="flex justify-between items-center">
-                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
-                        <Input title={'Company Name'} name='companyName' isRequired='required' type='text' />
-                        <Input title={'Company Phone'} name='companyPhone' isRequired='required' type='number' />
-                        <Input title={'Company Website'} name='companyWebsite' isRequired='required' type='text' />
-                        <Input title={'Company Email'} name='companyEmail' isRequired='required' type='email' />
-                        <Input title={'Company Address'} name='companyAddress' isRequired='required' type='text' />
-                    </div>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
+                    <Input title={'Company Name'} name='companyName' isRequired='required' type='text' />
+                    <Input title={'Company Phone'} name='companyPhone' isRequired='required' type='number' />
+                    <Input title={'Company Website'} name='companyWebsite' isRequired='required' type='text' />
+                    <Input title={'Company Email'} name='companyEmail' isRequired='required' type='email' />
+                    <Input title={'Company Address'} name='companyAddress' isRequired='required' type='text' />
                 </div>
             </form>
 
