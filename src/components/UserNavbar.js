@@ -147,15 +147,15 @@ const UserNavbar = () => {
                                 [
                                     <LinkComponents
                                         key={9}
-                                        to={'returns/customer'}
+                                        to={'returns/customers'}
                                         icon={<FaUser className='text-lg' />}
                                         name={'Customer'} />,
 
                                     <LinkComponents
                                         key={10}
-                                        to={'returns/expire-or-damage'}
-                                        icon={<RiFileDamageFill className='Expire / Damage' />}
-                                        name={'Customer'} />
+                                        to={'returns/expires-or-damages'}
+                                        icon={<RiFileDamageFill className='text-lg' />}
+                                        name={'Expires / Damages'} />
                                 ]
                             } />
 
@@ -166,21 +166,21 @@ const UserNavbar = () => {
                                 [
                                     <LinkComponents
                                         key={11}
-                                        to={'setup/category'}
+                                        to={'setup/categories'}
                                         icon={<BiCategory className='text-lg' />}
-                                        name={'Category'} />,
+                                        name={'Categories'} />,
 
                                     <LinkComponents
                                         key={12}
-                                        to={'setup/unit-type'}
+                                        to={'setup/unit-types'}
                                         icon={<BiUnite className='text-lg' />}
-                                        name={'Unit Type'} />,
+                                        name={'Unit Types'} />,
 
                                     <LinkComponents
                                         key={13}
-                                        to={'setup/company'}
+                                        to={'setup/companies'}
                                         icon={<AiFillCopyrightCircle className='text-lg' />}
-                                        name={'Company'} />
+                                        name={'Companies'} />
                                 ]
                             } />
 
@@ -195,15 +195,15 @@ const UserNavbar = () => {
                                 [
                                     <LinkComponents
                                         key={14}
-                                        to={'suppliers/list'}
+                                        to={'suppliers/lists'}
                                         icon={<FaThList className='text-md' />}
-                                        name={'List'} />,
+                                        name={'Lists'} />,
 
                                     <LinkComponents
                                         key={15}
-                                        to={'suppliers/payment'}
+                                        to={'suppliers/payments'}
                                         icon={<BsCreditCard2BackFill className='text-lg' />}
-                                        name={'Payment'} />,
+                                        name={'Payments'} />,
 
                                     <LinkComponents
                                         key={16}
