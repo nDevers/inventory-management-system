@@ -1,9 +1,9 @@
 import React from 'react';
-import { AiFillDelete } from 'react-icons/ai';
 import { RiDeleteBin6Fill } from 'react-icons/ri';
 import { toast } from 'react-toastify';
+import DeleteModal from '../modals/DeleteModal';
 
-const DeleteButton = ({ deleteApiLink, itemId }) => {
+const DeleteButton = ({ deleteApiLink, itemId, name }) => {
     const deleteItem = _id => {
         const url = `${deleteApiLink}${_id}`;
         fetch(url, {
@@ -13,10 +13,7 @@ const DeleteButton = ({ deleteApiLink, itemId }) => {
             .then(data => {
                 if (data.deletedCount > 0) {
                     toast(
-                        <div className="p-2 rounded-lg flex items-center gap-x-3">
-                            <AiFillDelete className='text-error text-3xl' />
-                            <p className='text-center text-black'>Deleted successfully.</p>
-                        </div>
+                        <DeleteModal name={name} />
                     )
                 };
             });

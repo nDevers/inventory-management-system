@@ -129,7 +129,7 @@ const Employees = () => {
                                     employee?.updatedTime?.slice(0, 10),
                                     <span className='flex items-center gap-x-1'>
                                         <EditButton />
-                                        <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/employees/' itemId={employee._id} />
+                                        <DeleteButton deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/employees/' itemId={employee._id} name={employee.name} />
                                     </span>
                                 ]
                             } />)
