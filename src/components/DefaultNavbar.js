@@ -59,13 +59,13 @@ const DefaultNavbar = () => {
         {
             defaultNavbarMenus.map(defaultNavbarMenu =>
                 <li key={defaultNavbarMenu.id}>
-                    <a href={defaultNavbarMenu.link}>
+                    <Link to={defaultNavbarMenu.link}>
                         <span className={`flex items-center gap-x-2 ${defaultNavbarMenu.extraClass}`}>
                             {defaultNavbarMenu.icon}
                             {defaultNavbarMenu.name}
                             {defaultNavbarMenu.extraComponent}
                         </span>
-                    </a>
+                    </Link>
                 </li>)
         }
     </>
