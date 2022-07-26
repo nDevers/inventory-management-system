@@ -8,6 +8,10 @@ import DeleteButton from '../../../components/buttons/DeleteButton';
 import RefreshButton from '../../../components/buttons/RefreshButton';
 import TotalItems from '../../../components/TotalItems';
 import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
+import ModalCloseButton from '../../../components/buttons/ModalCloseButton';
+import ModalHeading from '../../../components/headings/ModalHeading';
+import NewButton from '../../../components/buttons/NewButton';
+import CancelButton from '../../../components/buttons/CancelButton';
 
 const Categories = () => {
     const tableHeadItems = ['SN', 'Name', 'Description', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -54,24 +58,45 @@ const Categories = () => {
 
     return (
         <section className='p-4 mt-16'>
-            <form onSubmit={addCategory}>
+            <div>
                 <DashboardPageHeading
                     name='Categories'
                     value={categories.length}
                     buttons={[
-                        <SaveButton />,
+                        <NewButton modalId='create-new-product' />,
                         <RefreshButton />,
                         <PrintButton />
                     ]}
                 />
 
-                <div className="flex justify-between items-center">
-                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
-                        <Input title={'Category Name'} name='categoryName' isRequired='required' />
-                        <Input title={'Description'} name='categoryDescription' isRequired='required' />
-                    </div>
-                </div>
-            </form>
+                <input type="checkbox" id="create-new-product" className="modal-toggle" />
+                <label htmlFor="create-new-product" className="modal cursor-pointer">
+                    <label className="modal-box lg:w-4/12 md:w-5/12 w-11/12 max-w-4xl relative" htmlFor="">
+                        <ModalCloseButton modalId={'create-new-product'} />
+
+                        <ModalHeading modalHeading={'Create a New Category'} />
+
+                        <form onSubmit={addCategory} className='mx-auto'>
+                            <div className='flex flex-col w-full lg:flex-row place-content-center gap-x-4 mt-4 mb-8'>
+                                <Input title={'Category Name'} name='categoryName' isRequired='required' />
+                                <Input title={'Description'} name='categoryDescription' isRequired='required' />
+                            </div>
+
+                            <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                                <div className="grid">
+                                    <SaveButton extraClass='mt-4' />
+                                </div>
+
+                                <div className="divider lg:divider-horizontal"></div>
+
+                                <div className="grid">
+                                    <CancelButton extraClass='mt-4' />
+                                </div>
+                            </div>
+                        </form>
+                    </label>
+                </label>
+            </div>
 
             <table className="table table-zebra table-compact w-full">
                 <thead>
