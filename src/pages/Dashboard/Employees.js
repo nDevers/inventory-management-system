@@ -74,14 +74,12 @@ const Employees = () => {
                     ]}
                 />
 
-                <div className="flex justify-between items-center">
-                    <div className='flex place-items-center gap-4 mt-4 mb-8'>
-                        <Input title={'Employee Name'} name='employeeName' isRequired='required' type='text' />
-                        <Input title={'Employee Phone'} name='employeePhone' isRequired='required' type='text' />
-                        <Input title={'Employee Website'} name='employeeWebsite' isRequired='required' type='text' />
-                        <Input title={'Employee Email'} name='employeeEmail' isRequired='required' type='email' />
-                        <Input title={'Employee Address'} name='employeeAddress' isRequired='required' type='text' />
-                    </div>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
+                    <Input title={'Employee Name'} name='employeeName' isRequired='required' type='text' />
+                    <Input title={'Employee Phone'} name='employeePhone' isRequired='required' type='text' />
+                    <Input title={'Employee Website'} name='employeeWebsite' isRequired='required' type='text' />
+                    <Input title={'Employee Email'} name='employeeEmail' isRequired='required' type='email' />
+                    <Input title={'Employee Address'} name='employeeAddress' isRequired='required' type='text' />
                 </div>
             </form>
 
