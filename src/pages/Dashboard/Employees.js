@@ -77,13 +77,13 @@ const Employees = () => {
 
                 <input type="checkbox" id="create-new-product" className="modal-toggle" />
                 <label htmlFor="create-new-product" className="modal cursor-pointer">
-                    <label className="modal-box lg:w-5/12 md:w-5/12 w-11/12 max-w-4xl relative" htmlFor="">
+                    <label className="modal-box lg:w-7/12 md:w-10/12 w-11/12 max-w-4xl relative" htmlFor="">
                         <ModalCloseButton modalId={'create-new-product'} />
 
                         <ModalHeading modalHeading={'Add a new Employee'} />
 
                         <form onSubmit={addEmployee} className='mx-auto'>
-                            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 place-items-center gap-x-4 gap-y-2 mt-4 mb-8'>
+                            <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 mb-2'>
                                 <Input title={'Employee Name'} name='employeeName' isRequired='required' type='text' />
                                 <Input title={'Employee Phone'} name='employeePhone' isRequired='required' type='text' />
                                 <Input title={'Employee Website'} name='employeeWebsite' isRequired='required' type='text' />

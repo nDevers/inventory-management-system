@@ -16,6 +16,7 @@ import EditButton from '../../../components/buttons/EditButton';
 import DeleteButton from '../../../components/buttons/DeleteButton';
 import { toast } from 'react-toastify';
 import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
+import AddModal from '../../../components/modals/AddModal';
 
 const NonPharmacyProducts = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
@@ -68,12 +69,7 @@ const NonPharmacyProducts = () => {
             .then(res => res.json())
             .then(data => {
                 toast(
-                    <div className="alert alert-success shadow-lg">
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                            <span>{tradeName} added successfully.</span>
-                        </div>
-                    </div>
+                    <AddModal name={tradeName} />
                 );
             });
 
@@ -129,7 +125,7 @@ const NonPharmacyProducts = () => {
                     <ModalHeading modalHeading={'Create a Pharmacy Product'} />
 
                     <form onSubmit={addNonPharmacyProduct}>
-                        <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 mb-2'>
+                        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-2 mb-2'>
                             <Input title={'Trade Name'} type='text' placeholder='Trade name' name='tradeName' isRequired='required' />
                             <Input title={'Generic Name'} type='text' placeholder='Generic name' name='genericName' isRequired='required' />
                             <Input title={'Strength'} type='number' placeholder='Strength' name='strength' isRequired='required' />
@@ -216,7 +212,8 @@ const NonPharmacyProducts = () => {
                                             <EditButton id={product._id} />
                                             <DeleteButton
                                                 deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/products/pharmacy/'
-                                                itemId={product._id} />
+                                                itemId={product._id}
+                                                name={product.tradeName} />
                                         </span>
                                     ]
                                 } />)
