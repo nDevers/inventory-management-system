@@ -19,7 +19,7 @@ import DashboardPageHeading from '../../../components/headings/DashboardPageHead
 import AddModal from '../../../components/modals/AddModal';
 
 const PurchasePharmacyProducts = () => {
-    const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
+    const tableHeadItems = ['SN', 'Voucher', 'Suplier', 'Status', 'Quantity', 'TP', 'Vat', 'Discount', 'MRP', 'Creator', 'Created at', 'Actions'];
 
     const addNonPharmacyProduct = event => {
         event.preventDefault();
@@ -85,7 +85,7 @@ const PurchasePharmacyProducts = () => {
                 value={pharmacyProducts.length}
                 buttons={[
                     <NewButton modalId='create-new-product'/>,
-                    <NewButton modalId='create-direct-purchase' title="Direct_Purchase"/>,
+                    <NewButton modalId='create-direct-purchase' title="Direct Purchase"/>,
                     <RefreshButton />,
                     <PrintButton />
                 ]}
@@ -225,7 +225,7 @@ const PurchasePharmacyProducts = () => {
                 <label className="modal-box lg:w-7/12 md:w-10/12 w-11/12 max-w-4xl relative" htmlFor="">
                     <ModalCloseButton modalId={'create-direct-purchase'} />
 
-                    <ModalHeading modalHeading={'Direct Purchase a Pharmacy Product'} />
+                    <ModalHeading modalHeading={'Direct Purchase Pharmacy Products'} />
 
                     <form onSubmit={addNonPharmacyProduct}>
                         <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1 mb-2'>
@@ -284,6 +284,7 @@ const PurchasePharmacyProducts = () => {
                 </label>
             </label>
 
+            {/* Purchased Table */}
             <table className="table table-zebra table-compact">
                 <thead>
                     {
