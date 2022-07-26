@@ -21,12 +21,6 @@ import AddModal from '../../../components/modals/AddModal';
 const PurchasePharmacyProducts = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
 
-    const tableHead = <tr>
-        {
-            tableHeadItems?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
-        }
-    </tr>;
-
     const addNonPharmacyProduct = event => {
         event.preventDefault();
 
@@ -92,10 +86,12 @@ const PurchasePharmacyProducts = () => {
                 buttons={[
                     <NewButton modalId='create-new-product' />,
                     <RefreshButton />,
-                    <PrintButton />
+                    <PrintButton />,
+                    <NewButton modalId='create-direct-purchase' />
                 ]}
             />
 
+            {/* create new pharmacy product purchase */}
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
             <label htmlFor="create-new-product" className="modal cursor-pointer">
                 <label className="modal-box lg:w-7/12 md:w-10/12 w-11/12 max-w-4xl relative" htmlFor="">
@@ -223,10 +219,75 @@ const PurchasePharmacyProducts = () => {
                 </label>
             </label>
 
+            {/* create direct purchase */}
+            <input type="checkbox" id="create-direct-purchase" className="modal-toggle" />
+            <label htmlFor="create-direct-purchase" className="modal cursor-pointer">
+                <label className="modal-box lg:w-7/12 md:w-10/12 w-11/12 max-w-4xl relative" htmlFor="">
+                    <ModalCloseButton modalId={'create-direct-purchase'} />
+
+                    <ModalHeading modalHeading={'Direct Purchase a Pharmacy Product'} />
+
+                    <form onSubmit={addNonPharmacyProduct}>
+                        <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1 mb-2'>
+                            <Input title={'Trade Name'} type='text' placeholder='Trade name' name='tradeName' isRequired='required' />
+                            <Input title={'Generic Name'} type='text' placeholder='Generic name' name='genericName' isRequired='required' />
+                            <Input title={'Strength'} type='number' placeholder='Strength' name='strength' isRequired='required' />
+
+                            <Select title={'Category'} name='category' isRequired='required' />
+                            <Select title={'Company'} name='company' isRequired='required' />
+                            <Input title={'Stock'} type='number' placeholder='Stock' name='stock' isRequired='required' />
+                            <Select title={'Pack Type'} name='packType' isRequired='required' />
+                        </div>
+
+                        <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
+                            <div className="grid">
+                                <h3 className='text-xl'>Purchase Area</h3>
+
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Select title={'Purchase Unit Type'} name='purchaseUnitType' isRequired='required' />
+                                    <Input title={'Pack Size'} type='number' placeholder='Pack size' name='packSize' isRequired='required' />
+                                </div>
+
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Input title={'Pack TP'} type='number' placeholder='Pack TP' name='packTp' isRequired='required' />
+                                    <Input title={'Unit TP'} type='number' placeholder='Unit TP' name='unitTp' isRequired='required' />
+                                </div>
+
+                                <DoubleInput title={'Purchase VAT'} name1='purchaseVatPercent' name2='purchaseVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
+                                <DoubleInput title={'Purchase Discount'} name1='purchaseDiscountPercent' name2='purchaseDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
+
+                                <SaveButton extraClass={'mt-4'} />
+                            </div>
+
+                            <div className="divider lg:divider-horizontal"></div>
+
+                            <div className="grid">
+                                <h3 className='text-xl'>Sale Area</h3>
+
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Select title={'Sales Unit Type'} name='salesUnitType' isRequired='required' />
+                                    <Input title={'Pack Size'} type='number' name='salePackSize' placeholder='Pack size' isRequired='required' />
+                                </div>
+
+                                <div className='grid grid-cols-2 gap-x-4'>
+                                    <Input title={'Pack MRP'} type='number' name='packMrp' placeholder='Pack MRP' isRequired='required' />
+                                    <Input title={'Unit MRP'} type='number' name='unitMrp' placeholder='Unit MRP' isRequired='required' />
+                                </div>
+
+                                <DoubleInput title={'Sales VAT'} name1='salesVatPercent' name2='salesVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
+                                <DoubleInput title={'Sales Discount'} name1='salesDiscountPercent' name2='salesDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
+
+                                <CancelButton extraClass={'mt-4'} />
+                            </div>
+                        </div>
+                    </form>
+                </label>
+            </label>
+
             <table className="table table-zebra table-compact">
                 <thead>
                     {
-                        tableHead
+                        tableHeadItems?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
                     }
                 </thead>
                 <tbody>
