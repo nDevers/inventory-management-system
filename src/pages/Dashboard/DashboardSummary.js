@@ -121,7 +121,7 @@ const DashboardSummary = () => {
     const [customers, setCustomers] = useState([]);
     const [suppliersLists, setSuppliersLists] = useState([]);
     const [suppliersPayments, setSuppliersPayments] = useState([]);
-    const [suppliersDocuments, setsuppliersDocuments] = useState([]);
+    const [suppliersDocuments, setSuppliersDocuments] = useState([]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/products/pharmacy')
@@ -228,7 +228,7 @@ const DashboardSummary = () => {
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/suppliers/documents')
             .then(res => res.json())
-            .then(e => setsuppliersDocuments(e.length));
+            .then(e => setSuppliersDocuments(e.length));
     }, [suppliersDocuments]);
 
     return (
