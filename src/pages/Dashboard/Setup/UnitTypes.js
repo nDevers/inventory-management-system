@@ -7,6 +7,7 @@ import EditButton from '../../../components/buttons/EditButton';
 import DeleteButton from '../../../components/buttons/DeleteButton';
 import RefreshButton from '../../../components/buttons/RefreshButton';
 import TotalItems from '../../../components/TotalItems';
+import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
 
 const UnitTypes = () => {
     const tableHeadItems = ['SN', 'Name', 'Description', 'Creator', 'Created At', 'Updated By', 'Updated At', 'Actions'];
@@ -56,15 +57,15 @@ const UnitTypes = () => {
     return (
         <section className='p-4 mt-16'>
             <form onSubmit={addUnitType}>
-                <div className="flex justify-between items-center">
-                    <h2 className='text-2xl text-center font-bold'>Unit Types: <TotalItems text={unitTypes.length} /></h2>
-
-                    <div className='flex items-center gap-x-4'>
-                        <SaveButton btnSize='btn-xs' />
-                        <RefreshButton btnSize='btn-xs' />
-                        <PrintButton btnSize='btn-xs' />
-                    </div>
-                </div>
+                <DashboardPageHeading
+                    name='Unit Types'
+                    value={unitTypes.length}
+                    buttons={[
+                        <SaveButton />,
+                        <RefreshButton />,
+                        <PrintButton />
+                    ]}
+                />
 
                 <div className="flex justify-between items-center">
                     <div className='flex place-items-center gap-4 mt-4 mb-8'>

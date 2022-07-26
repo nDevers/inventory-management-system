@@ -15,6 +15,7 @@ import EditButton from '../../../components/buttons/EditButton';
 import DeleteButton from '../../../components/buttons/DeleteButton';
 import { toast } from 'react-toastify';
 import TotalItems from '../../../components/TotalItems';
+import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
 
 const NonPharmacyOrders = () => {
     const tableHeadItems = ['SN', 'Voucher', 'Supplier', 'Status', 'Quantity', 'TP', 'Vat', 'Discount', 'MRP', 'Creator', 'Created At', 'Actions'];
@@ -113,15 +114,15 @@ const NonPharmacyOrders = () => {
 
     return (
         <section className='p-4 mt-16'>
-            <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>Non Pharmacy Orders: <TotalItems text={nonPharmacyOrders.length} /></h2>
-
-                <div className='flex items-center gap-x-4'>
-                    <NewButton modalId='create-non-pharmacy-order' btnSize='btn-xs' />
-                    <RefreshButton btnSize='btn-xs' />
-                    <PrintButton btnSize='btn-xs' />
-                </div>
-            </div>
+            <DashboardPageHeading
+                name='Non Pharmacy Orders'
+                value={nonPharmacyOrders.length}
+                buttons={[
+                    <NewButton modalId='create-non-pharmacy-order' />,
+                    <RefreshButton />,
+                    <PrintButton />
+                ]}
+            />
 
             <input type="checkbox" id="create-non-pharmacy-order" className="modal-toggle" />
             <label htmlFor="create-non-pharmacy-order" className="modal cursor-pointer">

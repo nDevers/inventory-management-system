@@ -15,7 +15,7 @@ import TableRow from '../../../components/TableRow';
 import EditButton from '../../../components/buttons/EditButton';
 import DeleteButton from '../../../components/buttons/DeleteButton';
 import { toast } from 'react-toastify';
-import TotalItems from '../../../components/TotalItems';
+import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
 
 const NonPharmacyItems = () => {
     const tableHeadItems = ['SN', 'Code', 'Product name', 'Category', 'Strength', 'Company', 'Stock', 'Pack Type', 'Pack Size', 'Pack TP', 'Pack MRP', 'Unit TP', 'Unit MRP', 'Creator', 'Created At', 'Actions'];
@@ -90,17 +90,15 @@ const NonPharmacyItems = () => {
 
     return (
         <section className='p-4 mt-16'>
-            <div className="flex flex-col md:flex-row lg:flex-row justify-between items-center gap-y-2 mb-6">
-                <h2 className='lg:text-2xl md:text-xl text-lg text-center font-bold'>
-                    Non Pharmacy Requested Items: <TotalItems text={nonPharmacyRequestedItems.length} />
-                </h2>
-
-                <div className='flex items-center gap-x-4'>
-                    <NewButton modalId='create-new-product' btnSize='btn-xs' />
-                    <RefreshButton btnSize='btn-xs' />
-                    <PrintButton btnSize='btn-xs' />
-                </div>
-            </div>
+            <DashboardPageHeading
+                name='Non Pharmacy Requested Items'
+                value={nonPharmacyRequestedItems.length}
+                buttons={[
+                    <NewButton modalId='create-new-product' />,
+                    <RefreshButton />,
+                    <PrintButton />
+                ]}
+            />
 
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
             <label htmlFor="create-new-product" className="modal cursor-pointer">
