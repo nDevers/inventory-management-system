@@ -14,16 +14,16 @@ import logo from '../../assets/logo.png';
 import DetailsComponent from '../../components/navbar/DetailsComponent';
 const Dashboard = () => {
     return (
-        <div className="drawer drawer-mobile fixed top-0 left-0 right-0">
-            <input id="dashboard" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col">
+        <div className="drawer drawer-mobile">
+            <input id="dashboard" className="drawer-toggle" />
+            <div className="drawer-content">
                 <UserNavbar />
                 <Outlet />
             </div>
             <div className="drawer-side lg:bg-yellow-200 md:bg-yellow-200 w-52">
                 <label htmlFor="dashboard" className="drawer-overlay"></label>
                 <div className="flex flex-col justify-between">
-                    <nav className="flex flex-col mt-6 space-y-1">
+                    <nav className="flex flex-col mt-6 space-y-2">
                         <Link className="text-xl font-semibold uppercase flex items-center mb-8" to='/'>
                             <img className='w-12' src={logo} alt="logo" />
                             String LAB
