@@ -16,6 +16,8 @@ import DeleteButton from '../../../components/buttons/DeleteButton';
 import { toast } from 'react-toastify';
 import DashboardPageHeading from '../../../components/headings/DashboardPageHeading';
 import AddModal from '../../../components/modals/AddModal';
+import PrintButton2 from '../../../components/buttons/PrintButton2';
+import MailButton from '../../../components/buttons/MailButton';
 
 const PharmacyOrders = () => {
     const tableHeadItems = ['SN', 'Voucher', 'Supplier', 'Status', 'Quantity', 'TP', 'Vat', 'Discount', 'MRP', 'Creator', 'Created At', 'Actions'];
@@ -242,6 +244,9 @@ const PharmacyOrders = () => {
                                                 deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/orders/pharmacy/'
                                                 itemId={pharmacyOrder._id}
                                                 name='Order' />
+                                            <PrintButton2 />
+                                            <MailButton />
+                                            <NewButton title='Purchase' icon='' />
                                         </span>
                                     ]
                                 } />)
