@@ -19,38 +19,43 @@ import DashboardPageHeading from '../../../components/headings/DashboardPageHead
 import AddModal from '../../../components/modals/AddModal';
 
 const PurchasePharmacyProducts = () => {
-    const tableHeadItems = ['SN', 'Voucher', 'Suplier', 'Status', 'Quantity', 'TP', 'Vat', 'Discount', 'MRP', 'Creator', 'Created at', 'Actions'];
+    const tableHeadItems = ['SN', 'Voucher', 'Supplier', 'Status', 'Quantity', 'TP', 'Vat', 'Discount', 'MRP', 'Creator', 'Created at', 'Actions'];
 
-    const addNonPharmacyProduct = event => {
+    const modalTableHeadItems1 = ['SN', 'Name', 'Strength', 'Company', 'Category', 'Pack Type', 'TP'];
+
+    const modalTableHeadItems2 = ['SN', 'Name', 'Strength', 'Category', 'Stock', 'Quantity', 'Total TP', 'Action'];
+
+    const tableHead = <tr>
+        {
+            tableHeadItems?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
+        }
+    </tr>;
+
+    const modalTableHead1 = <tr>
+        {
+            modalTableHeadItems1?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
+        }
+    </tr>;
+
+    const modalTableHead2 = <tr>
+        {
+            modalTableHeadItems2?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
+        }
+    </tr>;
+
+    // add pharmacy order to db
+    const addPharmacyOrder = event => {
         event.preventDefault();
 
-        const tradeName = event?.target?.tradeName?.value;
-        const genericName = event?.target?.genericName?.value;
-        const strength = event?.target?.strength?.value;
+        const supplier = event?.target?.supplier?.value; const tradeName = event?.target?.tradeName?.value;
         const category = event?.target?.category?.value;
-        const company = event?.target?.company?.value;
-        const stock = event?.target?.stock?.value;
-        const packType = event?.target?.packType?.value;
-        const purchaseUnitType = event?.target?.purchaseUnitType?.value;
-        const purchasePackSize = event?.target?.purchasePackSize?.value;
-        const packTp = event?.target?.packTp?.value;
-        const unitTp = event?.target?.unitTp?.value;
-        const purchaseVatPercent = event?.target?.purchaseVatPercent?.value;
-        const purchaseVatTaka = event?.target?.purchaseVatTaka?.value;
-        const purchaseDiscountPercent = event?.target?.purchaseDiscountPercent?.value;
-        const purchaseDiscountTaka = event?.target?.purchaseDiscountTaka?.value;
-        const salesUnitType = event?.target?.salesUnitType?.value;
-        const salePackSize = event?.target?.salePackSize?.value;
-        const packMrp = event?.target?.packMrp?.value;
-        const unitMrp = event?.target?.unitMrp?.value;
-        const salesVatPercent = event?.target?.salesVatPercent?.value;
-        const salesVatTaka = event?.target?.salesVatTaka?.value;
-        const salesDiscountPercent = event?.target?.salesDiscountPercent?.value;
-        const salesDiscountTaka = event?.target?.salesDiscountTaka?.value;
-        const addedBy = 'admin';
-        const addedToDbAt = new Date();
+        const strength = event?.target?.strength?.value;
+        const boxType = event?.target?.boxType?.value;
+        const unitType = event?.target?.unitType?.value;
+        const creator = 'admin';
+        const createdAt = new Date();
 
-        const productDetails = { tradeName, genericName, strength, category, company, stock, packType, purchaseUnitType, purchasePackSize, packTp, unitTp, purchaseVatPercent, purchaseVatTaka, purchaseDiscountPercent, purchaseDiscountTaka, salesUnitType, salePackSize, packMrp, unitMrp, salesVatPercent, salesVatTaka, salesDiscountPercent, salesDiscountTaka, addedBy, addedToDbAt };
+        const productDetails = { supplier, tradeName, category, strength, boxType, unitType, creator, createdAt };
 
         // send data to server
         fetch('https://stringlab-ims-server.herokuapp.com/api/purchases/pharmacy', {
@@ -63,7 +68,7 @@ const PurchasePharmacyProducts = () => {
             .then(res => res.json())
             .then(data => {
                 toast(
-                    <AddModal name={tradeName} />
+                    <AddModal name='Order' />
                 );
             });
 
@@ -71,6 +76,22 @@ const PurchasePharmacyProducts = () => {
     };
 
     const [pharmacyProducts, setPharmacyProducts] = useState([]);
+    const [categories, setCategories] = useState([]);
+    const [unitTypes, setUnitTypes] = useState([]);
+
+    // get categories data
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/categories')
+            .then(res => res.json())
+            .then(c => setCategories(c));
+    }, [categories]);
+
+    // get unit types data
+    useEffect(() => {
+        fetch('https://stringlab-ims-server.herokuapp.com/api/setup/unitTypes')
+            .then(res => res.json())
+            .then(ut => setUnitTypes(ut));
+    }, [unitTypes]);
 
     useEffect(() => {
         fetch('https://stringlab-ims-server.herokuapp.com/api/purchases/pharmacy')
@@ -84,7 +105,7 @@ const PurchasePharmacyProducts = () => {
                 name='Purchase Pharmacy Products'
                 value={pharmacyProducts.length}
                 buttons={[
-                    <NewButton modalId='create-new-product'/>,
+                    <NewButton modalId='create-new-product' />,
                     <RefreshButton />,
                     <PrintButton />
                 ]}
@@ -92,40 +113,50 @@ const PurchasePharmacyProducts = () => {
 
             {/* create new pharmacy product purchase */}
             <input type="checkbox" id="create-new-product" className="modal-toggle" />
-            <label htmlFor="create-new-product" className="modal cursor-pointer">
-                <label className="modal-box lg:w-7/12 md:w-10/12 w-11/12 max-w-4xl relative" htmlFor="">
+            <label htmlFor="create-new-product" className="modal cursor-pointer z-50">
+                <label className="modal-box lg:w-10/12 md:w-11/12 w-full max-w-5xl relative" htmlFor="">
                     <ModalCloseButton modalId={'create-new-product'} />
 
-                    <ModalHeading modalHeading={'Purchase a Pharmacy Product'} />
+                    <ModalHeading modalHeading={'Create a Pharmacy Purchase'} />
 
-                    <form onSubmit={addNonPharmacyProduct}>
+                    <form onSubmit={addPharmacyOrder}>
                         <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-1 mb-2'>
                             <Input title={'Trade Name'} type='text' placeholder='Trade name' name='tradeName' isRequired='required' />
-                            <Input title={'Generic Name'} type='text' placeholder='Generic name' name='genericName' isRequired='required' />
-                            <Input title={'Strength'} type='number' placeholder='Strength' name='strength' isRequired='required' />
+                            <Select title={'Category'} name='category' isRequired='required' options={categories.map(c => c.name)} />
 
-                            <Select title={'Category'} name='category' isRequired='required' />
-                            <Select title={'Company'} name='company' isRequired='required' />
-                            <Input title={'Stock'} type='number' placeholder='Stock' name='stock' isRequired='required' />
-                            <Select title={'Pack Type'} name='packType' isRequired='required' />
+                            <Input title={'Strength'} type='text' placeholder='Strength' name='strength' isRequired='required' />
+
+                            <Select title={'Box Type'} name='boxType' isRequired='required' />
+                            <Select title={'Unit Type'} name='unitType' isRequired='required' options={unitTypes.map(u => u.name)} />
                         </div>
 
                         <div className="flex flex-col w-full lg:flex-row mt-4 place-content-center">
                             <div className="grid">
-                                <h3 className='text-xl'>Purchase Area</h3>
-
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <Select title={'Purchase Unit Type'} name='purchaseUnitType' isRequired='required' />
-                                    <Input title={'Pack Size'} type='number' placeholder='Pack size' name='packSize' isRequired='required' />
-                                </div>
-
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <Input title={'Pack TP'} type='number' placeholder='Pack TP' name='packTp' isRequired='required' />
-                                    <Input title={'Unit TP'} type='number' placeholder='Unit TP' name='unitTp' isRequired='required' />
-                                </div>
-
-                                <DoubleInput title={'Purchase VAT'} name1='purchaseVatPercent' name2='purchaseVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
-                                <DoubleInput title={'Purchase Discount'} name1='purchaseDiscountPercent' name2='purchaseDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
+                                <table className="table table-zebra table-compact">
+                                    <thead>
+                                        {
+                                            modalTableHead1
+                                        }
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            pharmacyProducts.map((product, index) =>
+                                                <TableRow
+                                                    key={product._id}
+                                                    tableRowsData={
+                                                        [
+                                                            index + 1,
+                                                            product.name,
+                                                            product.strength,
+                                                            product.company,
+                                                            product.category,
+                                                            product.packType,
+                                                            product.Tp,
+                                                        ]
+                                                    } />)
+                                        }
+                                    </tbody>
+                                </table>
 
                                 <SaveButton extraClass={'mt-4'} />
                             </div>
@@ -133,20 +164,38 @@ const PurchasePharmacyProducts = () => {
                             <div className="divider lg:divider-horizontal"></div>
 
                             <div className="grid">
-                                <h3 className='text-xl'>Sale Area</h3>
 
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <Select title={'Sales Unit Type'} name='salesUnitType' isRequired='required' />
-                                    <Input title={'Pack Size'} type='number' name='salePackSize' placeholder='Pack size' isRequired='required' />
-                                </div>
-
-                                <div className='grid grid-cols-2 gap-x-4'>
-                                    <Input title={'Pack MRP'} type='number' name='packMrp' placeholder='Pack MRP' isRequired='required' />
-                                    <Input title={'Unit MRP'} type='number' name='unitMrp' placeholder='Unit MRP' isRequired='required' />
-                                </div>
-
-                                <DoubleInput title={'Sales VAT'} name1='salesVatPercent' name2='salesVatTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
-                                <DoubleInput title={'Sales Discount'} name1='salesDiscountPercent' name2='salesDiscountTaka' type1='number' type2='number' placeholder1='%' placeholder2='In taka' />
+                                <table className="table table-zebra table-compact">
+                                    <thead>
+                                        {
+                                            modalTableHead2
+                                        }
+                                    </thead>
+                                    <tbody>
+                                        {
+                                            pharmacyProducts.map((product, index) =>
+                                                <TableRow
+                                                    key={product._id}
+                                                    tableRowsData={
+                                                        [
+                                                            index + 1,
+                                                            product.name,
+                                                            product.strength,
+                                                            product.category,
+                                                            product.stock,
+                                                            product.quantity,
+                                                            product.totalTp,
+                                                            <span className='flex items-center gap-x-1'>
+                                                                <EditButton />
+                                                                <DeleteButton
+                                                                    deleteApiLink='https://stringlab-ims-server.herokuapp.com/api/orders/pharmacy/'
+                                                                    itemId={'pharmacyOrder._id'} />
+                                                            </span>
+                                                        ]
+                                                    } />)
+                                        }
+                                    </tbody>
+                                </table>
 
                                 <CancelButton extraClass={'mt-4'} />
                             </div>
@@ -217,12 +266,12 @@ const PurchasePharmacyProducts = () => {
                     </form>
                 </label>
             </label>
-            
+
             {/* Purchased Table */}
             <table className="table table-zebra table-compact">
                 <thead>
                     {
-                        tableHeadItems?.map((tableHeadItem, index) => <th key={index} className='text-xs md:text-2xs lg:text-md' >{tableHeadItem}</th>)
+                        tableHead
                     }
                 </thead>
                 <tbody>
